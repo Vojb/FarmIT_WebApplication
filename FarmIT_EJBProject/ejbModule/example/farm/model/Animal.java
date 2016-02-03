@@ -1,12 +1,21 @@
 package example.farm.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
-public class Animal {
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="typeAnimal",
+discriminatorType=DiscriminatorType.STRING, length=1)
+public abstract class Animal implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private String idAnimal;
 	private String name;
-	private String typeAnimal;
 	private String age;
 	private String statusAnimal;
 	
@@ -24,14 +33,6 @@ public class Animal {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	@Column(name="TypeAnimal")
-	public String getTypeAnimal() {
-		return typeAnimal;
-	}
-	public void setTypeAnimal(String typeAnimal) {
-		this.typeAnimal = typeAnimal;
 	}
 
 	@Column(name="Age")
