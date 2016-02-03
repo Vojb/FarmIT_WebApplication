@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import example.farm.model.Food;
 
 
+
 @Stateless
 @LocalBean
 public class FoodBean implements FoodBeanLocal {
