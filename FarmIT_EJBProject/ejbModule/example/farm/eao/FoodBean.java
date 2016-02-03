@@ -20,20 +20,20 @@ public class FoodBean implements FoodBeanLocal {
 		return em.find(Food.class, id);
 	}
 	
-	public Food createFood(Food a) {
-		em.persist(a);
-		return a;
+	public Food createFood(Food f) {
+		em.persist(f);
+		return f;
 	}
 
-	public Food updateFood(Food a) {
-		em.merge(a);
-		return a;
+	public Food updateFood(Food f) {
+		em.merge(f);
+		return f;
 	}
 
 	public void deleteFood(long id) {
-		Food a = this.findByIdFood(id);
-		if (a != null) {
-			em.remove(a);
+		Food f = this.findByIdFood(id);
+		if (f != null) {
+			em.remove(f);
 		}
 	}
 
