@@ -7,11 +7,11 @@ import example.farm.model.Animal;
 @Local
 public interface AnimalBeanLocal {
 
-	public Animal findByIdAnimal();
+	public Animal findByIdAnimal(long id);
+	
+	public Animal createAnimal(Animal a);
 
-	public Animal createAnimal();
+	public Animal updateAnimal(Animal a);
 
-	public Animal updateAnimal();
-
-	public void deleteAnimal();
+	public void deleteAnimal(long id);
 }
