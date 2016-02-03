@@ -4,7 +4,6 @@ import javax.persistence.Column;
 
 public class Cow extends Animal {
 
-
 	private int amountOfPowerFeed;
 	
 	@Column(name="amountOfPowerFeed")
