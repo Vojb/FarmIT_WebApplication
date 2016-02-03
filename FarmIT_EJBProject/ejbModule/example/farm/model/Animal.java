@@ -14,17 +14,17 @@ public abstract class Animal implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String idAnimal;
+	private long idAnimal;
 	private String name;
 	private String age;
 	private String statusAnimal;
 	
 	@Id
 	@Column(name="IdAnimal")
-	public String getIdAnimal() {
+	public long getIdAnimal() {
 		return idAnimal;
 	}
-	public void setIdAnimal(String idAnimal) {
+	public void setIdAnimal(long idAnimal) {
 		this.idAnimal = idAnimal;
 	}
 	@Column(name="name")
