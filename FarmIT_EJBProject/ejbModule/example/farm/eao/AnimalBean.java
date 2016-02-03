@@ -25,17 +25,17 @@ public class AnimalBean implements AnimalBeanLocal {
 		return em.find(Animal.class, id);
 	}
 	
-	public Animal createEmployee(Animal a) {
+	public Animal createAnimal(Animal a) {
 		em.persist(a);
 		return a;
 	}
 
-	public Animal updateEmployee(Animal a) {
+	public Animal updateAnimal(Animal a) {
 		em.merge(a);
 		return a;
 	}
 
-	public void deleteEmployee(long id) {
+	public void deleteAnimal(long id) {
 		Animal a = this.findByIdAnimal(id);
 		if (a != null) {
 			em.remove(a);
