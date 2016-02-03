@@ -17,7 +17,7 @@ public class Eats {
 	public void setIdFood(long idFood) {
 		this.idFood = idFood;
 	}
-	@Id
+	
 	@Column(name = "idAnimal")
 	public long getIdAnimal() {
 		return idAnimal;
