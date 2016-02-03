@@ -1,5 +1,6 @@
 package example.farm.model;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
@@ -7,6 +8,7 @@ import javax.persistence.Entity;
 @DiscriminatorValue("Pig")
 public class Pig extends Animal {
 
+	@Column(name="amountOfPowerFeed")
 	private int amountOfPowerFeed;
 
 	public int getAmountOfPowerFeed() {
