@@ -8,11 +8,10 @@ import example.farm.model.Animal;
 public interface AnimalBeanLocal {
 
 	public Animal findByIdAnimal();
-	
 
-	public Animal createEmployee();
+	public Animal createAnimal();
 
-	public Animal updateEmployee();
+	public Animal updateAnimal();
 
-	public void deleteEmployee();
+	public void deleteAnimal();
 }
