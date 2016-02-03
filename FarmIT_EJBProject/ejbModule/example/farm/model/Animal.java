@@ -5,6 +5,9 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="typeAnimal",
+discriminatorType=DiscriminatorType.STRING, length=1)
 public abstract class Animal implements Serializable {
 	/**
 	 * 
@@ -13,7 +16,6 @@ public abstract class Animal implements Serializable {
 	
 	private String idAnimal;
 	private String name;
-	private String typeAnimal;
 	private String age;
 	private String statusAnimal;
 	
@@ -31,14 +33,6 @@ public abstract class Animal implements Serializable {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	@Column(name="TypeAnimal")
-	public String getTypeAnimal() {
-		return typeAnimal;
-	}
-	public void setTypeAnimal(String typeAnimal) {
-		this.typeAnimal = typeAnimal;
 	}
 
 	@Column(name="Age")
