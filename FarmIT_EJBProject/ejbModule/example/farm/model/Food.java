@@ -2,6 +2,7 @@ package example.farm.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -11,6 +12,7 @@ public class Food {
 	private String typeFood;
 	private int amount;
 	
+	@Id
 	@Column(name="idFood")
 	public long getIdFood() {
 		return idFood;
