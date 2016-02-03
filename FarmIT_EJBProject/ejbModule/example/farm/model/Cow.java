@@ -1,9 +1,13 @@
 package example.farm.model;
 
+import javax.persistence.Column;
+
 public class Cow extends Animal {
 
-	private int amountOfPowerFeed;
 
+	private int amountOfPowerFeed;
+	
+	@Column(name="amountOfPowerFeed")
 	public int getAmountOfPowerFeed() {
 		return amountOfPowerFeed;
 	}

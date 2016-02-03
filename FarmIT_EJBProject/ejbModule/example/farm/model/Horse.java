@@ -1,14 +1,17 @@
 package example.farm.model;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("Horse")
 public class Horse extends Animal {
+	
 
 	private int amountOfPowerFeed;
-
+	
+	@Column(name="amountOfPowerFeed")
 	public int getAmountOfPowerFeed() {
 		return amountOfPowerFeed;
 	}
