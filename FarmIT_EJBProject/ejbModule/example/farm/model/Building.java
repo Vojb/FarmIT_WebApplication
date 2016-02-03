@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.*;
-import example.farm.model.Box;
+
 
 @Entity
 @Table(name = "Buildings")
