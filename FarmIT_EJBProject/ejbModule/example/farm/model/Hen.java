@@ -1,5 +1,10 @@
 package example.farm.model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("Hen")
 public class Hen extends Animal {
 
 	private int amountOfOats;

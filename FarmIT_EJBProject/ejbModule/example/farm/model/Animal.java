@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="typeAnimal",
-discriminatorType=DiscriminatorType.STRING, length=1)
+discriminatorType=DiscriminatorType.STRING, length=10)
 public abstract class Animal implements Serializable {
 	/**
 	 * 
