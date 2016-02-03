@@ -1,9 +1,16 @@
 package example.farm.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
-public class Animal {
+public abstract class Animal implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private String idAnimal;
 	private String name;
 	private String typeAnimal;
