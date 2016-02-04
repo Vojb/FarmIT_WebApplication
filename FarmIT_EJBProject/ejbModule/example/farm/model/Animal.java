@@ -18,12 +18,10 @@ public abstract class Animal implements Serializable {
 	private String name;
 	private String age;
 	private String statusAnimal;
-	
-	@ManyToOne
-	@JoinColumn(name="idBox",
-	referencedColumnName="idBox")
-	
+	private long idBox;
+
 	@ManyToMany(mappedBy="Food")
+
 	
 	@Id
 	@Column(name="IdAnimal")
@@ -55,6 +53,16 @@ public abstract class Animal implements Serializable {
 	}
 	public void setStatusAnimal(String statusAnimal) {
 		this.statusAnimal = statusAnimal;
+	}
+	
+	@ManyToOne
+	@JoinColumn(name="idBox",
+	referencedColumnName="idBox")
+	public long getIdBox() {
+		return idBox;
+	}
+	public void setIdBox(long idBox) {
+		this.idBox = idBox;
 	}
 	
 
