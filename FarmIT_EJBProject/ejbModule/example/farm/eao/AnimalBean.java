@@ -3,6 +3,7 @@ package example.farm.eao;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import example.farm.model.Animal;
 
@@ -13,7 +14,9 @@ import example.farm.model.Animal;
 @LocalBean
 public class AnimalBean implements AnimalBeanLocal {
 
+	@PersistenceContext(unitName="LabEJBSql")
 	private EntityManager em;
+	
 	/**
 	 * Default constructor.
 	 */

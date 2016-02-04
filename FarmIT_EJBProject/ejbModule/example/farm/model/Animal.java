@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name="Animals")
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="typeAnimal",
-discriminatorType=DiscriminatorType.STRING, length=10)
+discriminatorType=DiscriminatorType.STRING, length=6)
 public abstract class Animal implements Serializable {
 	
 	
