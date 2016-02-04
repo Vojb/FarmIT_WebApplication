@@ -1,6 +1,7 @@
 package example.farm.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import javax.persistence.*;
 
@@ -19,9 +20,13 @@ public abstract class Animal implements Serializable {
 	private String age;
 	private String statusAnimal;
 	private long idBox;
+	
+	@ManyToMany
+	@JoinTable(name = "Eats", joinColumns = @JoinColumn(name = "idFood", referencedColumnName = "idFood") , inverseJoinColumns = @JoinColumn(name = "idAnimal", referencedColumnName = "idAnimal") )
+	private ArrayList<Food> foods = new ArrayList<Food>();
 
-	@ManyToMany(mappedBy="Food")
-
+	
+	
 	
 	@Id
 	@Column(name="IdAnimal")
