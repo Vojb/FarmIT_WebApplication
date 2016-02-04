@@ -13,14 +13,15 @@ import javax.persistence.Table;
 @Table(name="Boxes")
 public class Box {
 	private long idBox;
-
-	private ArrayList<Animal> animals = new ArrayList<Animal>();
 	
 	@OneToMany(mappedBy="Animal")
+	private ArrayList<Animal> animals = new ArrayList<Animal>();
 	
 	@ManyToOne
 	@JoinColumn(name="idBuilding",
 	referencedColumnName="idBuilding")
+	private Building building;
+	
 	
 	@Id
 	@Column(name="idBox")

@@ -19,6 +19,10 @@ public abstract class Animal implements Serializable {
 	private String name;
 	private String age;
 	private String statusAnimal;
+	
+	@ManyToOne
+	@JoinColumn(name="idBox",
+	referencedColumnName="idBox")
 	private long idBox;
 	
 	@ManyToMany
@@ -60,9 +64,7 @@ public abstract class Animal implements Serializable {
 		this.statusAnimal = statusAnimal;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name="idBox",
-	referencedColumnName="idBox")
+	@Column(name="idBox")
 	public long getIdBox() {
 		return idBox;
 	}

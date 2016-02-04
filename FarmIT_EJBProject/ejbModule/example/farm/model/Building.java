@@ -13,9 +13,10 @@ import java.util.*;
 public class Building {
 
 	private long idBuilding;
+	@OneToMany(mappedBy="Box")
 	private ArrayList<Box> boxes = new ArrayList<Box>(); 
 	
-	@OneToMany(mappedBy="Box")
+
 	
 	@Id
 	@Column(name = "idBuilding")
