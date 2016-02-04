@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -21,6 +23,9 @@ public class Box {
 	}
 	@OneToMany(mappedBy="Animal")
 	
+	@ManyToOne
+	@JoinColumn(name="idBuilding",
+	referencedColumnName="idBuilding")
 	
 	public void setIdBox(long idBox) {
 		this.idBox = idBox;
