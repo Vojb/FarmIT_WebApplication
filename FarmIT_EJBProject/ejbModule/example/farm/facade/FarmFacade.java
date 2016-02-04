@@ -13,7 +13,6 @@ import example.farm.model.Food;
  * Session Bean implementation class FarmFacade
  */
 @Stateless
-@LocalBean
 public class FarmFacade implements FarmFacadeLocal {
 
 	@EJB

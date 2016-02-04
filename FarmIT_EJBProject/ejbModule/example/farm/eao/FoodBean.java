@@ -3,22 +3,24 @@ package example.farm.eao;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import example.farm.model.Food;
 
 @Stateless
 @LocalBean
 public class FoodBean implements FoodBeanLocal {
-
+	@PersistenceContext(unitName = "LabEJBSql")
 	private EntityManager em;
-	
+
 	public FoodBean() {
 
 	}
-	public Food findByIdFood(long id){
+
+	public Food findByIdFood(long id) {
 		return em.find(Food.class, id);
 	}
-	
+
 	public Food createFood(Food f) {
 		em.persist(f);
 		return f;

@@ -43,17 +43,15 @@ public class FarmServlet extends HttpServlet {
 		 out.println("</head><body>");
 		 out.println("<h3>Katt med sammansatt nyckel</h3>");
 		
-		 
-		 Cow a = new Cow();
-		 a.setAge("12");
-		 a.setAmountOfPowerFeed(22);
-		 a.setName("Bajs");
-		 a.setIdAnimal(2);
-		 a.setStatusAnimal("Levande");
-		 facade.createAnimal(a);
+	Cow a = new Cow();
+	a.setAge("12");
+	a.setIdAnimal(2);
+	a.setName("Sosse");
+	a.setStatusAnimal("Alive");
+	facade.createAnimal(a);
 		 if(a != null){
 
-			 out.println(a.getAge()+a.getIdAnimal());
+			 out.println(a.getName());
 			  
 		 }out.println("</body></html>");
 	}

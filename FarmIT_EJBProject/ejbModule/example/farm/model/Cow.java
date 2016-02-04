@@ -1,7 +1,9 @@
 package example.farm.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
 public class Cow extends Animal {
 
 	/**

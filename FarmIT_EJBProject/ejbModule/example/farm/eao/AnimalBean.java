@@ -14,7 +14,7 @@ import example.farm.model.Animal;
 @LocalBean
 public class AnimalBean implements AnimalBeanLocal {
 
-	@PersistenceContext(unitName="LabEJBSql")
+	@PersistenceContext(unitName= "LabEJBSql")
 	private EntityManager em;
 	
 	/**
