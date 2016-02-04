@@ -19,7 +19,7 @@ public class Food {
 	@JoinTable(name="Eats",
 		joinColumns=
 			@JoinColumn(name="idFood",
-			referencedColumnName="Animal"),
+			referencedColumnName="idFood"),
 	inverseJoinColumns =
 	@JoinColumn(name="idAnimal",
 	referencedColumnName="idAnimal"))
