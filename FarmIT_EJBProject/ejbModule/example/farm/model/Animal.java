@@ -10,15 +10,18 @@ import javax.persistence.*;
 @DiscriminatorColumn(name="typeAnimal",
 discriminatorType=DiscriminatorType.STRING, length=10)
 public abstract class Animal implements Serializable {
-	/**
-	 * 
-	 */
+	
+	
 	private static final long serialVersionUID = 1L;
 	
 	private long idAnimal;
 	private String name;
 	private String age;
 	private String statusAnimal;
+	
+	@ManyToOne
+	@JoinColumn(name="idBox",
+	referencedColumnName="idBox")
 	
 	@Id
 	@Column(name="IdAnimal")

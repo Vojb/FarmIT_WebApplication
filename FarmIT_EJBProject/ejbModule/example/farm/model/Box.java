@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,7 +19,9 @@ public class Box {
 	public long getIdBox() {
 		return idBox;
 	}
-
+	@OneToMany(mappedBy="Animal")
+	
+	
 	public void setIdBox(long idBox) {
 		this.idBox = idBox;
 	}
