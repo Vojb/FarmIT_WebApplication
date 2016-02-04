@@ -23,6 +23,8 @@ public abstract class Animal implements Serializable {
 	@JoinColumn(name="idBox",
 	referencedColumnName="idBox")
 	
+	@ManyToMany(mappedBy="Food")
+	
 	@Id
 	@Column(name="IdAnimal")
 	public long getIdAnimal() {
@@ -38,7 +40,7 @@ public abstract class Animal implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
 	@Column(name="Age")
 	public String getAge() {
 		return age;

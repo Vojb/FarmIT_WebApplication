@@ -16,16 +16,18 @@ public class Box {
 
 	private ArrayList<Animal> animals = new ArrayList<Animal>();
 	
-	@Id
-	@Column(name="idBox")
-	public long getIdBox() {
-		return idBox;
-	}
 	@OneToMany(mappedBy="Animal")
 	
 	@ManyToOne
 	@JoinColumn(name="idBuilding",
 	referencedColumnName="idBuilding")
+	
+	@Id
+	@Column(name="idBox")
+	public long getIdBox() {
+		return idBox;
+	}
+
 	
 	public void setIdBox(long idBox) {
 		this.idBox = idBox;
