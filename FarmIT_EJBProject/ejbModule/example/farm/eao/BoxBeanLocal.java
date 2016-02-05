@@ -2,9 +2,11 @@ package example.farm.eao;
 
 import javax.ejb.Local;
 
-@Local
-public interface BoxLocal {
+import example.farm.model.Box;
 
+@Local
+public interface BoxBeanLocal {
+	
 	public Box findByIdBox(long id);
 
 	public Box createBox(Box a);

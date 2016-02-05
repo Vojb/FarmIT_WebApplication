@@ -5,12 +5,14 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import example.farm.model.Building;
+
 /**
  * Session Bean implementation class Building
  */
 @Stateless
 @LocalBean
-public class Building implements BuildingLocal {
+public class BuildingBean implements BuildingBeanLocal {
 
 	@PersistenceContext(unitName = "LabEJBSql")
 	private EntityManager em;

@@ -5,19 +5,22 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import example.farm.model.Box;
+
 /**
- * Session Bean implementation class Box
+ * Session Bean implementation class BoxBean
  */
 @Stateless
 @LocalBean
-public class Box implements BoxLocal {
+public class BoxBean implements BoxBeanLocal {
 
-	@PersistenceContext(unitName= "LabEJBSql")
+	@PersistenceContext(unitName = "LabEJBSql")
 	private EntityManager em;
+
 	/**
 	 * Default constructor.
 	 */
-	public Box() {
+	public BoxBean() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -33,6 +36,7 @@ public class Box implements BoxLocal {
 	public Box updateBox(Box a) {
 		em.merge(a);
 		return a;
+
 	}
 
 }
