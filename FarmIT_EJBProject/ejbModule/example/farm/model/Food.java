@@ -52,5 +52,28 @@ public class Food {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+	public void changeAmountInCow(Cow c, Food f){
+		int amount = c.getAmountOfPowerFeed();
+		f.setAmount(f.getAmount()-amount);
+	}
+	public void changeAmountInHen(Hen h, Food f){
+		int amount = h.getAmountOfOats();
+		f.setAmount(f.getAmount()-amount);
+	}
+	public void changeAmountInHorse(Horse h, Food powerFeed ,Food hay ){
+		int amountPowerFeed = h.getAmountOfPowerFeed();
+		int amountHay= h.getAmountOfHay();
+		powerFeed.setAmount(powerFeed.getAmount()-amountPowerFeed);
+		hay.setAmount(hay.getAmount()-amountHay);
+	}
+	public void changeAmountInPig(Pig p, Food powerFeed ,Food hay ){
+		int amountPowerFeed = p.getAmountOfPowerFeed();
+		powerFeed.setAmount(powerFeed.getAmount()-amountPowerFeed);
+	}
+	public void addAmount(Food f, int amount){
+		int amounts= f.getAmount();
+		f.setAmount(amounts+amount);
+	}
+	
 
 }

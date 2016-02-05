@@ -8,6 +8,10 @@ import javax.persistence.Entity;
 @DiscriminatorValue("Pig")
 public class Pig extends Animal {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Column(name="amountOfPowerFeed")
 	private int amountOfPowerFeed;
 
