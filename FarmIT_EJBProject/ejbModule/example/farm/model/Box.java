@@ -13,10 +13,10 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name="Boxes.findAll",
-		query= "SELECT * FROM Boxes"),
-	@NamedQuery(name="find.boxesInBuilding",
-		query= "SELECT * FROM Boxes WHERE IdBuilding EQUALS :IdBuilding")
+//	@NamedQuery(name="Boxes.findAll",
+//		query= "SELECT * FROM Boxes"),
+//	@NamedQuery(name="find.boxesInBuilding",
+//		query= "SELECT * FROM Boxes WHERE IdBuilding EQUALS :IdBuilding")
 })
 @Table(name="Boxes")
 public class Box {
