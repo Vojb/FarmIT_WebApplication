@@ -9,6 +9,7 @@ import example.farm.eao.BoxBean;
 import example.farm.eao.BuildingBean;
 import example.farm.eao.FoodBean;
 import example.farm.model.Animal;
+import example.farm.model.Box;
 import example.farm.model.Food;
 
 /**
@@ -18,11 +19,11 @@ import example.farm.model.Food;
 public class FarmFacade implements FarmFacadeLocal {
 
 	@EJB
-	AnimalBean ab;
+	AnimalBean animalb;
 	@EJB
-	FoodBean fb;
+	FoodBean foodb;
 	@EJB
-	BuildingBean bb;
+	BuildingBean buildingb;
 	@EJB
 	BoxBean boxb;
 	
@@ -34,33 +35,43 @@ public class FarmFacade implements FarmFacadeLocal {
 	}
 
 	public Animal createAnimal(Animal a) {
-		return ab.createAnimal(a);
+		return animalb.createAnimal(a);
 	}
 
 	public Animal updateAnimal(Animal a) {
-		return ab.updateAnimal(a);
+		return animalb.updateAnimal(a);
 	}
 
 	public void deleteAnimal(long a) {
-		ab.deleteAnimal(a);
+		animalb.deleteAnimal(a);
 	}
 
 	public Animal findByIdAnimal(long a) {
-		return ab.findByIdAnimal(a);
+		return animalb.findByIdAnimal(a);
 	}
 
 	public Food findByIdFood(long id){
-		return fb.findByIdFood(id);
+		return foodb.findByIdFood(id);
 	}
 	public Food createFood(Food f){
-		return fb.createFood(f);
+		return foodb.createFood(f);
 	}
 
 	public Food updateFood(Food f){
-		return fb.updateFood(f);
+		return foodb.updateFood(f);
 	}
 	public void deleteFood(long id){
-		fb.deleteFood(id);
+		foodb.deleteFood(id);
+	}
+	public Box findByIdBox(long id){
+		return boxb.findByIdBox(id);
+	}
+
+	public Box createBox(Box a){
+		return boxb.createBox(a);
+	}
+	public Box updateBox(Box a){
+		return boxb.updateBox(a);
 	}
 
 }
