@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import example.farm.facade.FarmFacadeLocal;
 import example.farm.model.Animal;
+import example.farm.model.Box;
+import example.farm.model.Building;
 import example.farm.model.Cow;
 import example.farm.model.Food;
 
@@ -45,12 +47,31 @@ public class FarmServlet extends HttpServlet {
 		out.println("</head><body>");
 		out.println("<h3>Katt med sammansatt nyckel</h3>");
 
-		// Cow a = new Cow();
-		// a.setAge("12");
-		// a.setIdAnimal(2);
-		// a.setName("Sosse");
-		// a.setStatusAnimal("Alive");
+//		 Cow a = new Cow();
+//		 a.setAge("12");
+//		 a.setIdAnimal(2);
+//		 a.setName("Sosse");
+//		 a.setStatusAnimal("Alive");
 		// facade.createAnimal(a);	
+		
+		Building bs=new Building ();
+		bs.setIdBuilding(1);
+		
+		Animal a = facade.findByIdAnimal(2);
+	
+		Box b = new Box();
+		b.setIdBox(1);
+		bs.addBoxtoBuilding(b);	
+		b.addAnimaltoBox(a);
+		
+		Food f= new Food();
+		f.setAmount(1000000);
+		f.setIdFood(2);
+		f.setType("Ris");
+	
+		f.addAnimal(a);
+		
+		facade.createFood(f);
 
 		out.println("</body></html>");
 	}

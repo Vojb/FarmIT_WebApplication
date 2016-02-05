@@ -41,5 +41,8 @@ public class Building {
 	public void setBoxes(ArrayList<Box> boxes) {
 		this.boxes = boxes;
 	}
+	public void addBoxtoBuilding(Box b){
+		boxes.add(b);
+	}
 
 }
