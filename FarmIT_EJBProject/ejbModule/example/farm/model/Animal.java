@@ -12,7 +12,11 @@ import javax.persistence.*;
 	 query="SELECT * FROM Animals"),
 	 @NamedQuery(name="Animals.findByType",
 	 query="SELECT * FROM Animals WHERE Type LIKE :Type"),
-	}) 
+	 @NamedQuery(name="Animals.findBox",
+	 query="SELECT * FROM Animals WHERE boxId EQUALS :boxId"),
+	 @NamedQuery(name="Animals.findFood",
+	 query="SELECT ")
+}) 
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="typeAnimal",
 discriminatorType=DiscriminatorType.STRING, length=6)

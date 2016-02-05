@@ -3,12 +3,18 @@ package example.farm.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.*;
 
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name="Buildings.findAllBoxesInBuildin",
+		query= "SELECT * FROM Buildings WHERE IdBox EQUALS :IdBox")
+})
 @Table(name = "Buildings")
 public class Building {
 
