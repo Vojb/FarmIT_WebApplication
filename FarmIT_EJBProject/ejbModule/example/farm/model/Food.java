@@ -1,5 +1,7 @@
 package example.farm.model;
 
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -23,7 +25,16 @@ public class Food {
 	inverseJoinColumns =
 	@JoinColumn(name="idAnimal",
 	referencedColumnName="idAnimal"))
+	private ArrayList<Animal> animals = new ArrayList<Animal>();
 	
+	public ArrayList<Animal> getAnimals() {
+		return animals;
+	}
+
+	public void setAnimals(ArrayList<Animal> animals) {
+		this.animals = animals;
+	}
+
 	public void setIdFood(long idFood) {
 		this.idFood = idFood;
 	}
@@ -47,6 +58,9 @@ public class Food {
 	@Column(name = "amount")
 	public int getAmount() {
 		return amount;
+	}
+	public void addAnimal(Animal e){
+		animals.add(e);
 	}
 
 	public void setAmount(int amount) {

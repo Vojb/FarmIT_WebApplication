@@ -12,8 +12,8 @@ import java.util.*;
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name="Buildings.findAllBoxesInBuildin",
-		query= "SELECT * FROM Buildings WHERE IdBox EQUALS :IdBox")
+//	@NamedQuery(name="Buildings.findAllBoxesInBuildin",
+//		query= "SELECT * FROM Buildings WHERE IdBox EQUALS :IdBox")
 })
 @Table(name = "Buildings")
 public class Building {
