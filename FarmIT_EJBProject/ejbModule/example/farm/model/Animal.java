@@ -13,7 +13,7 @@ import javax.persistence.*;
 	 @NamedQuery(name="Animals.findByType",
 	 query="SELECT * FROM Animals WHERE Type LIKE :Type"),
 	 @NamedQuery(name="Animals.findBox",
-	 query="SELECT * FROM Animals WHERE boxId EQUALS :boxId"),
+	 query="SELECT * FROM Animals WHERE boxId = :boxId"),
 	 @NamedQuery(name="Animals.findFood",
 	 query="SELECT ")
 }) 
