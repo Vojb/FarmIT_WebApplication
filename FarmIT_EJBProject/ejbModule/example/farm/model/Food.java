@@ -70,5 +70,6 @@ public class Food {
 		int amounts= f.getAmount();
 		f.setAmount(amounts+amount);
 	}
+	
 
 }
