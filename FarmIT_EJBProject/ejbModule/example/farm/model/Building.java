@@ -9,19 +9,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.*;
 
-
 @Entity
 @NamedQueries({
-//	@NamedQuery(name="Buildings.findAllBoxesInBuildin",
-//		query= "SELECT * FROM Buildings WHERE IdBox EQUALS :IdBox")
+		// @NamedQuery(name="Buildings.findAllBoxesInBuildin",
+		// query= "SELECT * FROM Buildings WHERE IdBox EQUALS :IdBox")
 })
 @Table(name = "Buildings")
 public class Building {
 
 	private long idBuilding;
-	
-	private Set<Box> boxes; 
-	
+	private Set<Box> boxes;
+
 	@Id
 	@Column(name = "idBuilding")
 	public long getIdBuilding() {
@@ -31,7 +29,8 @@ public class Building {
 	public void setIdBuilding(long idBuilding) {
 		this.idBuilding = idBuilding;
 	}
-	@OneToMany(mappedBy="Building")
+
+	@OneToMany(mappedBy = "Building")
 	public Set<Box> getBoxes() {
 		return boxes;
 	}
@@ -39,7 +38,8 @@ public class Building {
 	public void setBoxes(Set<Box> boxes) {
 		this.boxes = boxes;
 	}
-	public void addBoxtoBuilding(Box b){
+
+	public void addBoxtoBuilding(Box b) {
 		boxes.add(b);
 	}
 

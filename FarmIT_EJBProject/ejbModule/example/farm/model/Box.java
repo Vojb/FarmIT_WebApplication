@@ -21,14 +21,11 @@ import javax.persistence.Table;
 @Table(name = "Boxes")
 public class Box {
 	private long idBox;
-	
+	private Building building;
 	private Set<Animal> animals;
 	
 	@ManyToOne
 	@JoinColumn(name = "idBuilding", referencedColumnName = "idBuilding")
-	Building building; 
-	
-
 	public Building getBuilding() {
 		return building;
 	}
