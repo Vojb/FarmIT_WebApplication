@@ -26,7 +26,7 @@ public class Box {
 	
 	@ManyToOne
 	@JoinColumn(name = "idBuilding", referencedColumnName = "idBuilding")
-	private Building building;
+	Building building; 
 	
 
 	public Building getBuilding() {
