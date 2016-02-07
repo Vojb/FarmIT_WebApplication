@@ -1,6 +1,7 @@
 package example.farm.model;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,8 +24,8 @@ import javax.persistence.Table;
 public class Box {
 	private long idBox;
 
-	@OneToMany(mappedBy = "Animal")
-	private ArrayList<Animal> animals = new ArrayList<Animal>();
+	
+	private Set<Animal> animals;
 
 	@ManyToOne
 	@JoinColumn(name = "idBuilding", referencedColumnName = "idBuilding")
@@ -39,12 +40,12 @@ public class Box {
 	public void setIdBox(long idBox) {
 		this.idBox = idBox;
 	}
-
-	public ArrayList<Animal> getAnimals() {
+	@OneToMany(mappedBy = "Animals")
+	public Set<Animal> getAnimals() {
 		return animals;
 	}
 
-	public void setAnimals(ArrayList<Animal> animals) {
+	public void setAnimals(Set<Animal> animals) {
 		this.animals = animals;
 	}
 	public void addAnimaltoBox(Animal a){

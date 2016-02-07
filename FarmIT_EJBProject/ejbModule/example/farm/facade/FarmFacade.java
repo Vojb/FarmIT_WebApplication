@@ -10,6 +10,7 @@ import example.farm.eao.BuildingBean;
 import example.farm.eao.FoodBean;
 import example.farm.model.Animal;
 import example.farm.model.Box;
+import example.farm.model.Building;
 import example.farm.model.Cow;
 import example.farm.model.Food;
 import example.farm.model.Hen;
@@ -92,6 +93,19 @@ public class FarmFacade implements FarmFacadeLocal {
 		int amountHay = h.getAmountOfHay();
 		powerFeed.setAmount(powerFeed.getAmount() - amountPowerFeed);
 		hay.setAmount(hay.getAmount() - amountHay);
+	}
+	public Building findByIdBuilding(long id) {
+		return buildingb.findByIdBuilding(id);
+	}
+
+	public Building createBuilding(Building a) {
+		buildingb.createBuilding(a);
+		return a;
+	}
+
+	public Building updateBuilding(Building a) {
+		buildingb.updateBuilding(a);
+		return a;
 	}
 
 	public void changeAmountInPig(Pig p, Food powerFeed, Food hay) {

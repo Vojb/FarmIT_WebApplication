@@ -56,6 +56,8 @@ public class FarmServlet extends HttpServlet {
 		
 		Building bs=new Building ();
 		bs.setIdBuilding(1);
+		facade.createBuilding(bs);
+		
 		
 		Animal a = facade.findByIdAnimal(2);
 	
@@ -63,6 +65,8 @@ public class FarmServlet extends HttpServlet {
 		b.setIdBox(1);
 		bs.addBoxtoBuilding(b);	
 		b.addAnimaltoBox(a);
+		
+		facade.createBox(b);
 		
 		Food f= new Food();
 		f.setAmount(1000000);

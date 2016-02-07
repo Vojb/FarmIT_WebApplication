@@ -19,8 +19,8 @@ import java.util.*;
 public class Building {
 
 	private long idBuilding;
-	@OneToMany(mappedBy="Box")
-	private ArrayList<Box> boxes = new ArrayList<Box>(); 
+	
+	private Set<Box> boxes; 
 	
 
 	
@@ -33,12 +33,12 @@ public class Building {
 	public void setIdBuilding(long idBuilding) {
 		this.idBuilding = idBuilding;
 	}
-
-	public ArrayList<Box> getBoxes() {
+	@OneToMany(mappedBy="Box")
+	public Set<Box> getBoxes() {
 		return boxes;
 	}
 
-	public void setBoxes(ArrayList<Box> boxes) {
+	public void setBoxes(Set<Box> boxes) {
 		this.boxes = boxes;
 	}
 	public void addBoxtoBuilding(Box b){
