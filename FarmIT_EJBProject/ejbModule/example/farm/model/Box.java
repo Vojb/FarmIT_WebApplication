@@ -23,10 +23,18 @@ public class Box {
 	private long idBox;
 	
 	private Set<Animal> animals;
-	@ManyToOne
-	@JoinColumn(name = "idBuilding", referencedColumnName = "idBuilding")
+
 	private Building building;
 	
+	@ManyToOne
+	@JoinColumn(name = "idBuilding", referencedColumnName = "idBuilding")
+	public Building getBuilding() {
+		return building;
+	}
+
+	public void setBuilding(Building building) {
+		this.building = building;
+	}
 
 	@Id
 	@Column(name = "idBox")

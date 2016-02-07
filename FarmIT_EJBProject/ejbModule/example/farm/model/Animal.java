@@ -56,7 +56,7 @@ public abstract class Animal implements Serializable {
 		this.name = name;
 	}
 
-	@Column(name = "Age")
+	@Column(name = "age")
 	public String getAge() {
 		return age;
 	}
