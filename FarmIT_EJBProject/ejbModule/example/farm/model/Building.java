@@ -22,8 +22,6 @@ public class Building {
 	
 	private Set<Box> boxes; 
 	
-
-	
 	@Id
 	@Column(name = "idBuilding")
 	public long getIdBuilding() {
@@ -33,7 +31,7 @@ public class Building {
 	public void setIdBuilding(long idBuilding) {
 		this.idBuilding = idBuilding;
 	}
-	@OneToMany(mappedBy="Box")
+	@OneToMany(mappedBy="Boxes")
 	public Set<Box> getBoxes() {
 		return boxes;
 	}

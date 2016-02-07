@@ -1,6 +1,5 @@
 package example.farm.model;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -9,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,13 +21,12 @@ import javax.persistence.Table;
 @Table(name = "Boxes")
 public class Box {
 	private long idBox;
-
 	
 	private Set<Animal> animals;
-
 	@ManyToOne
 	@JoinColumn(name = "idBuilding", referencedColumnName = "idBuilding")
 	private Building building;
+	
 
 	@Id
 	@Column(name = "idBox")
