@@ -23,11 +23,12 @@ public class Box {
 	private long idBox;
 	
 	private Set<Animal> animals;
-
-	private Building building;
 	
 	@ManyToOne
 	@JoinColumn(name = "idBuilding", referencedColumnName = "idBuilding")
+	private Building building;
+	
+
 	public Building getBuilding() {
 		return building;
 	}
