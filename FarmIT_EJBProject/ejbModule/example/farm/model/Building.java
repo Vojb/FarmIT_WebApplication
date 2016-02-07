@@ -31,7 +31,7 @@ public class Building {
 	public void setIdBuilding(long idBuilding) {
 		this.idBuilding = idBuilding;
 	}
-	@OneToMany(mappedBy="Buildings")
+	@OneToMany(mappedBy="Building")
 	public Set<Box> getBoxes() {
 		return boxes;
 	}
