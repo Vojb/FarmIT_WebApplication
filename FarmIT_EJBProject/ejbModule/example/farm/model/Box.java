@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,7 +21,7 @@ import javax.persistence.Table;
 })
 @Table(name = "Boxes")
 public class Box {
-	private long idBox;
+	private String idBox;
 	private Building building;
 	private Set<Animal> animals;
 	
@@ -36,14 +37,14 @@ public class Box {
 
 	@Id
 	@Column(name = "idBox")
-	public long getIdBox() {
+	public String getIdBox() {
 		return idBox;
 	}
 
-	public void setIdBox(long idBox) {
+	public void setIdBox(String idBox) {
 		this.idBox = idBox;
 	}
-	@OneToMany(mappedBy = "idBox")
+	@OneToMany(mappedBy = "idBox", fetch=FetchType.EAGER)
 	public Set<Animal> getAnimals() {
 		return animals;
 	}

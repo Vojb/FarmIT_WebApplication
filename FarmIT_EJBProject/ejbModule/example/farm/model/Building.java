@@ -2,6 +2,7 @@ package example.farm.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.OneToMany;
@@ -16,20 +17,20 @@ import java.util.*;
 @Table(name = "Buildings")
 public class Building {
 
-	private long idBuilding;
+	private String idBuilding;
 	private Set<Box> boxes;
 
 	@Id
 	@Column(name = "idBuilding")
-	public long getIdBuilding() {
+	public String getIdBuilding() {
 		return idBuilding;
 	}
 
-	public void setIdBuilding(long idBuilding) {
+	public void setIdBuilding(String idBuilding) {
 		this.idBuilding = idBuilding;
 	}
 
-	@OneToMany(mappedBy = "building")
+	@OneToMany(mappedBy = "building", fetch = FetchType.EAGER)
 	public Set<Box> getBoxes() {
 		return boxes;
 	}
