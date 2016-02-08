@@ -1,5 +1,7 @@
 package example.farm.eao;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import example.farm.model.Box;
@@ -12,5 +14,9 @@ public interface BoxBeanLocal {
 	public Box createBox(Box a);
 
 	public Box updateBox(Box a);
+	
+	public List<Box> findAllBoxesInBuilding(String idBuilding);
+	
+	public List<Box> findAll();
 
 }

@@ -1,33 +1,53 @@
 package example.farm.eao;
 
+import java.util.List;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import example.farm.model.Animal;
+import example.farm.model.Box;
 
-/**
- * Session Bean implementation class AnimalBean
- */
 @Stateless
 @LocalBean
 public class AnimalBean implements AnimalBeanLocal {
 
-	@PersistenceContext(unitName= "LabEJBSql")
+	@PersistenceContext(unitName = "LabEJBSql")
 	private EntityManager em;
-	
-	/**
-	 * Default constructor.
-	 */
-	public AnimalBean() {
-		// TODO Auto-generated constructor stub
 
+	public List<Animal> findAll() {
+
+		TypedQuery<Animal> query = em.createNamedQuery("Animals.findAll", Animal.class);
+		List<Animal> results = query.getResultList();
+		return results;
 	}
-	public Animal findByIdAnimal(long id){
+
+	public List<Animal> findByType(String type) {
+
+		TypedQuery<Animal> query = em.createNamedQuery("Animals.findByType", Animal.class);
+
+		query.setParameter("type", type);
+
+		List<Animal> results = query.getResultList();
+		return results;
+	}
+
+	public List<Animal> findBox(String boxId) {
+		TypedQuery<Animal> query = em.createNamedQuery("Animals.findBox", Animal.class);
+
+		query.setParameter("boxId", boxId);
+
+		List<Animal> results = query.getResultList();
+		return results;
+	}
+
+	public Animal findByIdAnimal(long id) {
 		return em.find(Animal.class, id);
 	}
-	
+
 	public Animal createAnimal(Animal a) {
 		em.persist(a);
 		return a;
