@@ -18,7 +18,7 @@ import javax.persistence.*;
 		// query="SELECT ")
 })
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "typeAnimal", discriminatorType = DiscriminatorType.STRING, length = 6)
+@DiscriminatorColumn(name = "TypeAnimal", discriminatorType = DiscriminatorType.STRING, length = 6)
 public abstract class Animal implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -29,11 +29,11 @@ public abstract class Animal implements Serializable {
 	private String statusAnimal;
 
 	@ManyToOne
-	@JoinColumn(name = "idBox", referencedColumnName = "idBox")
+	@JoinColumn(name = "IdBox", referencedColumnName = "IdBox")
 	private String idBox;
 
 	@ManyToMany
-	@JoinTable(name = "Eats", joinColumns = @JoinColumn(name = "idFood", referencedColumnName = "idFood") , inverseJoinColumns = @JoinColumn(name = "idAnimal", referencedColumnName = "idAnimal") )
+	@JoinTable(name = "Eats", joinColumns = @JoinColumn(name = "IdFood", referencedColumnName = "IdFood") , inverseJoinColumns = @JoinColumn(name = "IdAnimal", referencedColumnName = "IdAnimal") )
 	private Set<Food> foods;
 
 	@Id
@@ -46,7 +46,7 @@ public abstract class Animal implements Serializable {
 		this.idAnimal = idAnimal;
 	}
 
-	@Column(name = "name")
+	@Column(name = "Name")
 	public String getName() {
 		return name;
 	}
@@ -55,7 +55,7 @@ public abstract class Animal implements Serializable {
 		this.name = name;
 	}
 
-	@Column(name = "age")
+	@Column(name = "Age")
 	public String getAge() {
 		return age;
 	}
@@ -73,7 +73,7 @@ public abstract class Animal implements Serializable {
 		this.statusAnimal = statusAnimal;
 	}
 
-	@Column(name = "idBox")
+	@Column(name = "IdBox")
 	public String getIdBox() {
 		return idBox;
 	}

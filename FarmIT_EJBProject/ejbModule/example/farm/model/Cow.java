@@ -14,7 +14,7 @@ public class Cow extends Animal {
 	private static final long serialVersionUID = 1L;
 	private int amountOfPowerFeed;
 	
-	@Column(name="amountOfPowerFeed")
+	@Column(name="AmountOfPowerFeed")
 	public int getAmountOfPowerFeed() {
 		return amountOfPowerFeed;
 	}

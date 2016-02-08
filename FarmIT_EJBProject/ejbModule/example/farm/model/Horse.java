@@ -11,7 +11,7 @@ public class Horse extends Animal {
 
 	private int amountOfPowerFeed;
 	
-	@Column(name="amountOfPowerFeed")
+	@Column(name="AmountOfPowerFeed")
 	public int getAmountOfPowerFeed() {
 		return amountOfPowerFeed;
 	}

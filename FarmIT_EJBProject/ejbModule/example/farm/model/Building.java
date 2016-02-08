@@ -21,7 +21,7 @@ public class Building {
 	private Set<Box> boxes;
 
 	@Id
-	@Column(name = "idBuilding")
+	@Column(name = "IdBuilding")
 	public String getIdBuilding() {
 		return idBuilding;
 	}

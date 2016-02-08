@@ -10,7 +10,7 @@ public class Hen extends Animal {
 
 	private int amountOfOats;
 
-	@Column(name = "amountOfOats")
+	@Column(name = "AmountOfOats")
 	public int getAmountOfOats() {
 		return amountOfOats;
 	}

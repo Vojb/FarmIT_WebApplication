@@ -21,7 +21,7 @@ public class Food {
 	private Set<Animal> animals;
 
 	@ManyToMany
-	@JoinTable(name = "Eats", joinColumns = @JoinColumn(name = "idFood", referencedColumnName = "idFood") , inverseJoinColumns = @JoinColumn(name = "idAnimal", referencedColumnName = "idAnimal") )
+	@JoinTable(name = "Eats", joinColumns = @JoinColumn(name = "IdFood", referencedColumnName = "IdFood") , inverseJoinColumns = @JoinColumn(name = "IdAnimal", referencedColumnName = "IdAnimal") )
 	public Set<Animal> getAnimals() {
 		return animals;
 	}
@@ -35,12 +35,12 @@ public class Food {
 	}
 
 	@Id
-	@Column(name = "idFood")
+	@Column(name = "IdFood")
 	public long getIdFood() {
 		return idFood;
 	}
 
-	@Column(name = "type")
+	@Column(name = "Type")
 	public String getType() {
 		return typeFood;
 	}
@@ -49,7 +49,7 @@ public class Food {
 		this.typeFood = type;
 	}
 
-	@Column(name = "amount")
+	@Column(name = "Amount")
 	public int getAmount() {
 		return amount;
 	}

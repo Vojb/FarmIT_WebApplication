@@ -26,7 +26,7 @@ public class Box {
 	private Set<Animal> animals;
 	
 	@ManyToOne
-	@JoinColumn(name = "idBuilding", referencedColumnName = "idBuilding")
+	@JoinColumn(name = "IdBuilding", referencedColumnName = "IdBuilding")
 	public Building getBuilding() {
 		return building;
 	}
@@ -36,7 +36,7 @@ public class Box {
 	}
 
 	@Id
-	@Column(name = "idBox")
+	@Column(name = "IdBox")
 	public String getIdBox() {
 		return idBox;
 	}

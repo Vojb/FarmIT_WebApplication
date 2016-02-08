@@ -9,7 +9,7 @@ public class Eats {
 	private long idAnimal;
 	
 	@Id
-	@Column(name = "idFood")
+	@Column(name = "IdFood")
 	public long getIdFood() {
 		return idFood;
 	}
@@ -18,7 +18,7 @@ public class Eats {
 		this.idFood = idFood;
 	}
 	
-	@Column(name = "idAnimal")
+	@Column(name = "IdAnimal")
 	public long getIdAnimal() {
 		return idAnimal;
 	}

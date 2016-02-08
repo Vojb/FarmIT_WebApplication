@@ -66,7 +66,7 @@ public class FarmServlet extends HttpServlet {
 //		Animal a = facade.findByIdAnimal(10001);
 		Building bs =facade.findByIdBuilding(1);
 		Box b = new Box();
-		b.setIdBox(1);
+//		b.setIdBox(1);
 		b.setBuilding(bs);
 		bs.addBoxtoBuilding(b);	
 		facade.createBox(b);
