@@ -61,6 +61,9 @@ public class FarmFacade implements FarmFacadeLocal {
 	public Food createFood(Food f){
 		return foodb.createFood(f);
 	}
+	public void addAnimal(Food f, Animal a){
+		 foodb.addAnimal(f, a);
+	}
 
 	public Food updateFood(Food f){
 		return foodb.updateFood(f);

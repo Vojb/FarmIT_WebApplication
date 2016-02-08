@@ -36,7 +36,7 @@ public abstract class Animal implements Serializable {
 		return box;
 	}
 	
-	@ManyToMany
+	@ManyToMany(fetch =FetchType.EAGER)
 	@JoinTable(name = "Eats", joinColumns = @JoinColumn(name = "IdFood", referencedColumnName = "IdFood") , inverseJoinColumns = @JoinColumn(name = "IdAnimal", referencedColumnName = "IdAnimal") )
 	private Set<Food> foods;
 

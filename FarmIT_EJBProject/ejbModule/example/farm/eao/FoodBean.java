@@ -5,6 +5,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import example.farm.model.Animal;
 import example.farm.model.Food;
 
 @Stateless
@@ -36,6 +37,9 @@ public class FoodBean implements FoodBeanLocal {
 		if (f != null) {
 			em.remove(f);
 		}
+	}
+	public void addAnimal(Food f,Animal a){
+		f.addAnimal(a);
 	}
 
 }

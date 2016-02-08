@@ -24,7 +24,7 @@ public interface FarmFacadeLocal {
 	public Food findByIdFood(long id);
 
 	public Food createFood(Food f);
-
+	public void addAnimal(Food f, Animal a);
 	public Food updateFood(Food f);
 
 	public void deleteFood(long id);
