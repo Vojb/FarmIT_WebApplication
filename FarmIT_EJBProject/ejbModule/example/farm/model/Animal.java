@@ -30,7 +30,7 @@ public abstract class Animal implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "idBox", referencedColumnName = "idBox")
-	private long idBox;
+	private String idBox;
 
 	@ManyToMany
 	@JoinTable(name = "Eats", joinColumns = @JoinColumn(name = "idFood", referencedColumnName = "idFood") , inverseJoinColumns = @JoinColumn(name = "idAnimal", referencedColumnName = "idAnimal") )
@@ -74,11 +74,11 @@ public abstract class Animal implements Serializable {
 	}
 
 	@Column(name = "idBox")
-	public long getIdBox() {
+	public String getIdBox() {
 		return idBox;
 	}
 
-	public void setIdBox(long idBox) {
+	public void setIdBox(String idBox) {
 		this.idBox = idBox;
 	}
 
