@@ -14,10 +14,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-//@NamedQueries({
-//		@NamedQuery(name="Boxes.findAll", query= "SELECT b FROM Boxes b"),
+@NamedQueries({
+		@NamedQuery(name="Boxes.findAll", query= "SELECT b FROM Boxes b"),
 //		@NamedQuery(name="find.boxesInBuilding", query= "SELECT b FROM Boxes b WHERE IdBuilding b = :IdBuilding")
-//})
+})
 @Table(name = "Boxes")
 public class Box {
 	private String idBox;

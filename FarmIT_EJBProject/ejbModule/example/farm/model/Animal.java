@@ -7,16 +7,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Animals")
-//@NamedQueries({
+@NamedQueries({
 //		 @NamedQuery(name="Animals.findAll",
-//		 query="SELECT * FROM Animals"),
+//		 query="SELECT e FROM Animals e")
 //		 @NamedQuery(name="Animals.findByType",
 //		 query="SELECT * FROM Animals WHERE Type LIKE :Type"),
 //		 @NamedQuery(name="Animals.findBox",
 //		 query="SELECT * FROM Animals WHERE boxId = :boxId"),
 //		 @NamedQuery(name="Animals.findFood",
 //		 query="SELECT ")
-//})
+})
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TypeAnimal", discriminatorType = DiscriminatorType.STRING, length = 6)
 public abstract class Animal implements Serializable {
@@ -76,8 +76,6 @@ public abstract class Animal implements Serializable {
 	public void setStatusAnimal(String statusAnimal) {
 		this.statusAnimal = statusAnimal;
 	}
-
-	
 
 	public void setBox(Box box) {
 		this.box = box;

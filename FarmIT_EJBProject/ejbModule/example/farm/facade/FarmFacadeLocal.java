@@ -1,5 +1,7 @@
 package example.farm.facade;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import example.farm.model.Animal;
@@ -20,7 +22,7 @@ public interface FarmFacadeLocal {
 	public void deleteAnimal(long a);
 
 	public Animal findByIdAnimal(long a);
-
+	public List<Animal> findAll();
 	public Food findByIdFood(long id);
 
 	public Food createFood(Food f);

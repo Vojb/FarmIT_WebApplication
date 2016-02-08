@@ -1,5 +1,7 @@
 package example.farm.facade;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -37,6 +39,10 @@ public class FarmFacade implements FarmFacadeLocal {
 	 */
 	public FarmFacade() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public List<Animal> findAll() {
+		return animalb.findAll();
 	}
 
 	public Animal createAnimal(Animal a) {

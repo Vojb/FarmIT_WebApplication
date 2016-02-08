@@ -2,6 +2,7 @@ package example.farm.Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -82,6 +83,15 @@ public class Farmlet extends HttpServlet {
 		out.println(" </h4>");
 		 }
 		
+		 
+	
+		 List<Animal> animals = facade.findAll();
+		 for (Animal emp2 : animals) {
+		 out.println("<h4>Hittade: "+ emp2.getName());
+		 out.println(" Id: "+ emp2.getIdAnimal());
+		 out.println("</h4>");
+		 }
+
 		 
 ////		
 //		Animal a = facade.findByIdAnimal(10001);
