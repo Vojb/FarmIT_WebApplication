@@ -7,7 +7,7 @@ import example.farm.model.Box;
 @Local
 public interface BoxBeanLocal {
 	
-	public Box findByIdBox(long id);
+	public Box findByIdBox(String id);
 
 	public Box createBox(Box a);
 

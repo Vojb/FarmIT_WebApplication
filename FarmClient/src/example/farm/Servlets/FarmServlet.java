@@ -45,7 +45,7 @@ public class FarmServlet extends HttpServlet {
 		out.println("<title>FarmIt</title>");
 		out.println("<meta charset=\"ISO-8859-1\">");
 		out.println("</head><body>");
-		out.println("<h3>Katt med sammansatt nyckel</h3>");
+		out.println("<h3>Farmlet</h3>");
 
 //		 Cow a = new Cow();
 //		 a.setAge("12");
@@ -55,7 +55,7 @@ public class FarmServlet extends HttpServlet {
 		// facade.createAnimal(a);	
 		
 //		Building bs=new Building ();
-//		bs.setIdBuilding(1);
+//		bs.setIdBuilding("Alfa");
 //		facade.createBuilding(bs);
 //		
 //		
@@ -64,12 +64,13 @@ public class FarmServlet extends HttpServlet {
 		
 ////		
 //		Animal a = facade.findByIdAnimal(10001);
-		Building bs =facade.findByIdBuilding(1);
+		Building bs =facade.findByIdBuilding("FuckOF");
 		Box b = new Box();
-//		b.setIdBox(1);
+		b.setIdBox("A1");
 		b.setBuilding(bs);
-		bs.addBoxtoBuilding(b);	
+
 		facade.createBox(b);
+		bs.addBoxtoBuilding(b);	
 		facade.updateBuilding(bs);
 		
 ////		

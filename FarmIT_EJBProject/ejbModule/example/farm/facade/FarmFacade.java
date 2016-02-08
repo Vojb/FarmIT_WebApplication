@@ -68,7 +68,7 @@ public class FarmFacade implements FarmFacadeLocal {
 	public void deleteFood(long id){
 		foodb.deleteFood(id);
 	}
-	public Box findByIdBox(long id){
+	public Box findByIdBox(String id){
 		return boxb.findByIdBox(id);
 	}
 
@@ -94,7 +94,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		powerFeed.setAmount(powerFeed.getAmount() - amountPowerFeed);
 		hay.setAmount(hay.getAmount() - amountHay);
 	}
-	public Building findByIdBuilding(long id) {
+	public Building findByIdBuilding(String id) {
 		return buildingb.findByIdBuilding(id);
 	}
 

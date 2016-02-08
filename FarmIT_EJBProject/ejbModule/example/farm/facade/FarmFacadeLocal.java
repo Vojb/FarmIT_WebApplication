@@ -29,7 +29,7 @@ public interface FarmFacadeLocal {
 
 	public void deleteFood(long id);
 	
-	public Box findByIdBox(long id);
+	public Box findByIdBox(String id);
 
 	public Box createBox(Box a);
 	public Box updateBox(Box a);
@@ -41,7 +41,7 @@ public interface FarmFacadeLocal {
 
 	public void changeAmountInHorse(Horse h, Food powerFeed, Food hay);
 	
-	public Building findByIdBuilding(long id);
+	public Building findByIdBuilding(String id);
 
 	public Building createBuilding(Building a);
 	public Building updateBuilding(Building a);

@@ -24,7 +24,7 @@ public class BoxBean implements BoxBeanLocal {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Box findByIdBox(long id) {
+	public Box findByIdBox(String id) {
 		return em.find(Box.class, id);
 	}
 

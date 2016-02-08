@@ -21,7 +21,7 @@ public class BuildingBean implements BuildingBeanLocal {
 	 * Default constructor.
 	 */
 
-	public Building findByIdBuilding(long id) {
+	public Building findByIdBuilding(String id) {
 		return em.find(Building.class, id);
 	}
 

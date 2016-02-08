@@ -7,7 +7,7 @@ import example.farm.model.Building;
 @Local
 public interface BuildingBeanLocal {
 	
-	public Building findByIdBuilding(long id);
+	public Building findByIdBuilding(String id);
 	
 	public Building createBuilding(Building a);
 	
