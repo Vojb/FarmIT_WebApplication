@@ -43,7 +43,7 @@ public class Box {
 	public void setIdBox(long idBox) {
 		this.idBox = idBox;
 	}
-	@OneToMany(mappedBy = "Animals")
+	@OneToMany(mappedBy = "idBox")
 	public Set<Animal> getAnimals() {
 		return animals;
 	}

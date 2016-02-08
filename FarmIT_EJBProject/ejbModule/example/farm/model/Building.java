@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.*;
@@ -30,7 +29,7 @@ public class Building {
 		this.idBuilding = idBuilding;
 	}
 
-	@OneToMany(mappedBy = "Building")
+	@OneToMany(mappedBy = "building")
 	public Set<Box> getBoxes() {
 		return boxes;
 	}
