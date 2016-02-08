@@ -61,13 +61,22 @@ public class Farmlet extends HttpServlet {
 //		
 //		Animal a = facade.findByIdAnimal(2);
 //	
+		Building e1 = facade.findByIdBuilding("Alfa");
+		 if (e1 != null) {
+		out.println("<h4>Hittade: "+ e1.getIdBuilding());
+		out.println(" </h4>");
+		 }
+		 Box e3 = facade.findByIdBox("1");
+		 if (e3 != null) {
+		out.println("<h4>Hittade: "+ e3.getIdBox());
+		out.println(" "+e3.getBuilding()+ "</h4>");
+		 }
 		
+		 
 ////		
 //		Animal a = facade.findByIdAnimal(10001);
 //		Building bs =facade.findByIdBuilding("FuckOF");
-//		Box b = new Box();
-//		b.setIdBox("A1");
-//		b.setBuilding(bs);
+
 //
 //		facade.createBox(b);
 //		bs.addBoxtoBuilding(b);	
@@ -75,13 +84,14 @@ public class Farmlet extends HttpServlet {
 //		
 ////		
 //		
-//		Cow c = new Cow();
-//		c.setAge("12");
-//		c.setName("KarlMax");
-//		c.setAmountOfPowerFeed(12);
-//		c.setIdAnimal(10001);
-//		c.setStatusAnimal("Frisk");
-//		facade.createAnimal(c);
+		Cow c = new Cow();
+		c.setAge("12");
+		c.setName("KarlMax");
+		c.setAmountOfPowerFeed(12);
+		c.setIdAnimal(10001);
+		c.setStatusAnimal("Frisk");
+		facade.createAnimal(c);
+		
 //		b.addAnimaltoBox(c);
 		
 //		facade.createBox(b);

@@ -7,12 +7,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Animals")
-@NamedQueries({ 
-		@NamedQuery(name = "Animals.findAll", query = "SELECT a FROM Animals a"),
-		@NamedQuery(name = "Animals.findByType", query = "SELECT a FROM Animals a WHERE a.Type LIKE :Type"),
-		@NamedQuery(name = "Animals.findBox", query = "SELECT a FROM Animals a WHERE a.boxId = :boxId"),
-		// @NamedQuery(name="Animals.findFood"
-})
+//@NamedQueries({
+//		 @NamedQuery(name="Animals.findAll",
+//		 query="SELECT * FROM Animals"),
+//		 @NamedQuery(name="Animals.findByType",
+//		 query="SELECT * FROM Animals WHERE Type LIKE :Type"),
+//		 @NamedQuery(name="Animals.findBox",
+//		 query="SELECT * FROM Animals WHERE boxId = :boxId"),
+//		 @NamedQuery(name="Animals.findFood",
+//		 query="SELECT ")
+//})
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TypeAnimal", discriminatorType = DiscriminatorType.STRING, length = 6)
 public abstract class Animal implements Serializable {
@@ -23,11 +27,15 @@ public abstract class Animal implements Serializable {
 	private String name;
 	private String age;
 	private String statusAnimal;
+	private Box box;
+
 
 	@ManyToOne
 	@JoinColumn(name = "IdBox", referencedColumnName = "IdBox")
-	private String idBox;
-
+	public Box getIdBox() {
+		return box;
+	}
+	
 	@ManyToMany
 	@JoinTable(name = "Eats", joinColumns = @JoinColumn(name = "IdFood", referencedColumnName = "IdFood") , inverseJoinColumns = @JoinColumn(name = "IdAnimal", referencedColumnName = "IdAnimal") )
 	private Set<Food> foods;
@@ -69,13 +77,10 @@ public abstract class Animal implements Serializable {
 		this.statusAnimal = statusAnimal;
 	}
 
-	@Column(name = "IdBox")
-	public String getIdBox() {
-		return idBox;
-	}
+	
 
-	public void setIdBox(String idBox) {
-		this.idBox = idBox;
+	public void setIdBox(Box idBox) {
+		this.box = idBox;
 	}
 
 }

@@ -11,9 +11,9 @@ import javax.persistence.Table;
 import java.util.*;
 
 @Entity
-@NamedQueries({
-	@NamedQuery(name="Buildings.findAllBoxesInBuildin", query= "SELECT b FROM Buildings b WHERE IdBox b = :IdBox")
-})
+//@NamedQueries({
+//	@NamedQuery(name="Buildings.findAllBoxesInBuildin", query= "SELECT b FROM Buildings b WHERE IdBox b = :IdBox")
+//})
 @Table(name = "Buildings")
 public class Building {
 
@@ -39,8 +39,8 @@ public class Building {
 		this.boxes = boxes;
 	}
 
-	public void addBoxtoBuilding(Box b) {
-		boxes.add(b);
-	}
+//	public void addBoxtoBuilding(Box b) {
+//		boxes.add(b);
+//	}
 
 }

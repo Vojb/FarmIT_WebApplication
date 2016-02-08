@@ -14,10 +14,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({
-		@NamedQuery(name="Boxes.findAll", query= "SELECT b FROM Boxes b"),
-		@NamedQuery(name="find.boxesInBuilding", query= "SELECT b FROM Boxes b WHERE IdBuilding b = :IdBuilding")
-})
+//@NamedQueries({
+//		@NamedQuery(name="Boxes.findAll", query= "SELECT b FROM Boxes b"),
+//		@NamedQuery(name="find.boxesInBuilding", query= "SELECT b FROM Boxes b WHERE IdBuilding b = :IdBuilding")
+//})
 @Table(name = "Boxes")
 public class Box {
 	private String idBox;
@@ -43,7 +43,7 @@ public class Box {
 	public void setIdBox(String idBox) {
 		this.idBox = idBox;
 	}
-	@OneToMany(mappedBy = "idBox", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "box", fetch=FetchType.EAGER)
 	public Set<Animal> getAnimals() {
 		return animals;
 	}
@@ -51,8 +51,8 @@ public class Box {
 	public void setAnimals(Set<Animal> animals) {
 		this.animals = animals;
 	}
-	public void addAnimaltoBox(Animal a){
-		animals.add(a);
-	}
+//	public void addAnimaltoBox(Animal a){
+//		animals.add(a);
+//	}
 
 }
