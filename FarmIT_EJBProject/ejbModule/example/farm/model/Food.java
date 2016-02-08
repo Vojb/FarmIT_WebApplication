@@ -1,6 +1,5 @@
 package example.farm.model;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 import javax.persistence.Column;

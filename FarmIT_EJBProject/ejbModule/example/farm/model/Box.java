@@ -9,15 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @NamedQueries({
-		// @NamedQuery(name="Boxes.findAll",
-		// query= "SELECT * FROM Boxes"),
-		// @NamedQuery(name="find.boxesInBuilding",
-		// query= "SELECT * FROM Boxes WHERE IdBuilding EQUALS :IdBuilding")
+		@NamedQuery(name="Boxes.findAll", query= "SELECT b FROM Boxes b"),
+		@NamedQuery(name="find.boxesInBuilding", query= "SELECT b FROM Boxes b WHERE IdBuilding b = :IdBuilding")
 })
 @Table(name = "Boxes")
 public class Box {

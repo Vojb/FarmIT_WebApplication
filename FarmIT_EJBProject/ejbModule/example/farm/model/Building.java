@@ -5,14 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.*;
 
 @Entity
 @NamedQueries({
-		// @NamedQuery(name="Buildings.findAllBoxesInBuildin",
-		// query= "SELECT * FROM Buildings WHERE IdBox EQUALS :IdBox")
+	@NamedQuery(name="Buildings.findAllBoxesInBuildin", query= "SELECT b FROM Buildings b WHERE IdBox b = :IdBox")
 })
 @Table(name = "Buildings")
 public class Building {

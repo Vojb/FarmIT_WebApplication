@@ -7,15 +7,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Animals")
-@NamedQueries({
-		// @NamedQuery(name="Animals.findAll",
-		// query="SELECT * FROM Animals"),
-		// @NamedQuery(name="Animals.findByType",
-		// query="SELECT * FROM Animals WHERE Type LIKE :Type"),
-		// @NamedQuery(name="Animals.findBox",
-		// query="SELECT * FROM Animals WHERE boxId = :boxId"),
-		// @NamedQuery(name="Animals.findFood",
-		// query="SELECT ")
+@NamedQueries({ 
+		@NamedQuery(name = "Animals.findAll", query = "SELECT a FROM Animals a"),
+		@NamedQuery(name = "Animals.findByType", query = "SELECT a FROM Animals a WHERE a.Type LIKE :Type"),
+		@NamedQuery(name = "Animals.findBox", query = "SELECT a FROM Animals a WHERE a.boxId = :boxId"),
+		// @NamedQuery(name="Animals.findFood"
 })
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TypeAnimal", discriminatorType = DiscriminatorType.STRING, length = 6)
