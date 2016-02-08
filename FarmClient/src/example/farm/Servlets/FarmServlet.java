@@ -54,28 +54,45 @@ public class FarmServlet extends HttpServlet {
 //		 a.setStatusAnimal("Alive");
 		// facade.createAnimal(a);	
 		
-		Building bs=new Building ();
-		bs.setIdBuilding(1);
-		facade.createBuilding(bs);
+//		Building bs=new Building ();
+//		bs.setIdBuilding(1);
+//		facade.createBuilding(bs);
+//		
+//		
+//		Animal a = facade.findByIdAnimal(2);
+//	
 		
-		
-		Animal a = facade.findByIdAnimal(2);
-	
+////		
+//		Animal a = facade.findByIdAnimal(10001);
+		Building bs =facade.findByIdBuilding(1);
 		Box b = new Box();
 		b.setIdBox(1);
+		b.setBuilding(bs);
 		bs.addBoxtoBuilding(b);	
-		b.addAnimaltoBox(a);
-		
 		facade.createBox(b);
+		facade.updateBuilding(bs);
 		
-		Food f= new Food();
-		f.setAmount(1000000);
-		f.setIdFood(2);
-		f.setType("Ris");
-	
-		f.addAnimal(a);
+////		
+//		
+//		Cow c = new Cow();
+//		c.setAge("12");
+//		c.setName("KarlMax");
+//		c.setAmountOfPowerFeed(12);
+//		c.setIdAnimal(10001);
+//		c.setStatusAnimal("Frisk");
+//		facade.createAnimal(c);
+//		b.addAnimaltoBox(c);
 		
-		facade.createFood(f);
+//		facade.createBox(b);
+//		
+//		Food f= new Food();
+//		f.setAmount(1000000);
+//		f.setIdFood(2);
+//		f.setType("Ris");
+//	
+//		f.addAnimal(a);
+//		
+//		facade.createFood(f);
 
 		out.println("</body></html>");
 	}
