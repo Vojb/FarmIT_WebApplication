@@ -20,8 +20,8 @@ import example.farm.model.Food;
 /**
  * Servlet implementation class FarmServlet
  */
-@WebServlet("/FarmServlet")
-public class FarmServlet extends HttpServlet {
+@WebServlet("/Farmlet")
+public class Farmlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
 	FarmFacadeLocal facade;
@@ -29,7 +29,7 @@ public class FarmServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public FarmServlet() {
+	public Farmlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -64,15 +64,15 @@ public class FarmServlet extends HttpServlet {
 		
 ////		
 //		Animal a = facade.findByIdAnimal(10001);
-		Building bs =facade.findByIdBuilding("FuckOF");
-		Box b = new Box();
-		b.setIdBox("A1");
-		b.setBuilding(bs);
-
-		facade.createBox(b);
-		bs.addBoxtoBuilding(b);	
-		facade.updateBuilding(bs);
-		
+//		Building bs =facade.findByIdBuilding("FuckOF");
+//		Box b = new Box();
+//		b.setIdBox("A1");
+//		b.setBuilding(bs);
+//
+//		facade.createBox(b);
+//		bs.addBoxtoBuilding(b);	
+//		facade.updateBuilding(bs);
+//		
 ////		
 //		
 //		Cow c = new Cow();
