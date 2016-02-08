@@ -32,7 +32,7 @@ public abstract class Animal implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "IdBox", referencedColumnName = "IdBox")
-	public Box getIdBox() {
+	public Box getBox() {
 		return box;
 	}
 	
@@ -79,8 +79,8 @@ public abstract class Animal implements Serializable {
 
 	
 
-	public void setIdBox(Box idBox) {
-		this.box = idBox;
+	public void setBox(Box box) {
+		this.box = box;
 	}
 
 }
