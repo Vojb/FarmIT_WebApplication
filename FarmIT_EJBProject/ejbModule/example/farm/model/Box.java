@@ -1,5 +1,6 @@
 package example.farm.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -15,11 +16,11 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name="Boxes.findAll", query= "SELECT b FROM Boxes b"),
+		@NamedQuery(name="Box.findAll", query="SELECT b FROM Boxes b")
 //		@NamedQuery(name="find.boxesInBuilding", query= "SELECT b FROM Boxes b WHERE IdBuilding b = :IdBuilding")
 })
 @Table(name = "Boxes")
-public class Box {
+public class Box implements Serializable {
 	private String idBox;
 	private Building building;
 	private Set<Animal> animals;

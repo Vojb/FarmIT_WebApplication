@@ -1,5 +1,6 @@
 package example.farm.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Foods")
-public class Food {
+public class Food implements Serializable{
 	private long idFood;
 	private String typeFood;
 	private int amount;

@@ -8,6 +8,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import java.io.Serializable;
 import java.util.*;
 
 @Entity
@@ -15,7 +17,7 @@ import java.util.*;
 //	@NamedQuery(name="Buildings.findAllBoxesInBuildin", query= "SELECT b FROM Buildings b WHERE IdBox b = :IdBox")
 //})
 @Table(name = "Buildings")
-public class Building {
+public class Building implements Serializable {
 
 	private String idBuilding;
 	private Set<Box> boxes;
