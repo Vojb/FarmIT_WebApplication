@@ -15,42 +15,38 @@ import example.farm.model.Pig;
 
 @Local
 public interface FarmFacadeLocal {
+	//skapa
 	public Animal createAnimal(Animal a);
-
-	public Animal updateAnimal(Animal a);
-
-	public void deleteAnimal(long a);
-
-	public Animal findByIdAnimal(long a);
-	public List<Animal> findAll();
-	public Food findByIdFood(long id);
-
-	public Food createFood(Food f);
-	public void addAnimal(Food f, Animal a);
-	public Food updateFood(Food f);
-
-	public void deleteFood(long id);
-	
-	public Box findByIdBox(String id);
-
 	public Box createBox(Box a);
-	public Box updateBox(Box a);
-	public void changeAmountInCow(Cow c, Food f) ;
-	
-
-	public void changeAmountInHen(Hen h, Food f) ;
-	
-
-	public void changeAmountInHorse(Horse h, Food powerFeed, Food hay);
-	
-	public Building findByIdBuilding(String id);
-
+	public Food createFood(Food f);
 	public Building createBuilding(Building a);
+	
+	//uppdatera
+	public Animal updateAnimal(Animal a);
+	public Food updateFood(Food f);
+	public Box updateBox(Box a);
 	public Building updateBuilding(Building a);
 	
-	public void changeAmountInPig(Pig p, Food powerFeed, Food hay);
-
+	//ta bort
+	public void deleteAnimal(long a);
+	public void deleteFood(long id);
+	
+	//hitta
+	public Animal findByIdAnimal(long a);
+	public Box findByIdBox(String id);
+	public Building findByIdBuilding(String id);
+	public Food findByIdFood(long id);
+	public List<Animal> findAll();
+	
+	//lägga till
+	public void addAnimal(Food f, Animal a);
 	public void addAmount(Food f, int amount);
+	
+	//ändra
+	public void changeAmountInCow(Cow c, Food f) ;
+	public void changeAmountInHen(Hen h, Food f) ;
+	public void changeAmountInHorse(Horse h, Food powerFeed, Food hay);
+	public void changeAmountInPig(Pig p, Food powerFeed, Food hay);
 
 
 }

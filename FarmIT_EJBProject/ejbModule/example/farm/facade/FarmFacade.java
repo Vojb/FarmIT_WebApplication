@@ -44,19 +44,43 @@ public class FarmFacade implements FarmFacadeLocal {
 	public List<Animal> findAll() {
 		return animalb.findAll();
 	}
-
+	//Skapa
 	public Animal createAnimal(Animal a) {
 		return animalb.createAnimal(a);
 	}
-
+	public Food createFood(Food f){
+		return foodb.createFood(f);
+	}
+	public Box createBox(Box a){
+		return boxb.createBox(a);
+	}
+	public Building createBuilding(Building a) {
+		buildingb.createBuilding(a);
+		return a;
+	}
+	//uppdatera 
 	public Animal updateAnimal(Animal a) {
 		return animalb.updateAnimal(a);
 	}
+	public Food updateFood(Food f){
+		return foodb.updateFood(f);
+	}
+	public Box updateBox(Box a){
+		return boxb.updateBox(a);
+	}
 
+	public Building updateBuilding(Building a) {
+		buildingb.updateBuilding(a);
+		return a;
+	}
+	//ta bort
 	public void deleteAnimal(long a) {
 		animalb.deleteAnimal(a);
 	}
-
+	public void deleteFood(long id){
+		foodb.deleteFood(id);
+	}
+	//hitta
 	public Animal findByIdAnimal(long a) {
 		return animalb.findByIdAnimal(a);
 	}
@@ -64,29 +88,21 @@ public class FarmFacade implements FarmFacadeLocal {
 	public Food findByIdFood(long id){
 		return foodb.findByIdFood(id);
 	}
-	public Food createFood(Food f){
-		return foodb.createFood(f);
-	}
-	public void addAnimal(Food f, Animal a){
-		 foodb.addAnimal(f, a);
-	}
-
-	public Food updateFood(Food f){
-		return foodb.updateFood(f);
-	}
-	public void deleteFood(long id){
-		foodb.deleteFood(id);
-	}
 	public Box findByIdBox(String id){
 		return boxb.findByIdBox(id);
 	}
-
-	public Box createBox(Box a){
-		return boxb.createBox(a);
+	public Building findByIdBuilding(String id) {
+		return buildingb.findByIdBuilding(id);
 	}
-	public Box updateBox(Box a){
-		return boxb.updateBox(a);
+	//lägga till
+	public void addAnimal(Food f, Animal a){
+		 foodb.addAnimal(f, a);
 	}
+	public void addAmount(Food f, int amount) {
+		int amounts = f.getAmount();
+		f.setAmount(amounts + amount);
+	}
+	//ändra
 	public void changeAmountInCow(Cow c, Food f) {
 		int amount = c.getAmountOfPowerFeed();
 		f.setAmount(f.getAmount() - amount);
@@ -103,28 +119,12 @@ public class FarmFacade implements FarmFacadeLocal {
 		powerFeed.setAmount(powerFeed.getAmount() - amountPowerFeed);
 		hay.setAmount(hay.getAmount() - amountHay);
 	}
-	public Building findByIdBuilding(String id) {
-		return buildingb.findByIdBuilding(id);
-	}
-
-	public Building createBuilding(Building a) {
-		buildingb.createBuilding(a);
-		return a;
-	}
-
-	public Building updateBuilding(Building a) {
-		buildingb.updateBuilding(a);
-		return a;
-	}
-
+	
 	public void changeAmountInPig(Pig p, Food powerFeed, Food hay) {
 		int amountPowerFeed = p.getAmountOfPowerFeed();
 		powerFeed.setAmount(powerFeed.getAmount() - amountPowerFeed);
 	}
 
-	public void addAmount(Food f, int amount) {
-		int amounts = f.getAmount();
-		f.setAmount(amounts + amount);
-	}
+
 
 }
