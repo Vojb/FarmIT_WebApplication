@@ -7,14 +7,15 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Animals")
-@NamedQueries({
-		 @NamedQuery(name="Animal.findAll", query="SELECT e FROM Animal e"),
-		 @NamedQuery(name="Animal.findByType", query="SELECT a FROM Animal a WHERE a.Type LIKE :Type"),
-		 @NamedQuery(name="Animal.findBox",query="SELECT a FROM Animal a WHERE a.boxId LIKE :IdBox"),
-//		 @NamedQuery(name="Animals.findFood", query="SELECT ")
-})
+
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TypeAnimal", discriminatorType = DiscriminatorType.STRING, length = 6)
+@NamedQueries({
+		 @NamedQuery(name="Animal.findAll", query="SELECT e FROM Animal e"),
+		 @NamedQuery(name="Animal.findByType", query="SELECT a FROM Animal a WHERE a.TypeAnimal LIKE :typeAnimal"),
+		 @NamedQuery(name="Animal.findBox",query="SELECT a FROM Animal a WHERE a.IdBox LIKE :idBox"),
+//		 @NamedQuery(name="Animals.findFood", query="SELECT ")
+})
 public abstract class Animal implements Serializable {
 
 	private static final long serialVersionUID = 1L;
