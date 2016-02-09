@@ -8,9 +8,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Animals")
 @NamedQueries({
-		 @NamedQuery(name="Animals.findAll", query="SELECT e FROM Animals e"),
-		 @NamedQuery(name="Animals.findByType", query="SELECT a FROM Animals a WHERE a.Type LIKE :Type"),
-		 @NamedQuery(name="Animals.findBox",query="SELECT a FROM Animals a WHERE a.boxId = :boxId"),
+		 @NamedQuery(name="Animal.findAll", query="SELECT e FROM Animal e"),
+		 @NamedQuery(name="Animal.findByType", query="SELECT a FROM Animal a WHERE a.Type LIKE :Type"),
+		 @NamedQuery(name="Animal.findBox",query="SELECT a FROM Animal a WHERE a.boxId LIKE :IdBox"),
 //		 @NamedQuery(name="Animals.findFood", query="SELECT ")
 })
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
