@@ -41,7 +41,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public List<Animal> findAll() {
+	public List<Animal> findAll() { 
 		return animalb.findAll();
 	}
 	//Skapa
