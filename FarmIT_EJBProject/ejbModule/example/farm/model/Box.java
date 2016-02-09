@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
 		@NamedQuery(name="Box.findAll", query="SELECT b FROM Box b"),
-		@NamedQuery(name="Box.findBoxesInByIdBuilding", query= "SELECT b FROM Box b WHERE IdBuilding b LIKE :IdBuilding")
+		@NamedQuery(name="Box.findBoxesInByIdBuilding", query= "SELECT b FROM Box b WHERE b.building LIKE :idBuilding"),
 })
 @Table(name = "Boxes")
 public class Box implements Serializable {

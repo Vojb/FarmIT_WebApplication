@@ -52,16 +52,16 @@ public class AnimalBean implements AnimalBeanLocal {
 
 			TypedQuery<Animal> query = em.createNamedQuery("Animals.findByType", Animal.class);
 
-			query.setParameter("type", type);
+			query.setParameter("typeAnimal", type);
 
 			List<Animal> results = query.getResultList();
 			return results;
 		}
 
-		public List<Animal> findBox(String boxId) {
+		public List<Animal> findBox(String idbox) {
 			TypedQuery<Animal> query = em.createNamedQuery("Animals.findBox", Animal.class);
 
-			query.setParameter("boxId", boxId);
+			query.setParameter("idbox", idbox);
 
 			List<Animal> results = query.getResultList();
 			return results;
