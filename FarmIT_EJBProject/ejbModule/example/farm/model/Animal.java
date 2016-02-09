@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "Animals")
 
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "TypeAnximal", discriminatorType = DiscriminatorType.STRING, length = 6)
+@DiscriminatorColumn(name = "TypeAnimal", discriminatorType = DiscriminatorType.STRING, length = 6)
 @NamedQueries({
 		 @NamedQuery(name="Animal.findAll", query="SELECT e FROM Animal e"),
 			 @NamedQuery(name="Animal.findByType", query="SELECT a FROM Animal a WHERE dtype = :typeAnimal"),

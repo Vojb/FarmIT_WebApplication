@@ -43,7 +43,7 @@ public class AnimalBean implements AnimalBeanLocal {
 	//Querys
 		public List<Animal> findAll() {
 
-			TypedQuery<Animal> query = em.createNamedQuery("Animals.findAll", Animal.class);
+			TypedQuery<Animal> query = em.createNamedQuery("Animal.findAll", Animal.class);
 			List<Animal> results = query.getResultList();
 			return results;
 		}
