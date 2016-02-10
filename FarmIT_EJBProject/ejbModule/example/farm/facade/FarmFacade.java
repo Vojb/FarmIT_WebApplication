@@ -124,7 +124,11 @@ public class FarmFacade implements FarmFacadeLocal {
 		int amountPowerFeed = p.getAmountOfPowerFeed();
 		powerFeed.setAmount(powerFeed.getAmount() - amountPowerFeed);
 	}
-
+	
+	//Mata
+	public void feedCow(Food f) {
+		foodb.feedCow(f);
+	}
 
 
 }

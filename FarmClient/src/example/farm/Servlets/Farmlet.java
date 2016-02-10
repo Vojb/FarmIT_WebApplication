@@ -43,11 +43,24 @@ public class Farmlet extends HttpServlet {
 			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html><html><head>");
-		out.println("<title>FarmIt</title>");
+		out.println("<title>FarmLet</title>");
 		out.println("<meta charset=\"ISO-8859-1\">");
 		out.println("</head><body>");
 		out.println("<h3>Farmlet</h3>");
-
+		
+		try{
+		Food f= facade.findByIdFood(1);
+		facade.feedCow(f);
+		out.println("Det gick att mata kossorna");
+		out.println("så de så");
+		
+		}catch(Exception e){
+			out.println("Det gick ej att mata kossorna");
+			out.println("så de så");
+		}
+		
+		
+		
 //		Cow a = new Cow();
 //		a.setAge("12");
 //		a.setIdAnimal(2);
@@ -59,12 +72,12 @@ public class Farmlet extends HttpServlet {
 //		bs.setIdBuilding("Alfa");
 //		facade.createBuilding(bs);
 		
-		
-		Animal a1 = facade.findByIdAnimal(999);
-		if (a1 != null) {
-			out.println("<h4>Hittade: " + a1.getIdAnimal());
-			out.println(" </h4>");
-		}
+//		
+//		Animal a1 = facade.findByIdAnimal(999);
+//		if (a1 != null) {
+//			out.println("<h4>Hittade: " + a1.getIdAnimal());
+//			out.println(" </h4>");
+//		}
 		
 //		Building e1 = facade.findByIdBuilding("Alfa");
 //		if (e1 != null) {

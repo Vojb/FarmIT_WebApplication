@@ -45,14 +45,13 @@ public class FoodBean implements FoodBeanLocal {
 	}
 
 	public void feedCow(Food f) {
-		int id = 10001;
+		long id = 10001;
 		int sum = f.getAmount();
 		Cow c = (Cow) em.find(Animal.class, id);
 		while (c != null) {
 			sum -= c.getAmountOfPowerFeed();
 			id++;
 		}
-
 		f.setAmount(sum);
 
 	}
