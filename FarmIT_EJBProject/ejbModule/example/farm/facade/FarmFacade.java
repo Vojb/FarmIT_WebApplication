@@ -44,6 +44,9 @@ public class FarmFacade implements FarmFacadeLocal {
 	public List<Animal> findAll() { 
 		return animalb.findAllQuery();
 	}
+	public List<Animal> findByTypeQuery(String type) {
+	return animalb.findByTypeQuery(type);
+	}
 	//Skapa
 	public Animal createAnimal(Animal a) {
 		return animalb.createAnimal(a);

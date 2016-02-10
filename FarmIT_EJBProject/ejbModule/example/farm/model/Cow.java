@@ -3,8 +3,10 @@ package example.farm.model;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 
 @Entity
+//@NamedQuery(name = "Cow.feedCowsSum", query = "SELECT SUM(AmountOfPowerFeed) FROM Animal a WHERE dtype like 'Cow'")
 @DiscriminatorValue("Cow")
 public class Cow extends Animal {
 

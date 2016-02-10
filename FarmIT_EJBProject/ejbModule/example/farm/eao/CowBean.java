@@ -1,9 +1,12 @@
 package example.farm.eao;
 
+import java.util.List;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import example.farm.model.Animal;
 import example.farm.model.Cow;
@@ -36,6 +39,12 @@ public class CowBean implements CowBeanLocal {
 		if (a != null) {
 			em.remove(a);
 		}
+	}
+	public List<Cow> sumOfCowFoodTHATAREAWESOME() {
+
+		TypedQuery<Cow> query = em.createNamedQuery("Cow.feedCowsSum", Cow.class);
+		List<Cow> results = query.getResultList();
+		return results;
 	}
 
 }

@@ -41,6 +41,7 @@ public interface FarmFacadeLocal {
 	public Building findByIdBuilding(String id);
 	public Food findByIdFood(long id);
 	public List<Animal> findAll();
+	public List<Animal> findByTypeQuery(String type);
 	
 	//lägga till
 	public void addAnimal(Food f, Animal a);
