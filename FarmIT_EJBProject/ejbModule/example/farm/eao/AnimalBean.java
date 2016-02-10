@@ -41,14 +41,14 @@ public class AnimalBean implements AnimalBeanLocal {
 		}
 	}
 	//Querys
-		public List<Animal> findAll() {
+		public List<Animal> findAllQuery() {
 
 			TypedQuery<Animal> query = em.createNamedQuery("Animal.findAll", Animal.class);
 			List<Animal> results = query.getResultList();
 			return results;
 		}
 
-		public List<Animal> findByType(String type) {
+		public List<Animal> findByTypeQuery(String type) {
 
 			TypedQuery<Animal> query = em.createNamedQuery("Animals.findByType", Animal.class);
 
@@ -58,7 +58,7 @@ public class AnimalBean implements AnimalBeanLocal {
 			return results;
 		}
 
-		public List<Animal> findBox(String idbox) {
+		public List<Animal> findBoxQuery(String idbox) {
 			TypedQuery<Animal> query = em.createNamedQuery("Animals.findBox", Animal.class);
 
 			query.setParameter("idbox", idbox);
@@ -66,5 +66,7 @@ public class AnimalBean implements AnimalBeanLocal {
 			List<Animal> results = query.getResultList();
 			return results;
 		}
+
+
 
 }

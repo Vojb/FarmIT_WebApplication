@@ -42,7 +42,7 @@ public class FarmFacade implements FarmFacadeLocal {
 	}
 	
 	public List<Animal> findAll() { 
-		return animalb.findAll();
+		return animalb.findAllQuery();
 	}
 	//Skapa
 	public Animal createAnimal(Animal a) {

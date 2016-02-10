@@ -17,9 +17,9 @@ public interface AnimalBeanLocal {
 
 	public void deleteAnimal(long id);
 
-	public List<Animal> findBox(String boxId);
+	public List<Animal> findBoxQuery(String boxId);
 	
-	public List<Animal> findByType(String type);
+	public List<Animal> findByTypeQuery(String type);
 	
-	public List<Animal> findAll();
+	public List<Animal> findAllQuery();
 }

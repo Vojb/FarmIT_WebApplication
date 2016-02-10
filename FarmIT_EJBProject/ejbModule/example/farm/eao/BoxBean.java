@@ -21,7 +21,7 @@ public class BoxBean implements BoxBeanLocal {
 	@PersistenceContext(unitName = "LabEJBSql")
 	private EntityManager em;
 
-	public List<Box> findAll(){
+	public List<Box> findAllQuery(){
 	
 	TypedQuery<Box> query =
 			em.createNamedQuery("Boxes.findAll", Box.class);
@@ -29,7 +29,7 @@ public class BoxBean implements BoxBeanLocal {
 	return results;
 	}
 	
-	public List<Box> findAllBoxesInBuilding(String idBuilding){
+	public List<Box> findAllBoxesInBuildingQuery(String idBuilding){
 		
 		TypedQuery<Box> query =
 				em.createNamedQuery("Boxes.findAllBoxesInBuilding", Box.class);

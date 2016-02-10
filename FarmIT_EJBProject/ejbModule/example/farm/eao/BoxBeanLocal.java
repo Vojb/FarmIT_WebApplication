@@ -15,8 +15,8 @@ public interface BoxBeanLocal {
 
 	public Box updateBox(Box a);
 	
-	public List<Box> findAllBoxesInBuilding(String idBuilding);
+	public List<Box> findAllBoxesInBuildingQuery(String idBuilding);
 	
-	public List<Box> findAll();
+	public List<Box> findAllQuery();
 
 }

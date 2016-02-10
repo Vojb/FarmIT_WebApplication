@@ -11,10 +11,10 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TypeAnimal", discriminatorType = DiscriminatorType.STRING, length = 6)
 @NamedQueries({
-		 @NamedQuery(name="Animal.findAll", query="SELECT e FROM Animal e"),
-			 @NamedQuery(name="Animal.findByType", query="SELECT a FROM Animal a WHERE dtype = :typeAnimal"),
-			 @NamedQuery(name="Animal.findBox",query="SELECT a FROM Animal a WHERE a.box LIKE :idbox"),
-//		 @NamedQuery(name="Animals.findFood", query="SELECT ")
+		 @NamedQuery(name="Animal.findAllQuery", query="SELECT e FROM Animal e"),
+			 @NamedQuery(name="Animal.findByTypeQuery", query="SELECT a FROM Animal a WHERE dtype = :typeAnimal"),
+			 @NamedQuery(name="Animal.findBoxQuery",query="SELECT a FROM Animal a WHERE a.box LIKE :idbox"),
+			 //@NamedQuery(name="Animals.findFood", query="SELECT ")
 })
 public abstract class Animal implements Serializable {
 
@@ -25,7 +25,6 @@ public abstract class Animal implements Serializable {
 	private String age;
 	private String statusAnimal;
 	private Box box;
-
 
 	@ManyToOne
 	@JoinColumn(name = "IdBox", referencedColumnName = "IdBox")
