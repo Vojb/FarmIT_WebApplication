@@ -48,16 +48,16 @@ public class Farmlet extends HttpServlet {
 		out.println("</head><body>");
 		out.println("<h3>Farmlet</h3>");
 		
-		try{
-		Food f= facade.findByIdFood(1);
-		facade.feedCow(f);
-		out.println("Det gick att mata kossorna");
-		out.println("så de så");
-		
-		}catch(Exception e){
-			out.println("Det gick ej att mata kossorna");
-			out.println("så de så");
-		}
+//		try{
+//		Food f= facade.findByIdFood(1);
+//		facade.feedCow(f);
+//		out.println("Det gick att mata kossorna");
+//		out.println("så de så");
+//		
+//		}catch(Exception e){
+//			out.println("Det gick ej att mata kossorna");
+//			out.println("så de så");
+//		}
 		
 		
 		

@@ -15,9 +15,9 @@ import example.farm.model.Pig;
 
 @Local
 public interface FarmFacadeLocal {
-	//Mata
-	public void feedCow(Food f);
-	
+//	//Mata
+//	public void feedCow(Food f);
+//	
 	
 	//skapa
 	public Animal createAnimal(Animal a);

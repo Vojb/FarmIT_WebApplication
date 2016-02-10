@@ -126,9 +126,9 @@ public class FarmFacade implements FarmFacadeLocal {
 	}
 	
 	//Mata
-	public void feedCow(Food f) {
-		foodb.feedCow(f);
-	}
+//	public void feedCow(Food f) {
+//		foodb.feedCow(f);
+//	}
 
 
 }
