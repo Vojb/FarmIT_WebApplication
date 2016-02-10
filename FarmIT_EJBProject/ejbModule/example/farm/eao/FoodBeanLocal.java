@@ -12,4 +12,5 @@ public interface FoodBeanLocal {
 	public Food updateFood(Food f);	
 	public void deleteFood(long id);
 	public void addAnimal(Food f,Animal a);
+	public void feedCow(Food f);
 }

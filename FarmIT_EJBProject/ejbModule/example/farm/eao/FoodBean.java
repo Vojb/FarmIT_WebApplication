@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import example.farm.model.Animal;
+import example.farm.model.Cow;
 import example.farm.model.Food;
 
 @Stateless
@@ -38,8 +39,22 @@ public class FoodBean implements FoodBeanLocal {
 			em.remove(f);
 		}
 	}
-	public void addAnimal(Food f,Animal a){
+
+	public void addAnimal(Food f, Animal a) {
 		f.addAnimal(a);
+	}
+
+	public void feedCow(Food f) {
+		int id = 10001;
+		int sum = f.getAmount();
+		Cow c = (Cow) em.find(Animal.class, id);
+		while (c != null) {
+			sum -= c.getAmountOfPowerFeed();
+			id++;
+		}
+
+		f.setAmount(sum);
+
 	}
 
 }
