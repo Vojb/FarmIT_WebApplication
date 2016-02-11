@@ -63,7 +63,12 @@ public class FarmFacade implements FarmFacadeLocal {
 	public List<Animal> findHens(){
 		return animalb.findHens();
 	}
-
+	public List<Animal> findHorses(){
+		return animalb.findHorses();
+	}
+	public List<Animal> findPigs(){
+		return animalb.findPigs();
+	}
 	// Skapa
 	public Animal createAnimal(Animal a) {
 		return animalb.createAnimal(a);
@@ -209,7 +214,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		}
 	}
 	public void feedHorses(long idFood,long idF) {
-		List<Animal> horses = findHens();
+		List<Animal> horses = findHorses();
 		Food f = findByIdFood(idFood);
 		Food food = findByIdFood(idF);
 		for (Animal a : horses) {
@@ -239,7 +244,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		}
 	}
 	public void feedPig(long idFood) {
-		List<Animal> pigs = findHens();
+		List<Animal> pigs = findPigs();
 		Food f = findByIdFood(idFood);
 		for (Animal a : pigs) {
 			try {
