@@ -208,16 +208,22 @@ public class FarmFacade implements FarmFacadeLocal {
 
 		}
 	}
-	public void feedHorses(long idFood) {
+	public void feedHorses(long idFood,long idF) {
 		List<Animal> horses = findHens();
 		Food f = findByIdFood(idFood);
+		Food food = findByIdFood(idF);
 		for (Animal a : horses) {
 			try {
 				Method metod = a.getClass().getMethod("getAmountOfHay");
+				Method metodtwo = a.getClass().getMethod("getAmountOfPowerFeed");
 				try {
 					int i = (int) metod.invoke(a);
+					int c = (int) metodtwo.invoke(a);
 					int sum = f.getAmount();
 					sum -= i;
+					int sum2 = food.getAmount();
+					sum2 -= c;
+					food.setAmount(sum2);
 					f.setAmount(sum);
 					updateFood(f);
 				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
