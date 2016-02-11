@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import example.farm.eao.AnimalBean;
 import example.farm.eao.BoxBean;
 import example.farm.eao.BuildingBean;
+import example.farm.eao.CowBean;
 import example.farm.eao.FoodBean;
 import example.farm.model.Animal;
 import example.farm.model.Box;
@@ -33,6 +34,8 @@ public class FarmFacade implements FarmFacadeLocal {
 	BuildingBean buildingb;
 	@EJB
 	BoxBean boxb;
+	@EJB
+	CowBean cowb;
 	
 	/**
 	 * Default constructor.
@@ -46,6 +49,12 @@ public class FarmFacade implements FarmFacadeLocal {
 	}
 	public List<Animal> findByTypeQuery(String type) {
 	return animalb.findByTypeQuery(type);
+	}
+	public List<Cow> sumOfCowFoodTHATAREAWESOME(){
+		return cowb.sumOfCowFoodTHATAREAWESOME();	
+	}
+	public List<Animal> sumOfCowFood(){
+		return animalb.sumOfCowFood();	
 	}
 	//Skapa
 	public Animal createAnimal(Animal a) {

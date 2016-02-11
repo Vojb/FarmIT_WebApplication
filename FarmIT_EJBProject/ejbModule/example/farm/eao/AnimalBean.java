@@ -10,6 +10,7 @@ import javax.persistence.TypedQuery;
 
 import example.farm.model.Animal;
 import example.farm.model.Box;
+import example.farm.model.Cow;
 
 @Stateless
 @LocalBean
@@ -64,6 +65,13 @@ public class AnimalBean implements AnimalBeanLocal {
 			query.setParameter("idbox", idbox);
 
 			List<Animal> results = query.getResultList();
+			return results;
+		}
+		public List<Animal> sumOfCowFood() {
+
+			TypedQuery<Animal> query = em.createNamedQuery("Animal.feedCowsSum", Animal.class);
+			List<Animal> results = query.getResultList();
+			
 			return results;
 		}
 

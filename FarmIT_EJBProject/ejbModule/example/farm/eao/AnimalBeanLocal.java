@@ -10,7 +10,7 @@ import example.farm.model.Animal;
 public interface AnimalBeanLocal {
 
 	public Animal findByIdAnimal(long id);
-	
+
 	public Animal createAnimal(Animal a);
 
 	public Animal updateAnimal(Animal a);
@@ -18,8 +18,10 @@ public interface AnimalBeanLocal {
 	public void deleteAnimal(long id);
 
 	public List<Animal> findBoxQuery(String boxId);
-	
+
 	public List<Animal> findByTypeQuery(String type);
-	
+
 	public List<Animal> findAllQuery();
+
+	public List<Animal> sumOfCowFood();
 }

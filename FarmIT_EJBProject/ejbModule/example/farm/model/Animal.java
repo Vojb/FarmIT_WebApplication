@@ -12,8 +12,10 @@ import javax.persistence.*;
 @DiscriminatorColumn(name = "TypeAnimal", discriminatorType = DiscriminatorType.STRING, length = 6)
 @NamedQueries({
 		 @NamedQuery(name="Animal.findAllQuery", query="SELECT e FROM Animal e"),
-			 @NamedQuery(name="Animal.findByTypeQuery", query="SELECT a FROM Animal a WHERE dtype = :typeAnimal"),
+			 @NamedQuery(name="Animal.findByTypeQuery", query="SELECT a FROM Animal a WHERE a.class = :typeAnimal"),
 			 @NamedQuery(name="Animal.findBoxQuery",query="SELECT a FROM Animal a WHERE a.box LIKE :idbox"),
+			 @NamedQuery(name = "Animal.feedCowsSum", query = "SELECT a.AmountOfPowerFeed FROM Animal a WHERE a.class = 'Cow'")
+
 			 //@NamedQuery(name="Animals.findFood", query="SELECT ")
 })
 public abstract class Animal implements Serializable {
@@ -76,5 +78,7 @@ public abstract class Animal implements Serializable {
 	public void setBox(Box box) {
 		this.box = box;
 	}
+	
+	
 
 }

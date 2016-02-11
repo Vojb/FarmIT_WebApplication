@@ -47,7 +47,9 @@ public class Farmlet extends HttpServlet {
 		out.println("<meta charset=\"ISO-8859-1\">");
 		out.println("</head><body>");
 		out.println("<h1>Farmlet</h1>");
-		out.println("<body background=https://companyblogdotzyngadotcom.files.wordpress.com/2012/09/6a01156fcaccc3970c0177448842e2970d.png>");
+//		
+		out.println(facade.sumOfCowFood());
+//		out.println("<body background=https://companyblogdotzyngadotcom.files.wordpress.com/2012/09/6a01156fcaccc3970c0177448842e2970d.png>");
 		
 //		try{
 //		Food f= facade.findByIdFood(1);
@@ -101,12 +103,7 @@ public class Farmlet extends HttpServlet {
 ////			out.println(" </h4>");
 ////		}
 //
-		List<Animal> animals = facade.findByTypeQuery("Cow");
-		for (Animal emp2 : animals) {
-			out.println("<h4>Hittade: " + emp2.getName());
-			out.println(" Id: " + emp2.getIdAnimal());
-			out.println("</h4>");
-		}
+	
 		
 	
 		// Animal a = facade.findByIdAnimal(10001);

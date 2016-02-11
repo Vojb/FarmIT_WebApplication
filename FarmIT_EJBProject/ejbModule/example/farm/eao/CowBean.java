@@ -44,6 +44,7 @@ public class CowBean implements CowBeanLocal {
 
 		TypedQuery<Cow> query = em.createNamedQuery("Cow.feedCowsSum", Cow.class);
 		List<Cow> results = query.getResultList();
+		
 		return results;
 	}
 
