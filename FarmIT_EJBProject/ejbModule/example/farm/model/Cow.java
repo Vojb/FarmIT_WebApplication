@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
 
 @Entity
-@NamedQuery(name = "Cow.feedCowsSum", query = "SELECT a FROM Animal a WHERE a.class = 'Cow'")
+//@NamedQuery(name = "Cow.feedCowsSum", query = "SELECT a FROM Animal a WHERE a.class = 'Cow'")
 @DiscriminatorValue("Cow")
 public class Cow extends Animal {
 

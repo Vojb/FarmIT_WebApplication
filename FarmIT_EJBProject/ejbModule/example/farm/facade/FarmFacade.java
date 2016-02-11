@@ -50,9 +50,9 @@ public class FarmFacade implements FarmFacadeLocal {
 	public List<Animal> findByTypeQuery(String type) {
 	return animalb.findByTypeQuery(type);
 	}
-	public List<Cow> sumOfCowFoodTHATAREAWESOME(){
-		return cowb.sumOfCowFoodTHATAREAWESOME();	
-	}
+//	public List<Cow> sumOfCowFoodTHATAREAWESOME(){
+//		return cowb.sumOfCowFoodTHATAREAWESOME();	
+//	}
 	public List<Animal> sumOfCowFood(){
 		return animalb.sumOfCowFood();	
 	}
@@ -140,6 +140,17 @@ public class FarmFacade implements FarmFacadeLocal {
 	//Mata
 //	public void feedCow(Food f) {
 //		foodb.feedCow(f);
+//	}
+//	public void feedCow(Food f,long aId) {
+//		Animal a = animalb.findByIdAnimal(aId);
+//		
+//		if(a.getClass())
+//		while (c != null) {
+//			sum -= c.getAmountOfPowerFeed();
+//			id++;
+//		}
+//		f.setAmount(sum);
+//
 //	}
 
 

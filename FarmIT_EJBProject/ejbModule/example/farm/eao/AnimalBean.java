@@ -19,8 +19,6 @@ public class AnimalBean implements AnimalBeanLocal {
 	@PersistenceContext(unitName = "LabEJBSql")
 	private EntityManager em;
 
-	
-
 	public Animal findByIdAnimal(long id) {
 		return em.find(Animal.class, id);
 	}
@@ -34,47 +32,47 @@ public class AnimalBean implements AnimalBeanLocal {
 		em.merge(a);
 		return a;
 	}
-	
+
 	public void deleteAnimal(long id) {
 		Animal a = this.findByIdAnimal(id);
 		if (a != null) {
 			em.remove(a);
 		}
 	}
-	//Querys
-		public List<Animal> findAllQuery() {
 
-			TypedQuery<Animal> query = em.createNamedQuery("Animal.findAll", Animal.class);
-			List<Animal> results = query.getResultList();
-			return results;
-		}
+	// Querys
+	public List<Animal> findAllQuery() {
 
-		public List<Animal> findByTypeQuery(String type) {
+		TypedQuery<Animal> query = em.createNamedQuery("Animal.findAll", Animal.class);
+		List<Animal> results = query.getResultList();
+		return results;
+	}
 
-			TypedQuery<Animal> query = em.createNamedQuery("Animals.findByType", Animal.class);
+	public List<Animal> findByTypeQuery(String type) {
 
-			query.setParameter("typeAnimal", type);
+		TypedQuery<Animal> query = em.createNamedQuery("Animals.findByType", Animal.class);
 
-			List<Animal> results = query.getResultList();
-			return results;
-		}
+		query.setParameter("typeAnimal", type);
 
-		public List<Animal> findBoxQuery(String idbox) {
-			TypedQuery<Animal> query = em.createNamedQuery("Animals.findBox", Animal.class);
+		List<Animal> results = query.getResultList();
+		return results;
+	}
 
-			query.setParameter("idbox", idbox);
+	public List<Animal> findBoxQuery(String idbox) {
+		TypedQuery<Animal> query = em.createNamedQuery("Animals.findBox", Animal.class);
 
-			List<Animal> results = query.getResultList();
-			return results;
-		}
-		public List<Animal> sumOfCowFood() {
+		query.setParameter("idbox", idbox);
 
-			TypedQuery<Animal> query = em.createNamedQuery("Animal.feedCowsSum", Animal.class);
-			List<Animal> results = query.getResultList();
-			
-			return results;
-		}
+		List<Animal> results = query.getResultList();
+		return results;
+	}
 
+	public List<Animal> sumOfCowFood() {
 
+		TypedQuery<Animal> query = em.createNamedQuery("Animal.feedCowsSum", Animal.class);
+		List<Animal> results = query.getResultList();
+
+		return results;
+	}
 
 }

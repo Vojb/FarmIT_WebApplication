@@ -14,7 +14,7 @@ import javax.persistence.*;
 		 @NamedQuery(name="Animal.findAllQuery", query="SELECT e FROM Animal e"),
 			 @NamedQuery(name="Animal.findByTypeQuery", query="SELECT a FROM Animal a WHERE a.class = :typeAnimal"),
 			 @NamedQuery(name="Animal.findBoxQuery",query="SELECT a FROM Animal a WHERE a.box LIKE :idbox"),
-			 @NamedQuery(name = "Animal.feedCowsSum", query = "SELECT a.AmountOfPowerFeed FROM Animal a WHERE a.class = 'Cow'")
+//			 @NamedQuery(name = "Animal.feedCowsSum", query = "SELECT a.AmountOfPowerFeed FROM Animal a WHERE a.class = 'Cow'")
 
 			 //@NamedQuery(name="Animals.findFood", query="SELECT ")
 })

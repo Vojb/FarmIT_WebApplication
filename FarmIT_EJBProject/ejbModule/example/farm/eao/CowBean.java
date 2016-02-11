@@ -40,12 +40,12 @@ public class CowBean implements CowBeanLocal {
 			em.remove(a);
 		}
 	}
-	public List<Cow> sumOfCowFoodTHATAREAWESOME() {
-
-		TypedQuery<Cow> query = em.createNamedQuery("Cow.feedCowsSum", Cow.class);
-		List<Cow> results = query.getResultList();
-		
-		return results;
-	}
+//	public List<Cow> sumOfCowFoodTHATAREAWESOME() {
+//
+//		TypedQuery<Cow> query = em.createNamedQuery("Cow.feedCowsSum", Cow.class);
+//		List<Cow> results = query.getResultList();
+//		
+//		return results;
+//	}
 
 }

@@ -2,6 +2,8 @@ package example.farm.Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -47,8 +49,30 @@ public class Farmlet extends HttpServlet {
 		out.println("<meta charset=\"ISO-8859-1\">");
 		out.println("</head><body>");
 		out.println("<h1>Farmlet</h1>");
+		
+		
+		Animal a = facade.findByIdAnimal(10002);
+		
+		try {
+			Method method = (a.getClass().getMethod("getAmountOfPowerFeed"));
+			try {
+				out.print(method.invoke(a));
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (NoSuchMethodException | SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		
-		out.println(facade.sumOfCowFood());
+//		out.println(facade.sumOfCowFood());
 //		out.println("<body background=https://companyblogdotzyngadotcom.files.wordpress.com/2012/09/6a01156fcaccc3970c0177448842e2970d.png>");
 		
 //		try{

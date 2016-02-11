@@ -17,5 +17,5 @@ public interface CowBeanLocal {
 
 	public void deleteCow(long id);
 
-	public List<Cow> sumOfCowFoodTHATAREAWESOME();
+//	public List<Cow> sumOfCowFoodTHATAREAWESOME();
 }
