@@ -24,5 +24,10 @@ public interface AnimalBeanLocal {
 	public List<Animal> findAllQuery();
 
 	public List<Animal> findCows();
+
 	public List<Animal> findHens();
+
+	public List<Animal> findPigs();
+
+	public List<Animal> findHorses();
 }

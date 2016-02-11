@@ -15,8 +15,9 @@ import javax.persistence.*;
 			 @NamedQuery(name="Animal.findByTypeQuery", query="SELECT a FROM Animal a WHERE a.class = :typeAnimal"),
 			 @NamedQuery(name="Animal.findBoxQuery",query="SELECT a FROM Animal a WHERE a.box LIKE :idbox"),
 			 @NamedQuery(name = "Animal.findCows", query = "SELECT a FROM Animal a WHERE a.class = 'Cow'"),
-		 	@NamedQuery(name = "Animal.findHens", query = "SELECT a FROM Animal a WHERE a.class = 'Hen'")
-
+		 	@NamedQuery(name = "Animal.findHens", query = "SELECT a FROM Animal a WHERE a.class = 'Hen'"),
+		 @NamedQuery(name = "Animal.findHorses", query = "SELECT a FROM Animal a WHERE a.class = 'Horse'"),
+		 @NamedQuery(name = "Animal.findPigs", query = "SELECT a FROM Animal a WHERE a.class = 'Pig'")
 			 //@NamedQuery(name="Animals.findFood", query="SELECT ")
 })
 public abstract class Animal implements Serializable {

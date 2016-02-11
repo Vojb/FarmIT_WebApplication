@@ -55,4 +55,6 @@ public interface FarmFacadeLocal {
 	public List<Animal> findCows();
 	public void feedCows(long idFood) ;
 	public void feedHens(long idFood) ;
+	public void feedHorses(long idFood);
+	public void feedPig(long idFood);
 }

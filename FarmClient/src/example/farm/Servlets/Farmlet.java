@@ -50,9 +50,16 @@ public class Farmlet extends HttpServlet {
 		out.println("</head><body>");
 		out.println("<h1>Farmlet</h1>");
 		
-		
-		facade.feedHens(2);
-		
+		try{
+
+			List<Animal> animals = facade.findByTypeQuery("Cow");
+			for(Animal a:animals){
+				out.print(a.getName());
+			}
+				
+		}catch(Exception e){
+			
+		}
 		
 //		
 //		out.println(facade.sumOfCowFood());

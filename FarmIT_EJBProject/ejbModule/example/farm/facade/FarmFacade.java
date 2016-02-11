@@ -208,5 +208,54 @@ public class FarmFacade implements FarmFacadeLocal {
 
 		}
 	}
+	public void feedHorses(long idFood) {
+		List<Animal> horses = findHens();
+		Food f = findByIdFood(idFood);
+		for (Animal a : horses) {
+			try {
+				Method metod = a.getClass().getMethod("getAmountOfHay");
+				try {
+					int i = (int) metod.invoke(a);
+					int sum = f.getAmount();
+					sum -= i;
+					f.setAmount(sum);
+					updateFood(f);
+				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			} catch (NoSuchMethodException | SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	}
+	public void feedPig(long idFood) {
+		List<Animal> pigs = findHens();
+		Food f = findByIdFood(idFood);
+		for (Animal a : pigs) {
+			try {
+				Method metod = a.getClass().getMethod("getAmountOfPowerFeed");
+				try {
+					int i = (int) metod.invoke(a);
+					int sum = f.getAmount();
+					sum -= i;
+					f.setAmount(sum);
+					updateFood(f);
+				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			} catch (NoSuchMethodException | SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	}
+
 
 }
