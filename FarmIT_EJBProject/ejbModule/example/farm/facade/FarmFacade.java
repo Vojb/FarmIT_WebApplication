@@ -219,8 +219,8 @@ public class FarmFacade implements FarmFacadeLocal {
 		Food food = findByIdFood(idF);
 		for (Animal a : horses) {
 			try {
-				Method metod = a.getClass().getMethod("getAmountOfHay");
-				Method metodtwo = a.getClass().getMethod("getAmountOfPowerFeed");
+				Method metod = a.getClass().getMethod("getAmountOfPowerFeed");
+				Method metodtwo = a.getClass().getMethod("getAmountOfHay");
 				try {
 					int i = (int) metod.invoke(a);
 					int c = (int) metodtwo.invoke(a);
@@ -243,7 +243,7 @@ public class FarmFacade implements FarmFacadeLocal {
 
 		}
 	}
-	public void feedPig(long idFood) {
+	public void feedPigs(long idFood) {
 		List<Animal> pigs = findPigs();
 		Food f = findByIdFood(idFood);
 		for (Animal a : pigs) {
@@ -267,6 +267,13 @@ public class FarmFacade implements FarmFacadeLocal {
 
 		}
 	}
+	public void feedAllAnimals(long idPowerFeed, long idOats,long idHay){
+		feedPigs(idPowerFeed);
+		feedHorses(idPowerFeed,idHay);
+		feedHens(idOats);
+		feedCows(idPowerFeed);
+	}
 
+	
 
 }

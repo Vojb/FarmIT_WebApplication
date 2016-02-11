@@ -52,14 +52,25 @@ public class Farmlet extends HttpServlet {
 		
 		try{
 
-			List<Animal> animals = facade.findByTypeQuery("Cow");
-			for(Animal a:animals){
-				out.print(a.getName());
-			}
-				
+			facade.feedAllAnimals(1,2,3);
+			out.print("<h1> MATADE DJUREN , dem blev mätta</h1>");
 		}catch(Exception e){
-			
+			out.print("<h1> MATADE INTE DJUREN </h1>");
 		}
+		
+		
+		
+//		
+//		try{
+//
+//			List<Animal> animals = facade.findByTypeQuery("Cow");
+//			for(Animal a:animals){
+//				out.print(a.getName());
+//			}
+//				
+//		}catch(Exception e){
+//			
+//		}
 		
 //		
 //		out.println(facade.sumOfCowFood());

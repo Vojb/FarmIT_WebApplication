@@ -15,7 +15,7 @@ import example.farm.model.Pig;
 
 @Local
 public interface FarmFacadeLocal {
-	
+
 	// skapa
 	public Animal createAnimal(Animal a);
 
@@ -80,5 +80,7 @@ public interface FarmFacadeLocal {
 
 	public void feedHorses(long idFood, long idF);
 
-	public void feedPig(long idFood);
+	public void feedPigs(long idFood);
+
+	public void feedAllAnimals(long idPowerFeed, long idOats,long idHay);
 }
