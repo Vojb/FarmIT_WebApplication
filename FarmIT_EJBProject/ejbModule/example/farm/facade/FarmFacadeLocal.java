@@ -47,12 +47,12 @@ public interface FarmFacadeLocal {
 	public void addAnimal(Food f, Animal a);
 	public void addAmount(Food f, int amount);
 	
-	//ändra
+	//Mata
 	public void changeAmountInCow(Cow c, Food f) ;
 	public void changeAmountInHen(Hen h, Food f) ;
 	public void changeAmountInHorse(Horse h, Food powerFeed, Food hay);
 	public void changeAmountInPig(Pig p, Food powerFeed, Food hay);
-//	public List<Cow> sumOfCowFoodTHATAREAWESOME();
-	public List<Animal> sumOfCowFood();
-
+	public List<Animal> findCows();
+	public void feedCows(long idFood) ;
+	public void feedHens(long idFood) ;
 }

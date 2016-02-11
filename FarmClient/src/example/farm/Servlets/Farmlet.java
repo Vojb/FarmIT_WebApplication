@@ -51,26 +51,9 @@ public class Farmlet extends HttpServlet {
 		out.println("<h1>Farmlet</h1>");
 		
 		
-		Animal a = facade.findByIdAnimal(10002);
+		facade.feedHens(2);
 		
-		try {
-			Method method = (a.getClass().getMethod("getAmountOfPowerFeed"));
-			try {
-				out.print(method.invoke(a));
-			} catch (IllegalAccessException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalArgumentException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (NoSuchMethodException | SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 //		
 //		out.println(facade.sumOfCowFood());
 //		out.println("<body background=https://companyblogdotzyngadotcom.files.wordpress.com/2012/09/6a01156fcaccc3970c0177448842e2970d.png>");

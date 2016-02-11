@@ -67,9 +67,16 @@ public class AnimalBean implements AnimalBeanLocal {
 		return results;
 	}
 
-	public List<Animal> sumOfCowFood() {
+	public List<Animal> findCows() {
 
-		TypedQuery<Animal> query = em.createNamedQuery("Animal.feedCowsSum", Animal.class);
+		TypedQuery<Animal> query = em.createNamedQuery("Animal.findCows", Animal.class);
+		List<Animal> results = query.getResultList();
+
+		return results;
+	}
+	public List<Animal> findHens() {
+
+		TypedQuery<Animal> query = em.createNamedQuery("Animal.findHens", Animal.class);
 		List<Animal> results = query.getResultList();
 
 		return results;

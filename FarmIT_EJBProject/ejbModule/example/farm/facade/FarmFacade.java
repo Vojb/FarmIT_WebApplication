@@ -1,5 +1,7 @@
 package example.farm.facade;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -36,48 +38,60 @@ public class FarmFacade implements FarmFacadeLocal {
 	BoxBean boxb;
 	@EJB
 	CowBean cowb;
-	
+
 	/**
 	 * Default constructor.
 	 */
 	public FarmFacade() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public List<Animal> findAll() { 
+
+	public List<Animal> findAll() {
 		return animalb.findAllQuery();
 	}
+
 	public List<Animal> findByTypeQuery(String type) {
-	return animalb.findByTypeQuery(type);
+		return animalb.findByTypeQuery(type);
 	}
-//	public List<Cow> sumOfCowFoodTHATAREAWESOME(){
-//		return cowb.sumOfCowFoodTHATAREAWESOME();	
-//	}
-	public List<Animal> sumOfCowFood(){
-		return animalb.sumOfCowFood();	
+
+	// public List<Cow> sumOfCowFoodTHATAREAWESOME(){
+	// return cowb.sumOfCowFoodTHATAREAWESOME();
+	// }
+	public List<Animal> findCows() {
+		return animalb.findCows();
 	}
-	//Skapa
+	public List<Animal> findHens(){
+		return animalb.findHens();
+	}
+
+	// Skapa
 	public Animal createAnimal(Animal a) {
 		return animalb.createAnimal(a);
 	}
-	public Food createFood(Food f){
+
+	public Food createFood(Food f) {
 		return foodb.createFood(f);
 	}
-	public Box createBox(Box a){
+
+	public Box createBox(Box a) {
 		return boxb.createBox(a);
 	}
+
 	public Building createBuilding(Building a) {
 		buildingb.createBuilding(a);
 		return a;
 	}
-	//uppdatera 
+
+	// uppdatera
 	public Animal updateAnimal(Animal a) {
 		return animalb.updateAnimal(a);
 	}
-	public Food updateFood(Food f){
+
+	public Food updateFood(Food f) {
 		return foodb.updateFood(f);
 	}
-	public Box updateBox(Box a){
+
+	public Box updateBox(Box a) {
 		return boxb.updateBox(a);
 	}
 
@@ -85,36 +99,44 @@ public class FarmFacade implements FarmFacadeLocal {
 		buildingb.updateBuilding(a);
 		return a;
 	}
-	//ta bort
+
+	// ta bort
 	public void deleteAnimal(long a) {
 		animalb.deleteAnimal(a);
 	}
-	public void deleteFood(long id){
+
+	public void deleteFood(long id) {
 		foodb.deleteFood(id);
 	}
-	//hitta
+
+	// hitta
 	public Animal findByIdAnimal(long a) {
 		return animalb.findByIdAnimal(a);
 	}
 
-	public Food findByIdFood(long id){
+	public Food findByIdFood(long id) {
 		return foodb.findByIdFood(id);
 	}
-	public Box findByIdBox(String id){
+
+	public Box findByIdBox(String id) {
 		return boxb.findByIdBox(id);
 	}
+
 	public Building findByIdBuilding(String id) {
 		return buildingb.findByIdBuilding(id);
 	}
-	//lägga till
-	public void addAnimal(Food f, Animal a){
-		 foodb.addAnimal(f, a);
+
+	// lägga till
+	public void addAnimal(Food f, Animal a) {
+		foodb.addAnimal(f, a);
 	}
+
 	public void addAmount(Food f, int amount) {
 		int amounts = f.getAmount();
 		f.setAmount(amounts + amount);
 	}
-	//ändra
+
+	// Mata ett djur
 	public void changeAmountInCow(Cow c, Food f) {
 		int amount = c.getAmountOfPowerFeed();
 		f.setAmount(f.getAmount() - amount);
@@ -131,27 +153,60 @@ public class FarmFacade implements FarmFacadeLocal {
 		powerFeed.setAmount(powerFeed.getAmount() - amountPowerFeed);
 		hay.setAmount(hay.getAmount() - amountHay);
 	}
-	
+
 	public void changeAmountInPig(Pig p, Food powerFeed, Food hay) {
 		int amountPowerFeed = p.getAmountOfPowerFeed();
 		powerFeed.setAmount(powerFeed.getAmount() - amountPowerFeed);
 	}
-	
-	//Mata
-//	public void feedCow(Food f) {
-//		foodb.feedCow(f);
-//	}
-//	public void feedCow(Food f,long aId) {
-//		Animal a = animalb.findByIdAnimal(aId);
-//		
-//		if(a.getClass())
-//		while (c != null) {
-//			sum -= c.getAmountOfPowerFeed();
-//			id++;
-//		}
-//		f.setAmount(sum);
-//
-//	}
 
+	// Mata
+	public void feedCows(long idFood) {
+		List<Animal> cows = findCows();
+		Food f = findByIdFood(idFood);
+		for (Animal a : cows) {
+			try {
+				Method metod = a.getClass().getMethod("getAmountOfPowerFeed");
+				try {
+					int i = (int) metod.invoke(a);
+					int sum = f.getAmount();
+					sum -= i;
+					f.setAmount(sum);
+					updateFood(f);
+				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			} catch (NoSuchMethodException | SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	}
+	public void feedHens(long idFood) {
+		List<Animal> hens = findHens();
+		Food f = findByIdFood(idFood);
+		for (Animal a : hens) {
+			try {
+				Method metod = a.getClass().getMethod("getAmountOfOats");
+				try {
+					int i = (int) metod.invoke(a);
+					int sum = f.getAmount();
+					sum -= i;
+					f.setAmount(sum);
+					updateFood(f);
+				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			} catch (NoSuchMethodException | SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	}
 
 }
