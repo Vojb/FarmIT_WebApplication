@@ -169,104 +169,56 @@ public class FarmFacade implements FarmFacadeLocal {
 		List<Animal> cows = findCows();
 		Food f = findByIdFood(idFood);
 		for (Animal a : cows) {
-			try {
-				Method metod = a.getClass().getMethod("getAmountOfPowerFeed");
-				try {
-					int i = (int) metod.invoke(a);
-					int sum = f.getAmount();
-					sum -= i;
-					f.setAmount(sum);
-					updateFood(f);
-				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			} catch (NoSuchMethodException | SecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
+			int amount = a.getAmountOfFood();
+			int feedAmount= f.getAmount();
+			feedAmount -=amount;
+			f.setAmount(feedAmount);
+			updateFood(f);
 		}
 	}
 	public void feedHens(long idFood) {
 		List<Animal> hens = findHens();
 		Food f = findByIdFood(idFood);
 		for (Animal a : hens) {
-			try {
-				Method metod = a.getClass().getMethod("getAmountOfOats");
-				try {
-					int i = (int) metod.invoke(a);
-					int sum = f.getAmount();
-					sum -= i;
-					f.setAmount(sum);
-					updateFood(f);
-				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			} catch (NoSuchMethodException | SecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
+			int amount = a.getAmountOfFood();
+			int feedAmount= f.getAmount();
+			feedAmount -=amount;
+			f.setAmount(feedAmount);
+			updateFood(f);
 		}
 	}
 	public void feedHorses(long idFood,long idF) {
-		List<Animal> horses = findHorses();
-		Food f = findByIdFood(idFood);
-		Food food = findByIdFood(idF);
-		for (Animal a : horses) {
-			try {
-				Method metod = a.getClass().getMethod("getAmountOfPowerFeed");
-				Method metodtwo = a.getClass().getMethod("getAmountOfHay");
-				try {
-					int i = (int) metod.invoke(a);
-					int c = (int) metodtwo.invoke(a);
-					int sum = f.getAmount();
-					sum -= i;
-					int sum2 = food.getAmount();
-					sum2 -= c;
-					food.setAmount(sum2);
-					f.setAmount(sum);
-					updateFood(f);
-				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			} catch (NoSuchMethodException | SecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			List<Animal> horses = findHorses();
+			Food f = findByIdFood(idFood);
+			Food f2 = findByIdFood(idF);
+			for (Animal a : horses) {
+				int amount = a.getAmountOfFood();
+				int amount2 = a.getAmountOfFoodAgain();
+				int feedAmount= f.getAmount();
+				int feedAmount2= f2.getAmount();
+				feedAmount2-=amount2;
+				feedAmount -=amount;
+				f2.setAmount(feedAmount2);
+				f.setAmount(feedAmount);
+				updateFood(f2);
+				updateFood(f);
 			}
-
-		}
+		
 	}
 	public void feedPigs(long idFood) {
 		List<Animal> pigs = findPigs();
 		Food f = findByIdFood(idFood);
 		for (Animal a : pigs) {
-			try {
-				Method metod = a.getClass().getMethod("getAmountOfPowerFeed");
-				try {
-					int i = (int) metod.invoke(a);
-					int sum = f.getAmount();
-					sum -= i;
-					f.setAmount(sum);
-					updateFood(f);
-				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			} catch (NoSuchMethodException | SecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
+			int amount = a.getAmountOfFood();
+			int feedAmount= f.getAmount();
+			feedAmount -=amount;
+			f.setAmount(feedAmount);
+			updateFood(f);
 		}
 	}
+
+
+			
 	public void feedAllAnimals(long idPowerFeed, long idOats,long idHay){
 		feedPigs(idPowerFeed);
 		feedHorses(idPowerFeed,idHay);

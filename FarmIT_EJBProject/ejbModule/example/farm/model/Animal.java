@@ -80,6 +80,14 @@ public abstract class Animal implements Serializable {
 	public void setBox(Box box) {
 		this.box = box;
 	}
+	@Transient
+	public int getAmountOfFood(){
+		return 0;
+	}
+	@Transient
+	public int getAmountOfFoodAgain() {
+		return 0;
+	}
 	
 	
 

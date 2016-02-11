@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
+import javax.persistence.Transient;
 
 @Entity
 //@NamedQuery(name = "Cow.feedCowsSum", query = "SELECT a FROM Animal a WHERE a.class = 'Cow'")
@@ -23,5 +24,9 @@ public class Cow extends Animal {
 
 	public void setAmountOfPowerFeed(int amountOfPowerFeed) {
 		this.amountOfPowerFeed = amountOfPowerFeed;
+	}
+	@Transient
+	public int getAmountOfFood() {
+		return amountOfPowerFeed;
 	}
 }

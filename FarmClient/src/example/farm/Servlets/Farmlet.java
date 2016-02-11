@@ -48,12 +48,12 @@ public class Farmlet extends HttpServlet {
 		out.println("<title>FarmLet</title>");
 		out.println("<meta charset=\"ISO-8859-1\">");
 		out.println("</head><body>");
-		out.println("<h1>Farmlet</h1>");
 		
+
 		try{
 
 			facade.feedAllAnimals(1,2,3);
-			out.print("<h1> MATADE DJUREN , dem blev mätta</h1>");
+			out.print("<h1> MATADE alla djur förutom odd, han blev flådd, dem blev mätta</h1>");
 		}catch(Exception e){
 			out.print("<h1> MATADE INTE DJUREN </h1>");
 		}
@@ -74,7 +74,7 @@ public class Farmlet extends HttpServlet {
 		
 //		
 //		out.println(facade.sumOfCowFood());
-//		out.println("<body background=https://companyblogdotzyngadotcom.files.wordpress.com/2012/09/6a01156fcaccc3970c0177448842e2970d.png>");
+out.println("<body background=https://scontent-arn2-1.xx.fbcdn.net/hphotos-xpt1/v/t35.0-12/12674798_10153805914356278_1012328399_o.jpg?oh=6f2d9bb75b591d52fcd1691a6d3e3605&oe=56BE85ED>");
 		
 //		try{
 //		Food f= facade.findByIdFood(1);

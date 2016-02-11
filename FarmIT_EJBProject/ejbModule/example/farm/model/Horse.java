@@ -3,15 +3,16 @@ package example.farm.model;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 
 @Entity
 @DiscriminatorValue("Horse")
 public class Horse extends Animal {
-	
 
 	private int amountOfPowerFeed;
-	
-	@Column(name="AmountOfPowerFeed")
+	private int amountOfHay;
+
+	@Column(name = "AmountOfPowerFeed")
 	public int getAmountOfPowerFeed() {
 		return amountOfPowerFeed;
 	}
@@ -28,5 +29,12 @@ public class Horse extends Animal {
 		this.amountOfHay = amountOfHay;
 	}
 
-	private int amountOfHay;
+	@Transient
+	public int getAmountOfFood() {
+		return amountOfPowerFeed;
+	}
+	@Transient
+	public int getAmountOfFoodAgain() {
+		return amountOfHay;
+	}
 }
