@@ -50,27 +50,27 @@ public class Farmlet extends HttpServlet {
 		out.println("</head><body>");
 		
 
-		try{
-
-			facade.feedAllAnimals(1,2,3);
-			out.print("<h1> MATADE alla djur förutom odd, han blev flådd, dem blev mätta</h1>");
-		}catch(Exception e){
-			out.print("<h1> MATADE INTE DJUREN </h1>");
-		}
+//		try{
+//
+//		//	facade.findByTypeQuery("Cow");
+//			out.print("<h1> MATADE alla djur förutom odd, han blev flådd, dem blev mätta</h1>");
+//		}catch(Exception e){
+//			out.print("<h1> MATADE INTE DJUREN </h1>");
+//		}
 		
 		
 		
 //		
-//		try{
-//
-//			List<Animal> animals = facade.findByTypeQuery("Cow");
-//			for(Animal a:animals){
-//				out.print(a.getName());
-//			}
-//				
-//		}catch(Exception e){
-//			
-//		}
+		try{
+
+			List<Animal> animals = facade.findByTypeQuery("Cow");
+			for(Animal a:animals){
+				out.print(a.getName());
+			}
+				
+		}catch(Exception e){
+			out.print("HELA VÄRLDEN SUGER"+e);
+		}
 		
 //		
 //		out.println(facade.sumOfCowFood());

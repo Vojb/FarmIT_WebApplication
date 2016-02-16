@@ -166,7 +166,7 @@ public class FarmFacade implements FarmFacadeLocal {
 
 	// Mata
 	public void feedCows(long idFood) {
-		List<Animal> cows = findCows();
+		List<Animal> cows = findByTypeQuery("Cow");
 		Food f = findByIdFood(idFood);
 		for (Animal a : cows) {
 			int amount = a.getAmountOfFood();
@@ -177,7 +177,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		}
 	}
 	public void feedHens(long idFood) {
-		List<Animal> hens = findHens();
+		List<Animal> hens = findByTypeQuery("Hen");
 		Food f = findByIdFood(idFood);
 		for (Animal a : hens) {
 			int amount = a.getAmountOfFood();
@@ -188,7 +188,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		}
 	}
 	public void feedHorses(long idFood,long idF) {
-			List<Animal> horses = findHorses();
+			List<Animal> horses = findByTypeQuery("Horse");
 			Food f = findByIdFood(idFood);
 			Food f2 = findByIdFood(idF);
 			for (Animal a : horses) {
@@ -206,7 +206,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		
 	}
 	public void feedPigs(long idFood) {
-		List<Animal> pigs = findPigs();
+		List<Animal> pigs = findByTypeQuery("Pig");
 		Food f = findByIdFood(idFood);
 		for (Animal a : pigs) {
 			int amount = a.getAmountOfFood();

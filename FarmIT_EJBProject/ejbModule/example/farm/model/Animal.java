@@ -12,7 +12,7 @@ import javax.persistence.*;
 @DiscriminatorColumn(name = "TypeAnimal", discriminatorType = DiscriminatorType.STRING, length = 6)
 @NamedQueries({
 		 @NamedQuery(name="Animal.findAllQuery", query="SELECT e FROM Animal e"),
-			 @NamedQuery(name="Animal.findByTypeQuery", query="SELECT a FROM Animal a WHERE a.class = :typeAnimal"),
+			 @NamedQuery(name="Animal.findByTypeQuery", query="SELECT a FROM Animal a WHERE a.class like :typeAnimal"),
 			 @NamedQuery(name="Animal.findBoxQuery",query="SELECT a FROM Animal a WHERE a.box LIKE :idbox"),
 			 @NamedQuery(name = "Animal.findCows", query = "SELECT a FROM Animal a WHERE a.class = 'Cow'"),
 		 	@NamedQuery(name = "Animal.findHens", query = "SELECT a FROM Animal a WHERE a.class = 'Hen'"),

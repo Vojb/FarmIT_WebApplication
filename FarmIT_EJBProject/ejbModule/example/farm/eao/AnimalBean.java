@@ -50,7 +50,7 @@ public class AnimalBean implements AnimalBeanLocal {
 
 	public List<Animal> findByTypeQuery(String type) {
 
-		TypedQuery<Animal> query = em.createNamedQuery("Animals.findByType", Animal.class);
+		TypedQuery<Animal> query = em.createNamedQuery("Animal.findByTypeQuery", Animal.class);
 
 		query.setParameter("typeAnimal", type);
 
