@@ -48,7 +48,7 @@ public class Farmlet extends HttpServlet {
 		out.println("<title>FarmLet</title>");
 		out.println("<meta charset=\"ISO-8859-1\">");
 		out.println("</head><body>");
-		
+	
 
 //		try{
 //
