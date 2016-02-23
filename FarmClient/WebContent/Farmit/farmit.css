@@ -1,0 +1,142 @@
+* { padding: 0; margin: 0; }
+
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 13px;
+}
+
+a{
+	padding-right: 25px;
+	padding-left: 25px;
+}
+a:link {
+    color: #ffffff;
+}
+a:visited {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #dac903;
+}
+a:active {
+    color: #ffffff;
+}
+
+#wrapper { 
+ margin: 0 auto;
+ width: 922px;
+}
+
+.fauxMenu{
+	padding: 10px;
+	text-align: center;
+}
+.fauxMenu a{
+	padding-right: 25px;
+	padding-left: 25px;
+}
+.fauxMenu a:link {
+  color: black;
+}
+
+.fauxMenu a:hover {
+  color: black;
+}
+
+.fauxMenu a:visited {
+  color: black;
+}
+e#header {
+ color: #333;
+ width: 902px;
+ padding: 10px;
+ height: 100px;
+ margin: 10px 0px 0px 0px;
+}
+#navigation {
+box-shadow:inset 1px 1px 7px rgba(0,0,0,0.5);
+ text-align: center;
+ color: #333;
+ padding: 10px;
+ margin: 0px 0px 0px 0px;
+ background:#339900;
+}
+#leftcolumn { 
+ display: inline;
+ color: #333;
+ padding:0;
+ width: 195px;
+ height: 600px;
+ float: left;
+ box-shadow:inset 1px 1px 7px rgba(0,0,0,0.5);
+ background: #339900;
+}
+
+#content #cmenu {
+text-align: center;
+
+}
+#content{ 
+ float: left;
+ color: #333;
+ margin: 0px 0px 0px;
+ width: 532px;
+ height: 600px;
+ box-shadow:inset 1px 1px 7px rgba(0,0,0,0.5);
+ display: inline;
+ position: relative;
+}
+#rightcolumn {
+
+ display: inline;
+ position: relative;
+ color: #333;
+ padding:0;
+ width: 195px;
+ height: 600px;
+ float: right;
+ box-shadow:inset 1px 1px 7px rgba(0,0,0,0.5);
+ background: #339900;
+}
+#logga {
+    vertical-align: middle;
+    margin-left: -220px;
+}
+.container {
+width: 522px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+#footer { 
+box-shadow:inset 1px 1px 7px rgba(0,0,0,0.5);
+ width: 922px;
+ clear: both;
+ color: #333;
+ background: #339900;
+ margin: 0px 0px 10px 0px;
+ padding: 10px;
+}
+.nav{
+	padding-left:145px;
+}
+.nav-tabs{
+	width: 532px;
+}
+.nav-tabs a:link {
+    color: black;
+}
+.nav-tabs a:visited {
+    color: black;
+}
+
+.nav-tabs a:hover {
+    color: black;
+}
+.nav-tabs a:active {
+    color: black;
+}
+
+	
+
+.clear { clear: both; background: none; }
