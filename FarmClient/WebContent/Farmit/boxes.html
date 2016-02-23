@@ -14,7 +14,7 @@
 <body>
 <!-- Begin Wrapper -->
 <div id="wrapper">
-<a href="main.html"><img id="logga" src="farmitlogga.jpg"height="100px"</img> </a>
+<a href="main.html"><img id="logga" src="farmitlogga.jpg"height="100px"/> </a>
   <!-- Begin Header -->
   <div id="header">
   
@@ -36,8 +36,64 @@
 	</div>
 	
     <div id="content">
-		<h1> Information</h1>
-		
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Create</a></li>
+    <li><a data-toggle="tab" href="#menu1">Update</a></li>
+    <li><a data-toggle="tab" href="#menu2">Find</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>Create Animal</h3>
+    <form>
+    
+	  <label>Type of Animal</label>
+	  			<select class="form-control">
+		  			<option>Cow</option>
+		  			<option>Hen</option>
+		  			<option>Horse</option>
+		  			<option>Pig</option>
+				</select> 
+	<br>
+	 <label>Status</label>
+				<select class="form-control">
+						<option>Healty</option>
+						<option>Sick</option>
+						<option>Gluefactory</option>
+				</select> 
+	<br>
+	<label>IdAnimal</label>
+	<br>
+	<input type="text" ="idAnimal">
+    </input>
+	<br>
+	<label>Name</label>
+	<br>
+	<input type="text" name ="name">
+	</input>
+	<br>
+	<label>Box</label>
+	<br>
+	<input class ="idBox">
+	</input>
+ 
+ 
+    </form>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Update Animal</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Find Animal</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
+
+
+        	</div>
     </div>
     <!-- End Content Column -->
     <!-- Begin Right Column -->
