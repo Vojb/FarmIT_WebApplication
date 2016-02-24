@@ -1,4 +1,5 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,7 +15,7 @@
 <body>	
 <!-- Begin Wrapper -->
 <div id="wrapper">
-<a href="main.html"><img id="logga" src="farmitlogga.jpg"height="100px"/> </a>
+<a href="main.html"><img id="logga" src="farmitLogga.jpg"height="100px"/> </a>
   <!-- Begin Header -->
   <div id="header">
   
@@ -22,8 +23,8 @@
     <!-- End Header -->
   <!-- Begin Navigation -->
   <div id="navigation"> 
-      <a href="main.html">Home</a>   
-	  <a href="animals.html">Animals</a> 
+      <a href="index.jsp">Home</a>   
+	  <a href="animals.jsp">Animals</a> 
 	  <a href="foods.html">Foods</a>
 	  <a href="boxes.html">Boxes</a>
 	  <a href="buildings.html">Buildings</a></div>

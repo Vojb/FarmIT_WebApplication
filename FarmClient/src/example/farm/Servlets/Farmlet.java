@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.Set;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -165,6 +166,25 @@ out.println("<body background=https://scontent-arn2-1.xx.fbcdn.net/hphotos-xpt1/
 //		facade.updateFood(e4);
 
 		out.println("</body></html>");
+		
+	
+		
 	}
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		
+		String operation = request.getParameter("operation");
+		String idAnimal = null;
+		
+		if (operation.equals("findAnimalById")) {
+			
+			idAnimal = request.getParameter("idAnimalFind");
+			
+			
+			Animal a = facade.findByIdAnimal(Long.parseLong(idAnimal));
+			
+			request.setAttribute("idAnimal", a.getIdAnimal());
+		}
 
+	}
 }
