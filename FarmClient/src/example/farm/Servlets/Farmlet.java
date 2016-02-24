@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -59,7 +60,8 @@ public class Farmlet extends HttpServlet {
 //			out.print("<h1> MATADE INTE DJUREN </h1>");
 //		}
 		
-		
+		String idAnimal = (String) request.getAttribute("IdAnimal");
+		out.println(idAnimal);
 		
 //		
 		try{
@@ -75,7 +77,7 @@ public class Farmlet extends HttpServlet {
 		
 //		
 //		out.println(facade.sumOfCowFood());
-out.println("<body background=https://scontent-arn2-1.xx.fbcdn.net/hphotos-xpt1/v/t35.0-12/12674798_10153805914356278_1012328399_o.jpg?oh=6f2d9bb75b591d52fcd1691a6d3e3605&oe=56BE85ED>");
+//out.println("<body background=https://scontent-arn2-1.xx.fbcdn.net/hphotos-xpt1/v/t35.0-12/12674798_10153805914356278_1012328399_o.jpg?oh=6f2d9bb75b591d52fcd1691a6d3e3605&oe=56BE85ED>");
 		
 //		try{
 //		Food f= facade.findByIdFood(1);
@@ -172,7 +174,7 @@ out.println("<body background=https://scontent-arn2-1.xx.fbcdn.net/hphotos-xpt1/
 	}
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		
+		String url= null;
 		String operation = request.getParameter("operation");
 		String idAnimal = null;
 		
@@ -180,11 +182,13 @@ out.println("<body background=https://scontent-arn2-1.xx.fbcdn.net/hphotos-xpt1/
 			
 			idAnimal = request.getParameter("idAnimalFind");
 			
-			
 			Animal a = facade.findByIdAnimal(Long.parseLong(idAnimal));
 			
 			request.setAttribute("idAnimal", a.getIdAnimal());
+			url = "/animals.jsp";
 		}
-
+		
+			
+		
 	}
 }

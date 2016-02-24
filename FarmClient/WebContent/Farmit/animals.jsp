@@ -84,7 +84,6 @@
 								<label>Age</label>
 								<br>
 								<input type="text" name="age" maxlength="2" required />
-
 								<br>
 								<label>Box</label>
 								<br>
@@ -97,8 +96,6 @@
 								<br>
 								<button type="submit" value="Submit">Submit</button>
 								<button type="reset" value="Reset">Reset</button>
-								
-								
 							</form>
 
 
@@ -110,9 +107,14 @@
 								<form method="post">
 									<label>Find by Animalid</label>
 									<br>
-									<input type="numbers" ="idAnimal" maxlength="5" required>
+									<input type="numbers" ="idAnimalFind" maxlength="5" required>
 									<button type="submit" value="findAnimalById">Find</button>
-
+							<% 
+									
+									String idAnimal = (String) request.getAttribute("IdAnimal");
+								
+								
+							%>
 									</input>
 								</form>
 								<br>
@@ -140,7 +142,6 @@
 								<label>Box</label>
 								<br>
 								<input type="text" name="idBox" maxlength="2" required />
-								</input>
 								<br>
 								<label id="food"> Food </label>
 								<br>
@@ -150,10 +151,7 @@
 								<br>
 								<button type="submit" value="Submit">Submit</button>
 								<button type="reset" value="Reset">Reset</button>
-							<% 
-									String idAnimal = (String) request.getAttribute("IdAnimal");
-									out.println(idAnimal);
-							%>
+						
 							</form>
 						</div>
 						<div id="menu2" class="tab-pane fade">
