@@ -111,8 +111,6 @@
 									<input type="numbers" ="idAnimalFind" maxlength="5" required>
 									<button type="submit" value="findAnimalById">Find</button>
 							<% 
-									
-									String idAnimal = (String) request.getAttribute("IdAnimal");
 								
 								
 							%>

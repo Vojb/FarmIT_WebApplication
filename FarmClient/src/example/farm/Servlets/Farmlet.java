@@ -59,22 +59,22 @@ public class Farmlet extends HttpServlet {
 //		}catch(Exception e){
 //			out.print("<h1> MATADE INTE DJUREN </h1>");
 //		}
-		
-		String idAnimal = (String) request.getAttribute("IdAnimal");
-		out.println(idAnimal);
-		
 //		
-		try{
-
-			List<Animal> animals = facade.findByTypeQuery("Cow");
-			for(Animal a:animals){
-				out.print(a.getName());
-			}
-				
-		}catch(Exception e){
-			out.print("HELA VÄRLDEN SUGER"+e);
-		}
-		
+//		String idAnimal = (String) request.getAttribute("IdAnimal");
+//		out.println(idAnimal);
+//		
+////		
+//		try{
+//
+//			List<Animal> animals = facade.findByTypeQuery("Cow");
+//			for(Animal a:animals){
+//				out.print(a.getName());
+//			}
+//				
+//		}catch(Exception e){
+//			out.print("HELA VÄRLDEN SUGER"+e);
+//		}
+//		
 //		
 //		out.println(facade.sumOfCowFood());
 //out.println("<body background=https://scontent-arn2-1.xx.fbcdn.net/hphotos-xpt1/v/t35.0-12/12674798_10153805914356278_1012328399_o.jpg?oh=6f2d9bb75b591d52fcd1691a6d3e3605&oe=56BE85ED>");
@@ -185,9 +185,10 @@ public class Farmlet extends HttpServlet {
 			Animal a = facade.findByIdAnimal(Long.parseLong(idAnimal));
 			
 			request.setAttribute("idAnimal", a.getIdAnimal());
-			url = "/animals.jsp";
+			
 		}
 		
+		url = "/animals.jsp";
 			
 		
 	}
