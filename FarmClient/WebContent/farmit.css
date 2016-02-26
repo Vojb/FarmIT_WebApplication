@@ -5,7 +5,6 @@ body {
  font-size: 13px;
 }
 .form-control {
-    
     margin-left: 2%;
     display: block;
     width: 20%;
@@ -83,7 +82,7 @@ e#header {
  color: #333;
  padding: 10px;
  margin: 0px 0px 0px 0px;
- background:rgb(85, 185, 33)
+ background: rgb(65, 154, 18);
 }
 #leftcolumn { 
 
@@ -95,7 +94,7 @@ e#header {
  height: 600px;
  float: left;
  box-shadow: inset 0px 0px 2px black;
- background: rgb(85, 185, 33)
+ background: rgb(65, 154, 18);
 }
 
 #content #cmenu {
@@ -123,11 +122,10 @@ text-align: center;
  height: 600px;
  float: right;
  box-shadow: inset 0px 0px 2px black;
- background: rgb(85, 185, 33)
+ background:  rgb(65, 154, 18);
 }
 #logga {
-    vertical-align: middle;
-    margin-left: -220px;
+    padding-left: 38%;
 }
 .container  h3 {
     padding-left: 2%;
@@ -150,7 +148,7 @@ width: 510px;
  width: 922px;
  clear: both;
  color: #333;
- background: rgb(85, 185, 33);
+ background: rgb(65, 154, 18);
  margin: 0px 0px 10px 0px;
  padding: 10px;
 }

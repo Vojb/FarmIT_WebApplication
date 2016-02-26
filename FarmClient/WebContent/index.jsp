@@ -15,7 +15,7 @@
 <body>	
 <!-- Begin Wrapper -->
 <div id="wrapper">
-<a href="main.html"><img id="logga" src="farmitLogga.jpg"height="100px"/> </a>
+<a href="main.html"><img id="logga" src="farmitLogga.jpg"height="120px"/> </a>
   <!-- Begin Header -->
   <div id="header">
   
