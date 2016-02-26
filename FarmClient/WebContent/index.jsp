@@ -23,11 +23,9 @@
     <!-- End Header -->
   <!-- Begin Navigation -->
   <div id="navigation"> 
-      <a href="index.jsp">Home</a>   
-	  <a href="animals.jsp">Animals</a> 
-	  <a href="foods.html">Foods</a>
-	  <a href="boxes.html">Boxes</a>
-	  <a href="buildings.html">Buildings</a></div>
+    <a href="index.jsp">Home</a> <a href="create.jsp">Add</a> <a
+        href="find.jsp">Find</a> 
+      </div>
   <!-- End Navigation -->
   <!-- Begin Faux Columns -->
   <div id="faux">

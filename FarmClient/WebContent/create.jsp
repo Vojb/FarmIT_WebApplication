@@ -35,9 +35,8 @@
 		<!-- End Header -->
 		<!-- Begin Navigation -->
 		<div id="navigation">
-			<a href="index.jsp">Home</a> <a href="animals.jsp">Animals</a> <a
-				href="foods.html">Foods</a> <a href="boxes.html">Boxes</a> <a
-				href="buildings.html">Buildings</a>
+			<a href="index.jsp">Home</a> <a href="create.jsp">Add</a> <a
+				href="find.jsp">Find</a> 
 		</div>
 		<!-- End Navigation -->
 		<!-- Begin Faux Columns -->
@@ -48,15 +47,9 @@
 			<div id="content">
 
 				<div class="container">
-					<ul class="nav nav-tabs">
-						<li class="active"><a data-toggle="tab" href="#home">Create</a></li>
-						<li><a data-toggle="tab" href="#menu1">Update</a></li>
-						<li><a data-toggle="tab" href="#menu2">Find</a></li>
-					</ul>
+							
+							<h3>Add animal</h3>
 
-					<div class="tab-content">
-						<div id="home" class="tab-pane fade in active">
-							<h3>Create Animal</h3>
 							<form method="post">
 
 								<label>Type of Animal</label>
@@ -101,66 +94,7 @@
 
 
 						</div>
-						<div id="menu1" class="tab-pane fade">
-					
-								<h3>Update Animal</h3>
-								<br>
-								<form action="/FarmClient/Farmlet" method="post">
-									<label>Find by Animalid</label>
-									<br>
-									<input type="text" ="idAnimalFind" maxlength="5" required>
-									<button type="submit" value="findById">Find</button>
-									<input name="operation" value="findAnimalById" type="hidden">
-							<% 
-								
-								
-							%>
-									</input>
-								</form>
-								<br>
-								<label>Status</label>
-								<select class="form-control">
-									<option>Healthy</option>
-									<option>Sick</option>
-									<option>Gluefactory</option>
-								</select>
-								<br>
-								<label>IdAnimal</label>
-								<br>
-								<input type="numbers" ="foundidAnimal" maxlength="5" readonly>
-								</input>
-								<br>
-								<label>Name</label>
-								<br>
-								<input type="text" name="foundname" maxlength="222" required />
-								<br>
-								<label>Age</label>
-								<br>
-								<input type="text" name="age" maxlength="2" required />
-								</input>
-								<br>
-								<label>Box</label>
-								<br>
-								<input type="text" name="idBox" maxlength="2" required />
-								<br>
-								<label id="food"> Food </label>
-								<br>
-								<input type="text" name="food" maxlength="2" required />
-								</input>
-								<br>
-								<br>
-								<button type="submit" value="Submit">Submit</button>
-								<button type="reset" value="Reset">Reset</button>
 						
-							</form>
-						</div>
-						<div id="menu2" class="tab-pane fade">
-							<h3>Find Animal</h3>
-							<p>Sed ut perspiciatis unde omnis iste natus error sit
-								voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-						</div>
-					</div>
-
 
 				</div>
 			</div>
