@@ -24,7 +24,7 @@
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
 		<a href="index.jsp"><img id="logga" src="farmitLogga.jpg"
-			height="100px" /> </a>
+			height="120px" /> </a>
 		<!-- Begin Header -->
 		<div id="header">
 
