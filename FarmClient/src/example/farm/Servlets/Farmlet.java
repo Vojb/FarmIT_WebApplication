@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bajs.Person;
 import example.farm.facade.FarmFacadeLocal;
 import example.farm.model.Animal;
 import example.farm.model.Box;
@@ -23,9 +22,6 @@ import example.farm.model.Building;
 import example.farm.model.Cow;
 import example.farm.model.Food;
 
-/**
- * Servlet implementation class FarmServlet
- */
 @WebServlet("/Farmlet")
 public class Farmlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -33,18 +29,9 @@ public class Farmlet extends HttpServlet {
 	FarmFacadeLocal facade;
 
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public Farmlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -68,8 +55,7 @@ public class Farmlet extends HttpServlet {
 		        	request.setAttribute("animal", a);
 		            System.out.println(a);
 		            request.setAttribute("foundidAnimal", a.getIdAnimal());
-		            request.setAttribute("foundname", a.getName());
-//		            
+		            request.setAttribute("foundname", a.getName());            
 		            System.out.print(a.getName());
 		            url = "/updateAnimal.jsp?";
 		        	
