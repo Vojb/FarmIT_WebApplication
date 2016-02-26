@@ -59,18 +59,10 @@ public class Farmlet extends HttpServlet {
 	        if (operation.equals("findByIdAnimal")) {
 	          int id=0;
 	          Animal a= null;
-	        	try{
-	        		System.out.println(request.getParameter("findIdAnimal"));
 	        		
 	        	 id = Integer.parseInt(request.getParameter("findIdAnimal"));
-	        	 System.out.println("cccxcxzc" + id);
 	        	 a = facade.findByIdAnimal(id);
-	        	 
-	        	}catch(Exception e){
-	        		System.out.println("hej" +e);
 	        	
-	        	 
-	        	}
 	        	if(a!=null){
 
 		        	request.setAttribute("animal", a);
