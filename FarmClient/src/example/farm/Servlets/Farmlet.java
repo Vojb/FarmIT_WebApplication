@@ -172,16 +172,21 @@ public class Farmlet extends HttpServlet {
 		
 	
 		
-	}
+	}   
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        out.println("Farmlet-doGet");
+        out.close();
+    }
 	   protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
 	        String url = null;
 	        String operation = request.getParameter("operation");
 	        if (operation.equals("findAnimalById")) {
-	      
-	            String name = request.getParameter("idAnimalFind");
+	            String id = request.getParameter("idAnimalFind");
 	            
-	            Animal a = facade.findByIdAnimal(Long.parseLong(name));
+	            Animal a = facade.findByIdAnimal(Long.parseLong(id));
 	            System.out.println(a);
 	            request.setAttribute("foundidAnimal", a.getIdAnimal());
 	            url = "/farmit/animals.jsp#menu2";

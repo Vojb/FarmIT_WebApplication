@@ -108,7 +108,7 @@
 								<form action="/FarmClient/Farmlet" method="post">
 									<label>Find by Animalid</label>
 									<br>
-									<input type="numbers" ="idAnimalFind" maxlength="5" required>
+									<input type="text" ="idAnimalFind" maxlength="5" required>
 									<button type="submit" value="findById">Find</button>
 									<input name="operation" value="findAnimalById" type="hidden">
 							<% 
