@@ -11,7 +11,6 @@ import javax.ejb.Stateless;
 import example.farm.eao.AnimalBean;
 import example.farm.eao.BoxBean;
 import example.farm.eao.BuildingBean;
-import example.farm.eao.CowBean;
 import example.farm.eao.FoodBean;
 import example.farm.model.Animal;
 import example.farm.model.Box;
@@ -36,8 +35,7 @@ public class FarmFacade implements FarmFacadeLocal {
 	BuildingBean buildingb;
 	@EJB
 	BoxBean boxb;
-	@EJB
-	CowBean cowb;
+
 
 	/**
 	 * Default constructor.
