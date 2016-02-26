@@ -102,14 +102,15 @@
 
 						</div>
 						<div id="menu1" class="tab-pane fade">
-							<form>
+					
 								<h3>Update Animal</h3>
 								<br>
-								<form method="post">
+								<form action="/FarmClient/Farmlet" method="post">
 									<label>Find by Animalid</label>
 									<br>
 									<input type="numbers" ="idAnimalFind" maxlength="5" required>
-									<button type="submit" value="findAnimalById">Find</button>
+									<button type="submit" value="findById">Find</button>
+									<input name="operation" value="findAnimalById" type="hidden">
 							<% 
 								
 								
@@ -126,12 +127,12 @@
 								<br>
 								<label>IdAnimal</label>
 								<br>
-								<input type="numbers" ="idAnimal" maxlength="5" readonly>
+								<input type="numbers" ="foundidAnimal" maxlength="5" readonly>
 								</input>
 								<br>
 								<label>Name</label>
 								<br>
-								<input type="text" name="name" maxlength="222" required />
+								<input type="text" name="foundname" maxlength="222" required />
 								<br>
 								<label>Age</label>
 								<br>

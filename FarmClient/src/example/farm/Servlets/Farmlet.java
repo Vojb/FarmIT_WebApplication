@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bajs.Person;
 import example.farm.facade.FarmFacadeLocal;
 import example.farm.model.Animal;
 import example.farm.model.Box;
@@ -172,24 +173,22 @@ public class Farmlet extends HttpServlet {
 	
 		
 	}
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		String url= null;
-		String operation = request.getParameter("operation");
-		String idAnimal = null;
-		
-		if (operation.equals("findAnimalById")) {
-			
-			idAnimal = request.getParameter("idAnimalFind");
-			
-			Animal a = facade.findByIdAnimal(Long.parseLong(idAnimal));
-			
-			request.setAttribute("idAnimal", a.getIdAnimal());
-			
-		}
-		
-		url = "/animals.jsp";
-			
-		
-	}
+	   protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	            throws ServletException, IOException {
+	        String url = null;
+	        String operation = request.getParameter("operation");
+	        if (operation.equals("findAnimalById")) {
+	      
+	            String name = request.getParameter("idAnimalFind");
+	            
+	            Animal a = facade.findByIdAnimal(Long.parseLong(name));
+	            System.out.println(a);
+	            request.setAttribute("foundidAnimal", a.getIdAnimal());
+	            url = "/farmit/animals.jsp#menu2";
+	        }
+	        
+	        System.out.println(url);
+	        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+	        dispatcher.forward(request, response);
+	    }
 }
