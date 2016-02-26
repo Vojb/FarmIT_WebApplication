@@ -94,9 +94,8 @@
 
 
 						</div>
-						
+					
 
-				</div>
 			</div>
 			<!-- End Content Column -->
 			<!-- Begin Right Column -->
