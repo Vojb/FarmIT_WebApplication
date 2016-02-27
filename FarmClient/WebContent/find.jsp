@@ -28,9 +28,6 @@
 		<!-- Begin Header -->
 		<div id="header">
 
-			<h1>
-			Control your farm 
-			</h1>
 		</div>
 		<!-- End Header -->
 		<!-- Begin Navigation -->
@@ -47,7 +44,8 @@
 			<div id="content">
 
 				<div class="container">
-							
+							<h3><center>What do you want to find?</center></h3>
+							<hr>
 							<h3>Find Animal</h3>
 
 							<form action="/FarmClient/Farmlet" method="post">
@@ -57,6 +55,7 @@
 									<button type="submit" value="btn_findByIdAnimal">Find</button>
 									<input name="operation" value="findByIdAnimal" type="hidden">
 							</form>
+							<hr>
 							<h3>Find Food</h3>
 							<form action="/FarmClient/Farmlet" method="post">
 									<label>Find by Food name</label>
@@ -65,6 +64,7 @@
 									<button type="submit" value="btn_findByFoodName">Find</button>
 									<input name="operation" value="findByFoodName" type="hidden">
 							</form>
+							<hr>
 							<h3>Find Building</h3>
 							<form action="/FarmClient/Farmlet" method="post">
 									<label>Find by Building Id</label>
@@ -72,7 +72,9 @@
 									<input type="text" name="findIdBuilding" maxlength="5" required>
 									<button type="submit" value="btn_findIdBuilding">Find</button>
 									<input name="operation" value="findByIdBuilding" type="hidden">
+
 							</form>
+							<hr>
 							<h3>Find Boxes</h3>
 							<form action="/FarmClient/Farmlet" method="post">
 									<label>Find by Box Id</label>
@@ -81,6 +83,7 @@
 									<button type="submit" value="btn_findIdbox">Find</button>
 									<input name="operation" value="findByIdBox" type="hidden">
 							</form>
+							<hr>
 
 				</div>
 			</div>

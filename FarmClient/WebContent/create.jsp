@@ -27,10 +27,6 @@
 			height="120px" /> </a>
 		<!-- Begin Header -->
 		<div id="header">
-
-			<h1>
-			Control your farm 
-			</h1>
 		</div>
 		<!-- End Header -->
 		<!-- Begin Navigation -->

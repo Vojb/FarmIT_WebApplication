@@ -28,42 +28,63 @@ public class Farmlet extends HttpServlet {
 	@EJB
 	FarmFacadeLocal facade;
 
-
 	public Farmlet() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        out.println("Farmlet-doGet");
-        out.close();
-    }
-	   protected void doPost(HttpServletRequest request, HttpServletResponse response)
-	            throws ServletException, IOException {
-	        String url = null;
-	        String operation = request.getParameter("operation");
-	        if (operation.equals("findByIdAnimal")) {
-	          int id=0;
-	          Animal a= null;
-	        		
-	        	 id = Integer.parseInt(request.getParameter("findIdAnimal"));
-	        	 a = facade.findByIdAnimal(id);
-	        	
-	        	if(a!=null){
+			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		out.println("Farmlet-doGet");
+		out.close();
+	}
 
-		        	request.setAttribute("animal", a);
-		            System.out.println(a);
-		            request.setAttribute("foundidAnimal", a.getIdAnimal());
-		            request.setAttribute("foundname", a.getName());            
-		            System.out.print(a.getName());
-		            url = "/updateAnimal.jsp?";
-		        	
-	            }
-	        }
-	        
-	        
-	        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-	        dispatcher.forward(request, response);
-	    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String url = null;
+		String operation = request.getParameter("operation");
+		if (operation.equals("findByIdAnimal")) {
+			int id = 0;
+			Animal a = null;
+
+			id = Integer.parseInt(request.getParameter("findIdAnimal"));
+			a = facade.findByIdAnimal(id);
+
+			if (a != null) {
+
+				request.setAttribute("animal", a);
+				System.out.println(a);
+				url = "/updateAnimal.jsp?";
+
+			}
+		} else if (operation.equals("findByIdBuilding")) {
+			
+			String id = request.getParameter("findIdBuilding");
+			Building b = facade.findByIdBuilding(id);
+
+			if (b != null) {
+
+				request.setAttribute("building", b);
+				System.out.println(b);
+				url = "/updateBuilding.jsp?";
+			}
+		} else if (operation.equals("findByIdBox")) {
+			
+			String id = request.getParameter("findIdBox");
+			Box b = facade.findByIdBox(id);
+
+			if (b != null) {
+
+				request.setAttribute("box", b);
+				url = "/updateBox.jsp?";
+			}	
+		} else if (operation.equals("find")) {
+			url = "/find.jsp?";
+		} else {
+			url = "/find.jsp?";
+		}
+
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+		dispatcher.forward(request, response);
+	}
 }

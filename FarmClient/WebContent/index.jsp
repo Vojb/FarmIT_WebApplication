@@ -19,7 +19,6 @@
   <!-- Begin Header -->
   <div id="header">
   
-  <h1> <center>Control your farm</center></h1></div>
     <!-- End Header -->
   <!-- Begin Navigation -->
   <div id="navigation"> 

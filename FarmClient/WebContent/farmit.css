@@ -4,6 +4,14 @@ body {
  font-family: Arial, Helvetica, sans-serif;
  font-size: 13px;
 }
+hr {
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 18;
+    border-top: 1px solid black;
+}
 .form-control {
     margin-left: 2%;
     display: block;
