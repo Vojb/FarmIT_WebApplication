@@ -40,6 +40,8 @@ public interface FarmFacadeLocal {
 	public void deleteFood(long id);
 
 	// hitta
+	public Food findByFoodName(String foodName);
+	
 	public Animal findByIdAnimal(long a);
 
 	public Box findByIdBox(String id);

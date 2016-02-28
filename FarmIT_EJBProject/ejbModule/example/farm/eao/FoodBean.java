@@ -46,14 +46,22 @@ public class FoodBean implements FoodBeanLocal {
 	public void addAnimal(Food f, Animal a) {
 		f.addAnimal(a);
 	}
-	public List<Food> findFoodByType(String type) {
+	public Food findFoodByType(String type) {
 
 		TypedQuery<Food> query = em.createNamedQuery("Food.findByName", Food.class);
 
-		query.setParameter("foodType", type);
-
+		query.setParameter("foodType", type.toLowerCase());
+		Food f= null;
+		System.out.println(type);
 		List<Food> results = query.getResultList();
+		for(Food food: results){
+			if(food.getNameFood().equals(type.toLowerCase()))
+			f = food;
+			System.out.println("bajs");
+			System.out.println(f.getIdFood());
+			
+		}
+		return f;
 		
-		return results;
 	}
 }

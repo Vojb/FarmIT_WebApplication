@@ -49,58 +49,39 @@ public class Farmlet extends HttpServlet {
 
 			id = Integer.parseInt(request.getParameter("findIdAnimal"));
 			a = facade.findByIdAnimal(id);
-
 			if (a != null) {
-
 				request.setAttribute("animal", a);
-				System.out.println(a);
 				url = "/updateAnimal.jsp?";
 
 			}
 		} else if (operation.equals("findByIdBuilding")) {
-			
 			String id = request.getParameter("findIdBuilding");
 			Building b = facade.findByIdBuilding(id);
-
+			
 			if (b != null) {
-
 				request.setAttribute("building", b);
-				System.out.println(b);
 				url = "/updateBuilding.jsp?";
 			}
 		} else if (operation.equals("findByIdBox")) {
-			
 			String id = request.getParameter("findIdBox");
 			Box b = facade.findByIdBox(id);
-
 			if (b != null) {
-
 				request.setAttribute("box", b);
 				url = "/updateBox.jsp?";
 			}	
 		}  else if (operation.equals("findByFoodName")) {
-			
-			String foodname = request.getParameter("findFoodName");
-			
-			Food f = facade.findByIdFood(1);
-			Food f2 = facade.findByIdFood(2);
-			Food f3 = facade.findByIdFood(3);
-			
-		
-			
-			
-
-			if (f != null) {
-
-				request.setAttribute("box", b);
-				url = "/updateBox.jsp?";
+			Food f = null;
+			String foodname = request.getParameter("findByFoodName");
+			f = facade.findByFoodName(foodname);
+			if (f!= null) {
+				request.setAttribute("food", f);
+				url = "/updateFood.jsp?";
 			}	
 		}else if (operation.equals("find")) {
 			url = "/find.jsp?";
 		} else {
 			url = "/find.jsp?";
 		}
-
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

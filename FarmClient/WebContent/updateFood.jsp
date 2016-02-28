@@ -45,22 +45,17 @@
 
 				<div class="container">
 							
-							<h3>Update animal</h3>
-		<% Building a = (Building)request.getAttribute("building"); %>
+							<h3>Update Food</h3>
+		<% Food a = (Food)request.getAttribute("food"); %>
 									<br>
 
 									<form action="/FarmClient/Farmlet" method="post">
-									<label>Building</label>
+									<label>FoodName</label>
 								<br>
-								<input type="text" name="foundIdBuilding" maxlength="222" readonly value="<%= a.getIdBuilding()%>"> 
+								<input type="text" name="foundFoodName" maxlength="222" readonly value="<%= a.getNameFood() %>">
 								<br>
-								<%  %>
 								<label>Status</label>
-								<select class="form-control">
-									<option>Healthy</option>
-									<option>Sick</option>
-									<option>Gluefactory</option>
-								</select>
+						
 								<br>
 								
 								<br>

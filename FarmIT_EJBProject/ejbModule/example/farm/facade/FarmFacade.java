@@ -113,6 +113,9 @@ public class FarmFacade implements FarmFacadeLocal {
 	}
 
 	// hitta
+	public Food findByFoodName(String foodName){
+		return foodb.findFoodByType(foodName);
+	}
 	public Animal findByIdAnimal(long a) {
 		return animalb.findByIdAnimal(a);
 	}
