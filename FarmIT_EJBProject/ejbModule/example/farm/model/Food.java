@@ -16,12 +16,12 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries({
-@NamedQuery(name="Food.findByName", query="SELECT a FROM Food a WHERE a.typeFood LIKE :foodType"),
+@NamedQuery(name="Food.findByName", query="SELECT a FROM Food a WHERE a.nameFood =:foodType"),
 })
 @Table(name = "Foods")
 public class Food implements Serializable{
 	private long idFood;
-	private String typeFood;
+	private String nameFood;
 	private int amount;
 
 	private Set<Animal> animals;
@@ -49,12 +49,12 @@ public class Food implements Serializable{
 	}
 
 	@Column(name = "Type")
-	public String getType() {
-		return typeFood;
+	public String getNameFood() {
+		return nameFood;
 	}
 
-	public void setType(String typeFood) {
-		this.typeFood = typeFood;
+	public void setNameFood(String nameFood) {
+		this.nameFood = nameFood;
 	}
 
 	@Column(name = "Amount")
