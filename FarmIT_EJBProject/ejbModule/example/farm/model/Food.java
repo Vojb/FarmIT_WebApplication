@@ -10,9 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({
+@NamedQuery(name="Food.findByName", query="SELECT a FROM Food a WHERE a.typeFood LIKE :foodType"),
+})
 @Table(name = "Foods")
 public class Food implements Serializable{
 	private long idFood;
@@ -48,8 +53,8 @@ public class Food implements Serializable{
 		return typeFood;
 	}
 
-	public void setType(String type) {
-		this.typeFood = type;
+	public void setType(String typeFood) {
+		this.typeFood = typeFood;
 	}
 
 	@Column(name = "Amount")

@@ -1,9 +1,12 @@
 package example.farm.eao;
 
+import java.util.List;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import example.farm.model.Animal;
 import example.farm.model.Cow;
@@ -43,5 +46,14 @@ public class FoodBean implements FoodBeanLocal {
 	public void addAnimal(Food f, Animal a) {
 		f.addAnimal(a);
 	}
+	public List<Food> findFoodByType(String type) {
 
+		TypedQuery<Food> query = em.createNamedQuery("Food.findByName", Food.class);
+
+		query.setParameter("foodType", type);
+
+		List<Food> results = query.getResultList();
+		
+		return results;
+	}
 }
