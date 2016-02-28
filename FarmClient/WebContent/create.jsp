@@ -10,7 +10,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="javascript" src="script.js"> </script>
+<script src="myscripts.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
@@ -49,45 +49,57 @@
 							<form method="post">
 
 								<label>Type of Animal</label>
-								<select class="form-control">
-									<option>Cow</option>
-									<option>Hen</option>
-									<option>Horse</option>
-									<option>Pig</option>
+								<br />
+								<select id="changeFood" class="form-control" name="changeFood" required>
+									<option name="changeFood">Choose</option>
+									<option name="changeFood" value="cow" data-content="Powerfeed" data-example=" ">Cow</option>
+									<option name="changeFood" value="Hen" data-content="Oats" data-example=" ">Hen</option>
+									<option name="changeFood" value="Horse" data-content="Powerfeed" data-example="Hay">Horse</option>
+									<option name="changeFood" value="Pig" data-content="Powerfeed" data-example="">Pig</option>
 								</select>
-								<br>
+								<br />
 								<label>Status</label>
 								<select class="form-control">
 									<option>Healthy</option>
 									<option>Sick</option>
 									<option>Gluefactory</option>
 								</select>
-								<br>
+								<br />
 								<label>IdAnimal</label>
-								<br>
+								<br />
 								<input type="text" ="idAnimal" maxlength="5" required>
-								<br>
+								<br />
 								<label>Name</label>
-								<br>
+								<br />
 								<input type="text" name="name" maxlength="222" required />
-								<br>
+								<br />
 								<label>Age</label>
-								<br>
+								<br />
 								<input type="text" name="age" maxlength="2" required />
-								<br>
+								<br />
 								<label>Box</label>
-								<br>
+								<br />
 								<input type="text" name="idBox" maxlength="2" required />
-								<br>
-								<label id="food"> Food </label>
-								<br>
+								<br />
+								<label id="food"> Food</label>
+								<br />
 								<input type="text" name="food" maxlength="2" required />
-								<br>
-								<br>
+								<br />
+								<label id="foodOne"> </label>
+								<br />
+								<input type="text" name="foodOne" maxlength="2" required />
+								<br />
+								<br />
 								<button type="submit" value="Submit">Submit</button>
 								<button type="reset" value="Reset">Reset</button>
 							</form>
 
+<script>
+$("#changeFood").change(function() {
+    $('#food').text($('option:selected').attr('data-content'));
+    $('#foodOne').text($('option:selected').attr('data-example'));
+}).change();
+</script>
 
 						</div>
 					

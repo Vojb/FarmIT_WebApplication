@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="myscripts.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
@@ -35,6 +36,7 @@
 	
     <div id="content">
 		<h1> Information</h1>
+    <p id="demo"></p>
 		
     </div>
     <!-- End Content Column -->
