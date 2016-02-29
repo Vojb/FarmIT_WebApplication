@@ -26,6 +26,10 @@ hr {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+p {
+    padding-top: 4px;
+    margin: 0px 12px 0px;
+}
 button{
 	margin-left: 2%;
 	font-size:15px;

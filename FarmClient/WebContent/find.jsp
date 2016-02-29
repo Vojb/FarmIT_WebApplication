@@ -46,10 +46,12 @@
 									<br>
 									<input type="numbers" id="findIdAnimal" name="findIdAnimal" maxlength="50" required>
 									<button type="submit" id="findAnimal" value="btn_findByIdAnimal">Find </button>
-									 <input type="text" id="Baajs" maxlength="222" hidden value="Gluefactory">
 									<input name="operation" value="findByIdAnimal" type="hidden">
 									<br>
-									<%= request.getAttribute("msg") %>
+									<%if(request.getAttribute("msgA")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msgA")%></center><%
+									}%>
 								
 							</form>
 							<hr>
@@ -60,6 +62,10 @@
 									<input type="text" name="findByFoodName" maxlength="52" required>
 									<button type="submit" value="btn_findByFoodName">Find</button>
 									<input name="operation" value="findByFoodName" type="hidden">
+									<%if(request.getAttribute("msgF")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msgF")%></center><%
+									}%>
 							</form>
 							<hr>
 							<h3>Building</h3>
@@ -69,7 +75,10 @@
 									<input type="text" name="findIdBuilding" maxlength="5" required>
 									<button type="submit" value="btn_findIdBuilding">Find</button>
 									<input name="operation" value="findByIdBuilding" type="hidden">
-
+									<%if(request.getAttribute("msgB")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msgB")%></center><%
+									}%>
 							</form>
 							<hr>
 							<h3>Boxes</h3>
@@ -79,6 +88,10 @@
 									<input type="text" name="findIdBox" maxlength="5" required>
 									<button type="submit" value="btn_findIdbox">Find</button>
 									<input name="operation" value="findByIdBox" type="hidden">
+									<%if(request.getAttribute("msgBox")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msgBox")%></center><%
+									}%>
 							</form>
 							<hr>
 
