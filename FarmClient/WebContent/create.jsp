@@ -51,7 +51,7 @@
 								<label>Type of Animal</label>
 								<br />
 								<select id="changeFood" class="form-control" name="changeFood" required>
-									<option name="changeFood">Choose</option>
+									<option name="changeFood" data-content="food" data-example=" ">Choose</option>
 									<option name="changeFood" value="cow" data-content="Powerfeed" data-example=" ">Cow</option>
 									<option name="changeFood" value="Hen" data-content="Oats" data-example=" ">Hen</option>
 									<option name="changeFood" value="Horse" data-content="Powerfeed" data-example="Hay">Horse</option>
@@ -81,7 +81,7 @@
 								<br />
 								<input type="text" name="idBox" maxlength="2" required />
 								<br />
-								<label id="food"> Food</label>
+								<label id="food">Food</label>
 								<br />
 								<input type="text" name="food" maxlength="2" required />
 								<br />

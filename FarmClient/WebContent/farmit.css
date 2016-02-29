@@ -26,10 +26,9 @@ hr {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
 button{
+	margin-left: 2%;
 	font-size:15px;
-	margin:1%;
 	padding-left:2%;
 	padding-right:2%;	
 }
@@ -190,6 +189,7 @@ width: 510px;
 background: beige;
 }
 label {
+	padding-top: 1%;
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;

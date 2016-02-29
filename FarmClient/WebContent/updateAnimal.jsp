@@ -84,8 +84,10 @@
 								</input>
 								<br>
 								<br>
-								<button type="submit" value="find ">Back</button>
+								<button type="submit" value="find">Back</button>
 								<input name="operation" value="find" type="hidden">		
+								<button type="submit" value="update">Update</button>
+								<input name="operation" value="update" type="hidden">		
 								
 					
 
