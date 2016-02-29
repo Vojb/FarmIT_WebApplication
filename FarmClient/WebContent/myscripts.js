@@ -1,15 +1,11 @@
-		$("#findAnimal").click(function(){
-			
-				alert($('#Baajs').delay(5000).val());
-				  $('#foundStatusAnimal').val($('#Baajs').val());
-				  alert($('#Baajs').val());
-	});
 $("#changeFood").change(function() {
 		$('#food').text($('option:selected').attr('data-content'));
 		$('#foodOne').text($('option:selected').attr('data-example'));
 	    
 	}).change();
-	
+//$("#findAnimal").click(function(){
+//	  $('#foundStatusAnimal').val($('#Baajs').val());
+//	});	
 	
 
 
