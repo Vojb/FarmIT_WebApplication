@@ -57,7 +57,7 @@
 									<option name="changeFood" value="Horse" data-content="Powerfeed" data-example="Hay">Horse</option>
 									<option name="changeFood" value="Pig" data-content="Powerfeed" data-example="">Pig</option>
 								</select>
-								<br />
+								
 								<label>Status</label>
 								<select class="form-control">
 									<option>Healthy</option>
