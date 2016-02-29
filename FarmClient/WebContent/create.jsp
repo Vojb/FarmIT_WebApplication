@@ -5,13 +5,10 @@
 <head>
 <title>Farmit</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="myscripts.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
 <link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
 <body>
@@ -51,7 +48,7 @@
 								<label>Type of Animal</label>
 								<br />
 								<select id="changeFood" class="form-control" name="changeFood" required>
-									<option name="changeFood" data-content="food" data-example=" ">Choose</option>
+									<option name="changeFood" data-content="Food" data-example=" ">Choose</option>
 									<option name="changeFood" value="cow" data-content="Powerfeed" data-example=" ">Cow</option>
 									<option name="changeFood" value="Hen" data-content="Oats" data-example=" ">Hen</option>
 									<option name="changeFood" value="Horse" data-content="Powerfeed" data-example="Hay">Horse</option>
@@ -91,15 +88,10 @@
 								<br />
 								<br />
 								<button type="submit" value="Submit">Submit</button>
-								<button type="reset" value="Reset">Reset</button>
+								<button type="reset" value="Reset">Reet</button>
 							</form>
+		
 
-<script>
-$("#changeFood").change(function() {
-    $('#food').text($('option:selected').attr('data-content'));
-    $('#foodOne').text($('option:selected').attr('data-example'));
-}).change();
-</script>
 
 						</div>
 					
@@ -117,4 +109,7 @@ $("#changeFood").change(function() {
 	</div>
 	<!-- End Wrapper -->
 </body>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="/FarmClient/myscripts.js"></script>
 </html>
