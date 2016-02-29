@@ -47,6 +47,9 @@
 									<input type="numbers" id="findAnimalId" name="findIdAnimal" maxlength="50" required>
 									<button type="submit" value="btn_findByIdAnimal">Find </button>
 									<input name="operation" value="findByIdAnimal" type="hidden">
+									<br>
+									<%= request.getAttribute("msg") %>
+								
 							</form>
 							<hr>
 							<h3>Food</h3>

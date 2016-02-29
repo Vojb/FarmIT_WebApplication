@@ -27,6 +27,7 @@ public class Farmlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
 	FarmFacadeLocal facade;
+	
 
 	public Farmlet() {
 		super();
@@ -41,6 +42,7 @@ public class Farmlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String url = null;
 		String operation = request.getParameter("operation");
 		if (operation.equals("findByIdAnimal")) {
@@ -50,8 +52,12 @@ public class Farmlet extends HttpServlet {
 			if (a != null) {
 				request.setAttribute("animal", a);
 				url = "/updateAnimal.jsp?";
+			}else{
+				request.setAttribute("msg", "didnt find a fucking animal");
+				url = "/find.jsp?";
 
 			}
+			
 		} else if (operation.equals("findByIdBuilding")) {
 			String id = request.getParameter("findIdBuilding");
 			Building b = facade.findByIdBuilding(id);
