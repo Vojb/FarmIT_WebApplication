@@ -1,9 +1,9 @@
-	$("#findAnimal").click(function(){
-	
-		alert($('#Baajs').val());
-		  $("#kuk").val($('#Baajs').val());
-		  alert($('#Baajs').val());
-});	
+		$("#findAnimal").click(function(){
+			
+				alert($('#Baajs').delay(5000).val());
+				  $('#foundStatusAnimal').val($('#Baajs').val());
+				  alert($('#Baajs').val());
+	});
 $("#changeFood").change(function() {
 		$('#food').text($('option:selected').attr('data-content'));
 		$('#foodOne').text($('option:selected').attr('data-example'));
@@ -11,12 +11,7 @@ $("#changeFood").change(function() {
 	}).change();
 	
 	
-//		$("#findAnimal").click(function(){
-//			
-//				alert($('#Baajs').delay(5000).val());
-//				  $('#foundStatusAnimal').val($('#Baajs').val());
-//				  alert($('#Baajs').val());
-//	});
+
 
 	
 

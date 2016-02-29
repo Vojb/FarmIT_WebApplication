@@ -5,13 +5,14 @@
 <head>
 <title>Farmit</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">	
-<link rel="stylesheet" type="text/css" href="farmit.css" />
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
 <body>
 
-<%@ page import="javax.servlet.http.*" %>
-<%@ page import="example.farm.model.*" %>
+	<%@ page import="javax.servlet.http.*"%>
+	<%@ page import="example.farm.model.*"%>
 
 
 
@@ -20,14 +21,12 @@
 		<a href="index.jsp"><img id="logga" src="farmitLogga.jpg"
 			height="120px" /> </a>
 		<!-- Begin Header -->
-		<div id="header">
-		
-		</div>
+		<div id="header"></div>
 		<!-- End Header -->
 		<!-- Begin Navigation -->
-		  <div>
-  			<%@ include file="includedivision.jsp" %> 
-      	</div>
+		<div>
+			<%@ include file="includedivision.jsp"%>
+		</div>
 		<!-- End Navigation -->
 		<!-- Begin Faux Columns -->
 		<div id="faux">
@@ -37,61 +36,69 @@
 			<div id="content">
 
 				<div class="container">
-							
-							<h3>Update animal</h3>
-		<% Animal a = (Animal)request.getAttribute("animal"); %>
-									<br>
 
-									<form action="/FarmClient/Farmlet" method="post">
-									<label>Type of animal</label>
-								<br>
-								<input type="text" name="foundTypeAnimal" maxlength="222" readonly value="<%= a.getClass().getSimpleName()%>"> 
-								<input type="text" id="Baajs" maxlength="222" value="Gluefactory">
-								<br>
-								<label>Status</label>
-								<select id="kuk" class="form-control">
-									<option value="Healthy" >Healthy</option>
-									<option value="Sick" >Sick</option>
-									<option value="Gluefactory" >Gluefactory</option>
-								</select>
-								<br>
-								<label>IdAnimal</label>
-								<br>
-								<input type="numbers" name="foundidAnimal" maxlength="5" readonly value="<%= a.getIdAnimal()%>">
-							
-								<br>
-								<label>Name</label>
-								<br>
-								<input type="text" name="foundname" maxlength="222" required value="<%= a.getName()%>"> 
-								<br>
-								<label>Age</label>
-								<br>
-								<input type="text" name="age" maxlength="2" required  value="<%= a.getAge()%>"> 
-								<br>
-								<label>Box</label>
-								<br>
-								<input type="text" name="idBox" maxlength="2" required  value="<%= a.getBox().getIdBox()%>"> 
-								<br>
-								<label id="food"> Food </label>
-								<br>
-								<input type="text" name="food" maxlength="2" required value="<%= a.getAmountOfFood()%>"> 
-								</input>
-								<br>
-								<br>
-								<button type="submit" value="find">Back</button>
-								<input name="operation" value="find" type="hidden">		
-								<button type="submit" value="update">Update</button>
-								<input name="operation" value="update" type="hidden">		
-								
-					
+					<h3>Update animal</h3>
+					<%
+						Animal a = (Animal) request.getAttribute("animal");
+					%>
+					<br>
 
-							</form>
-					
+						<form action="/FarmClient/Farmlet" method="post">
+							<label>Type of animal</label>
+							<br> <input type="text" name="foundTypeAnimal"
+								maxlength="222" readonly
+								value="<%=a.getClass().getSimpleName()%>"> <br> <label>Status</label>
+										<select id="FoundStatusAnimal" class="form-control">
+											<%
+												if (a.getStatusAnimal().equals("Healthy")) {
+											%>
+											<option selected value="healthy"><%=a.getStatusAnimal()%></option>
+											<option value="Sick">Sick</option>
+											<option value="Gluefactory">Gluefactory</option>
+											<%
+												}
+												if (a.getStatusAnimal().equals("Sick")) {
+											%>
+											<option value="Healthy">Healthy</option>
+											<option selected value="Sick"><%=a.getStatusAnimal()%></option>
+											<option value="Gluefactory">Gluefactory</option>
+											<%
+												}
+												if (a.getStatusAnimal().equals("Gluefactory")) {
+											%>
+											<option value="Sick">Sick</option>
+											<option value="Healthy">Healthy</option>
+											<option selected value="Gluefactory"><%=a.getStatusAnimal()%></option>
+											<%
+												}
+											%>
 
-						</div>
-						
+									</select> <br> <label>IdAnimal</label> <br> <input
+												type="numbers" name="foundidAnimal" maxlength="5" readonly
+												value="<%=a.getIdAnimal()%>"> <br> <label>Name</label>
+														<br> <input type="text" name="foundname"
+															maxlength="222" required value="<%=a.getName()%>">
+																<br> <label>Age</label> <br> <input
+																		type="text" name="age" maxlength="2" required
+																		value="<%=a.getAge()%>"> <br> <label>Box</label>
+																				<br> <input type="text" name="idBox"
+																					maxlength="2" required
+																					value="<%=a.getBox().getIdBox()%>"> <br>
+																							<label id="food"> Food </label> <br> <input
+																								type="text" name="food" maxlength="2" required
+																								value="<%=a.getAmountOfFood()%>"> </input> <br>
+																									<br>
+																										<button type="submit" value="find">Back</button>
+																										<input name="operation" value="find"
+																										type="hidden">
+																											<button type="submit" value="update">Update</button>
+																											<input name="operation" value="update"
+																											type="hidden">
+						</form>
+				</div>
 
-				
+
+
 			</div>
 			<!-- End Content Column -->
 			<!-- Begin Right Column -->
@@ -106,6 +113,9 @@
 	<!-- End Wrapper -->
 </body>
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	crossorigin="anonymous"></script>
 <script src="/FarmClient/myscripts.js"></script>
 </html>
