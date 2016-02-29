@@ -41,7 +41,7 @@
 							<hr>
 							<h3>Animal</h3>
 
-							<form action="/FarmClient/Farmlet" method="post">
+							<form action="/FarmClient/Farmlet" method="post" onSubmit="return checkIfidNbr();">
 									<label>Find by Animal id</label>
 									<br>
 									<input type="numbers" id="findAnimalId" name="findIdAnimal" maxlength="50" required>
