@@ -24,10 +24,9 @@
 		<div id="header"></div>
 		<!-- End Header -->
 		<!-- Begin Navigation -->
-		<div id="navigation">
-			<a href="index.jsp">Home</a> <a href="create.jsp">Add</a> <a
-				href="find.jsp">Find</a>
-		</div>
+		  <div>
+  			<%@ include file="includedivision.jsp" %> 
+      	</div>
 		<!-- End Navigation -->
 		<!-- Begin Faux Columns -->
 		<div id="faux">
