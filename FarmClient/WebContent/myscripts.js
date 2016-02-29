@@ -12,9 +12,10 @@
 		fnElement.setAttribute("placeholder","Animal Id please" );
 	}
 		function checkIfIdNbr(){
-		  var fnElement =document.getElementById("findIdAnimal");
-		  var findIdAnimal = findElement.value;
-		  if (isNaN(fnElement)) {
+		  var fnElement = document.getElementById("findIdAnimal");
+		  console.log(fnElement);
+		  var findIdAnimal = fnElement.value;
+		  if (isNaN(findIdAnimal)) {
 			fnElement.setAttribute("placeholder","Id only consists of numbers");
 		    return false;
 		  }

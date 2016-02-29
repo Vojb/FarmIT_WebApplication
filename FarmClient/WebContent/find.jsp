@@ -41,10 +41,10 @@
 							<hr>
 							<h3>Animal</h3>
 
-							<form action="/FarmClient/Farmlet" method="post" onSubmit="return checkIfidNbr();">
+							<form action="/FarmClient/Farmlet" method="post" onSubmit="checkIfIdNbr();">
 									<label>Find by Animal id</label>
 									<br>
-									<input type="numbers" id="findAnimalId" name="findIdAnimal" maxlength="50" required>
+									<input type="numbers" id="findIdAnimal" name="findIdAnimal" maxlength="50" required>
 									<button type="submit" value="btn_findByIdAnimal">Find </button>
 									<input name="operation" value="findByIdAnimal" type="hidden">
 									<br>
