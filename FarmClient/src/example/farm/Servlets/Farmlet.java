@@ -79,7 +79,6 @@ public class Farmlet extends HttpServlet {
 			}	
 		} else if (operation.equals("feedAnimals")) {
 				facade.feedAllAnimals(1,2,3);
-				System.out.println("matade djuren");
 				url = "/index.jsp?";
 				
 		}else if (operation.equals("find")) {

@@ -52,14 +52,10 @@ public class FoodBean implements FoodBeanLocal {
 
 		query.setParameter("foodType", type.toLowerCase());
 		Food f= null;
-		System.out.println(type);
 		List<Food> results = query.getResultList();
 		for(Food food: results){
 			if(food.getNameFood().equals(type.toLowerCase()))
 			f = food;
-			System.out.println("bajs");
-			System.out.println(f.getIdFood());
-			
 		}
 		return f;
 		

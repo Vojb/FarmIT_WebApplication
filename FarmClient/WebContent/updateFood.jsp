@@ -5,13 +5,14 @@
 <head>
 <title>Farmit</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="farmit.css" />
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
 <body>
 
-<%@ page import="javax.servlet.http.*" %>
-<%@ page import="example.farm.model.*" %>
+	<%@ page import="javax.servlet.http.*"%>
+	<%@ page import="example.farm.model.*"%>
 
 
 
@@ -20,14 +21,12 @@
 		<a href="index.jsp"><img id="logga" src="farmitLogga.jpg"
 			height="120px" /> </a>
 		<!-- Begin Header -->
-		<div id="header">
-		
-		</div>
+		<div id="header"></div>
 		<!-- End Header -->
 		<!-- Begin Navigation -->
 		<div id="navigation">
 			<a href="index.jsp">Home</a> <a href="create.jsp">Add</a> <a
-				href="find.jsp">Find</a> 
+				href="find.jsp">Find</a>
 		</div>
 		<!-- End Navigation -->
 		<!-- Begin Faux Columns -->
@@ -38,37 +37,35 @@
 			<div id="content">
 
 				<div class="container">
-							
-							<h3>Update Food</h3>
-		<% Food a = (Food)request.getAttribute("food"); %>
+
+					<h3>Update Food</h3>
+					<%
+						Food a = (Food) request.getAttribute("food");
+					%>
+					<br />
+
+					<form action="/FarmClient/Farmlet" method="post">
+						<label>Id</label>
+						<br />
+						<% %>
+						<input type="text" name="foundIdFood" maxlength="222" readonly
+							value="<%=a.getIdFood()%>"> <br /> <label>FoodName</label>
+							<br /> <input type="text" name="foundFoodName" maxlength="222"
+							readonly value="<%=a.getNameFood().substring(0, 1).toUpperCase() + a.getNameFood().substring(1)%>"> <br /> <label>Amount</label>
+								<br /> <input type="text" name="foundFoodAmount"
+								maxlength="222" readonly value="<%=a.getAmount()%>"> <br />
+
+
 									<br />
+									<button type="submit" value="find ">Back</button> <input
+									name="operation" value="find" type="hidden">
+					</form>
 
-									<form action="/FarmClient/Farmlet" method="post">
-									<label>Id</label>
-						<input type="text" name="foundIdFood" maxlength="222" readonly value="<%= a.getIdFood() %>">
-								<br />
-									<label>FoodName</label>
-								<br />
-								<input type="text" name="foundFoodName" maxlength="222" readonly value="<%= a.getNameFood() %>">
-								<br />
-								<label>Amount</label>
-						<input type="text" name="foundFoodAmount" maxlength="222" readonly value="<%= a.getAmount() %>">
-								<br />
-								
-								
-								<br/>
-								<button type="submit" value="find ">Back</button>
-								<input name="operation" value="find" type="hidden">		
-								
-					
 
-							</form>
-					
+				</div>
 
-						</div>
-						
 
-				
+
 			</div>
 			<!-- End Content Column -->
 			<!-- Begin Right Column -->
@@ -83,6 +80,9 @@
 	<!-- End Wrapper -->
 </body>
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	crossorigin="anonymous"></script>
 <script src="/FarmClient/myscripts.js"></script>
 </html>
