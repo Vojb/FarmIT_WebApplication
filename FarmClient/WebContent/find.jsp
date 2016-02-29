@@ -41,11 +41,12 @@
 							<hr>
 							<h3>Animal</h3>
 
-							<form action="/FarmClient/Farmlet" method="post" onSubmit="checkIfIdNbr();">
+							<form action="/FarmClient/Farmlet" method="post" >
 									<label>Find by Animal id</label>
 									<br>
 									<input type="numbers" id="findIdAnimal" name="findIdAnimal" maxlength="50" required>
-									<button type="submit" value="btn_findByIdAnimal">Find </button>
+									<button type="submit" id="findAnimal" value="btn_findByIdAnimal">Find </button>
+									 <input type="text" id="Baajs" maxlength="222" hidden value="Gluefactory">
 									<input name="operation" value="findByIdAnimal" type="hidden">
 									<br>
 									<%= request.getAttribute("msg") %>

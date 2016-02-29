@@ -46,12 +46,13 @@
 									<label>Type of animal</label>
 								<br>
 								<input type="text" name="foundTypeAnimal" maxlength="222" readonly value="<%= a.getClass().getSimpleName()%>"> 
+								<input type="text" id="Baajs" maxlength="222" value="Gluefactory">
 								<br>
 								<label>Status</label>
-								<select class="form-control">
-									<option>Healthy</option>
-									<option>Sick</option>
-									<option>Gluefactory</option>
+								<select id="kuk" class="form-control">
+									<option value="Healthy" >Healthy</option>
+									<option value="Sick" >Sick</option>
+									<option value="Gluefactory" >Gluefactory</option>
 								</select>
 								<br>
 								<label>IdAnimal</label>
