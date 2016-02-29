@@ -44,11 +44,9 @@ public class Farmlet extends HttpServlet {
 		String url = null;
 		String operation = request.getParameter("operation");
 		if (operation.equals("findByIdAnimal")) {
-			int id = 0;
-			Animal a = null;
-
-			id = Integer.parseInt(request.getParameter("findIdAnimal"));
-			a = facade.findByIdAnimal(id);
+			int id = Integer.parseInt(request.getParameter("findIdAnimal"));
+			Animal a = facade.findByIdAnimal(id);
+			
 			if (a != null) {
 				request.setAttribute("animal", a);
 				url = "/updateAnimal.jsp?";
