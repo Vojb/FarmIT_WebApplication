@@ -52,6 +52,7 @@
   <div id="footer"> farm life </div>
   <!-- End Footer -->
  </div>
+<img id="logga" src="animals.png"height="120px"/> </a>
 <!-- End Wrapper -->
 </body>
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
