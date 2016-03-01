@@ -19,7 +19,7 @@
 
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
-		<a href="index.jsp"><img id="logga" src="farmitlogg.png"
+		<a href="index.jsp"><img id="logga" src="signLoggoFarm.png"
 			height="120px" /> </a>
 		<!-- Begin Header -->
 		<div id="header"></div>

@@ -55,11 +55,11 @@ button{
 	font-size:10px;
 	padding-left:2%;
 	padding-right:2%;
-   background: rgb(182, 216, 164);	
+   background: rgba(248, 216, 148, 0.7);
 }
 #navigation a{
         color: black;
-    background: rgb(248, 248, 232);
+    background: rgba(97, 185, 75, 0.67);
     box-shadow: inset 0px 0px 2px black;
 	padding-right: 25px;
 	padding-left: 25px;
@@ -119,14 +119,12 @@ e#header {
  margin: 10px 0px 0px 0px;
 }
 #navigation {
- border-top-left-radius:50%;
- border-top-right-radius:50%;
  box-shadow: inset 0px 0px 2px black;
  text-align: center;
  color: #333;
  padding: 10px;
  margin: 0px 0px 0px 0px;
- background: rgba(65, 154, 18, 0.38);
+ background: rgba(248, 216, 148, 0.7);
 }
 #leftcolumn { 
 
@@ -138,7 +136,7 @@ e#header {
  height: 600px;
  float: left;
  box-shadow: inset 0px 0px 2px black;
- background: rgba(65, 154, 18, 0.38);
+ background: rgba(248, 216, 148, 0.7);
 }
 
 #content #cmenu {
@@ -146,7 +144,7 @@ text-align: center;
 
 }
 #content{  
-    background: rgba(245, 245, 220, 0.65);
+    background: rgba(97, 185, 75, 0.67);
     margin: 10px 10px 10px;
     float: left;
     color: #333;
@@ -166,9 +164,10 @@ text-align: center;
  height: 600px;
  float: right;
  box-shadow: inset 0px 0px 2px black;
- background:  rgba(65, 154, 18, 0.38);
+ background:  rgba(248, 216, 148, 0.7);
 }
 #logga {
+    opacity: 0.7;
     padding-left: 38%;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -211,7 +210,7 @@ width: 510px;
  width: 922px;
  clear: both;
  color: #333;
- background: rgba(65, 154, 18, 0.38);
+ background: rgba(248, 216, 148, 0.7);
  margin: 0px 0px 10px 0px;
  padding: 10px;
 }
@@ -233,10 +232,10 @@ width: 510px;
 }
 .nav-tabs a:active {
     color: black;
-    background: rgba(245, 245, 220, 0.65);
+    background: rgba(97, 185, 75, 0.67);
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-background: rgba(245, 245, 220, 0.65);
+background: rgba(97, 185, 75, 0.67);
 }
 label {
 	padding-top: 1%;
