@@ -10,10 +10,29 @@
 <link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
 <body>
-
 <%@ page import="javax.servlet.http.*" %>
 <%@ page import="example.farm.model.*" %>
+<script type="text/javascript">
 
+function tratt(){
+	
+alert("hej");
+}
+
+function x(){
+	tratt();
+	var fnElement = document.getElementById("findIdAnimal");
+	  var findIdAnimal = fnElement.value;
+	  alert(findIdAnimal);
+	  if (isNaN(findIdAnimal)) {
+		alert("1");
+		  fnElement.setAttribute("placeholder","Id only consists of numbers");
+	    	alert("2")
+		  return false;
+	  }
+		document.getElementById("y").submit();
+}
+</script>
 
 
 	<!-- Begin Wrapper -->
@@ -40,13 +59,13 @@
 				<div class="container">
 							<h3><center>What do you want to find?</center></h3>
 							<hr>
-							<h3>Animal</h3>
-
-							<form action="/FarmClient/Farmlet" method="post" >
+						<h3>Animal</h3>
+						
+							<form action="/FarmClient/Farmlet" method="post" id="y">
 									<label>Find by Animal id</label>
 									<br>
 									<input type="text" id="findIdAnimal" name="findIdAnimal" maxlength="50" required>
-									<button type="submit" id="find-animal" value="btn_findByIdAnimal">Find </button>
+									<button type="submit" id="findAnimal" value="btn_findByIdAnimal" onClick="x();"> Find </button>
 									<input name="operation" value="findByIdAnimal" type="hidden">
 									<br>
 									<%if(request.getAttribute("msgA")==null){
@@ -54,10 +73,10 @@
 									 	<center><%=request.getAttribute("msgA")%></center><%
 									}%>
 								
-							</form>
+							
 							<hr>
 							<h3>Food</h3>
-							<form action="/FarmClient/Farmlet" method="post">
+						
 									<label>Find by Food name</label>
 									<br>
 									<input type="text" name="findByFoodName" maxlength="52" required>
@@ -67,10 +86,10 @@
 									 }else{ %>
 									 	<center><%=request.getAttribute("msgF")%></center><%
 									}%>
-							</form>
+							
 							<hr>
 							<h3>Building</h3>
-							<form action="/FarmClient/Farmlet" method="post">
+							
 									<label>Find by Building Id</label>
 									<br>
 									<input type="text" name="findIdBuilding" maxlength="5" required>
@@ -80,7 +99,7 @@
 									 }else{ %>
 									 	<center><%=request.getAttribute("msgB")%></center><%
 									}%>
-							</form>
+						
 							<hr>
 							<h3>Boxes</h3>
 							<form action="/FarmClient/Farmlet" method="post">
