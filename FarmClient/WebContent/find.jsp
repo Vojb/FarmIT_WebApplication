@@ -14,20 +14,11 @@
 <%@ page import="example.farm.model.*" %>
 <script type="text/javascript">
 
-function tratt(){
-	
-alert("hej");
-}
-
 function x(){
-	tratt();
 	var fnElement = document.getElementById("findIdAnimal");
 	  var findIdAnimal = fnElement.value;
-	  alert(findIdAnimal);
 	  if (isNaN(findIdAnimal)) {
-		alert("1");
 		  fnElement.setAttribute("placeholder","Id only consists of numbers");
-	    	alert("2")
 		  return false;
 	  }
 		document.getElementById("y").submit();
@@ -37,7 +28,7 @@ function x(){
 
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
-		<a href="index.jsp"><img id="logga" src="farmitlogg.png"
+		<a href="index.jsp"><img id="logga" src="farmitLogga.jpg"
 			height="120px" /> </a>
 		<!-- Begin Header -->
 		<div id="header">
@@ -64,7 +55,7 @@ function x(){
 							<form action="/FarmClient/Farmlet" method="post" id="y">
 									<label>Find by Animal id</label>
 									<br>
-									<input type="text" id="findIdAnimal" name="findIdAnimal" maxlength="50" required>
+									<input type="text" id="findIdAnimal" name="findIdAnimal" value="only numbers pls" maxlength="50" required>
 									<button type="submit" id="findAnimal" value="btn_findByIdAnimal" onClick="x();"> Find </button>
 									<input name="operation" value="findByIdAnimal" type="hidden">
 									<br>
