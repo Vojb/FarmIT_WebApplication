@@ -50,11 +50,11 @@ public class FoodBean implements FoodBeanLocal {
 
 		TypedQuery<Food> query = em.createNamedQuery("Food.findByName", Food.class);
 
-		query.setParameter("foodType", type.toLowerCase());
+		query.setParameter("foodType", type);
 		Food f= null;
 		List<Food> results = query.getResultList();
 		for(Food food: results){
-			if(food.getNameFood().equals(type.toLowerCase()))
+			if(food.getNameFood().equals(type))
 			f = food;
 		}
 		return f;
