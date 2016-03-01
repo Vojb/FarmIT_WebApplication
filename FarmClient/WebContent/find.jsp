@@ -55,9 +55,9 @@
 						<h3>Animal</h3>
 						
 							<form action="/FarmClient/Farmlet" method="post" id="y">
-									<label>Find by Animal id</label>
+									<label>Find Animal</label>
 									<br>
-									<input type="number" id="findIdAnimal" name="findIdAnimal" placeholder="Insert Id number" maxlength="50" required>
+									<input type="number" id="findIdAnimal" name="findIdAnimal" placeholder="Insert id number" maxlength="50" required>
 									<button type="submit" id="findAnimal" value="btn_findByIdAnimal" onClick="x();"> Find </button>
 									<input name="operation" value="findByIdAnimal" type="hidden">
 									<br>
@@ -70,9 +70,9 @@
 							<hr>
 							<h3>Food</h3>
 						<form action="/FarmClient/Farmlet" method="post">
-									<label>Find by Food name</label>
+									<label>Find Food</label>
 									<br>
-									<input type="text" name="findByFoodName" maxlength="52" required>
+									<input type="text" name="findByFoodName" placeholder="Insert food name" maxlength="52" required>
 									<button type="submit" value="btn_findByFoodName">Find</button>
 									<input name="operation" value="findByFoodName" type="hidden">
 									<%if(request.getAttribute("msgF")==null){
@@ -83,9 +83,9 @@
 							<hr>
 							<h3>Building</h3>
 							<form action="/FarmClient/Farmlet" method="post">
-									<label>Find by Building Id</label>
+									<label>Find Building</label>
 									<br>
-									<input type="text" name="findIdBuilding" maxlength="5" required>
+									<input type="text" name="findIdBuilding" placeholder="Insert building id" maxlength="5" required>
 									<button type="submit" value="btn_findIdBuilding">Find</button>
 									<input name="operation" value="findByIdBuilding" type="hidden">
 									<%if(request.getAttribute("msgB")==null){
@@ -96,9 +96,9 @@
 							<hr>
 							<h3>Boxes</h3>
 							<form action="/FarmClient/Farmlet" method="post">
-									<label>Find by Box Id</label>
+									<label>Find Box</label>
 									<br>
-									<input type="text" name="findIdBox" maxlength="5" required>
+									<input type="text" name="findIdBox" placeholder="Insert Box id" maxlength="5" required>
 									<button type="submit" value="btn_findIdbox">Find</button>
 									<input name="operation" value="findByIdBox" type="hidden">
 									<%if(request.getAttribute("msgBox")==null){
