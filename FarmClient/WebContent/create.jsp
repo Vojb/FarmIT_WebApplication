@@ -40,7 +40,7 @@
 
 				<div class="container">
 							
-							<h3>Add animal</h3>
+							<h2>Add animal</h2>
 
 							<form action="/FarmClient/Farmlet" method="post">
 
