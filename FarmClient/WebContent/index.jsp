@@ -15,7 +15,7 @@
 <body>	
 <!-- Begin Wrapper -->
 <div id="wrapper">
-<a href="index.jsp"><img id="logga" src="farmitLogga.jpg"height="120px"/> </a>
+<a href="index.jsp"><img id="logga" src="farmitlogg.png"height="120px"/> </a>
   <!-- Begin Header -->
   <div id="header">
   
