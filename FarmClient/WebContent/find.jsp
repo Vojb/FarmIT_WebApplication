@@ -14,15 +14,17 @@
 <%@ page import="example.farm.model.*" %>
 <script type="text/javascript">
 
-function x(){
+/* function x(){
 	var fnElement = document.getElementById("findIdAnimal");
 	  var findIdAnimal = fnElement.value;
 	  if (isNaN(findIdAnimal)) {
-		  fnElement.setAttribute("placeholder","Id only consists of numbers");
+		  
+		  //document.getElementById("findIdAnimal").value = '';		 
+		  //fnElement.setAttribute("placeholder","Id only consists of numbers");
 		  return false;
 	  }
 		document.getElementById("y").submit();
-}
+} */
 </script>
 
 
@@ -55,7 +57,7 @@ function x(){
 							<form action="/FarmClient/Farmlet" method="post" id="y">
 									<label>Find by Animal id</label>
 									<br>
-									<input type="text" id="findIdAnimal" name="findIdAnimal" value="only numbers pls" maxlength="50" required>
+									<input type="number" id="findIdAnimal" name="findIdAnimal" placeholder="Insert Id number" maxlength="50" required>
 									<button type="submit" id="findAnimal" value="btn_findByIdAnimal" onClick="x();"> Find </button>
 									<input name="operation" value="findByIdAnimal" type="hidden">
 									<br>
@@ -64,10 +66,10 @@ function x(){
 									 	<center><%=request.getAttribute("msgA")%></center><%
 									}%>
 								
-							
+							</form>
 							<hr>
 							<h3>Food</h3>
-						
+						<form action="/FarmClient/Farmlet" method="post">
 									<label>Find by Food name</label>
 									<br>
 									<input type="text" name="findByFoodName" maxlength="52" required>
@@ -77,10 +79,10 @@ function x(){
 									 }else{ %>
 									 	<center><%=request.getAttribute("msgF")%></center><%
 									}%>
-							
+							</form>
 							<hr>
 							<h3>Building</h3>
-							
+							<form action="/FarmClient/Farmlet" method="post">
 									<label>Find by Building Id</label>
 									<br>
 									<input type="text" name="findIdBuilding" maxlength="5" required>
@@ -90,7 +92,7 @@ function x(){
 									 }else{ %>
 									 	<center><%=request.getAttribute("msgB")%></center><%
 									}%>
-						
+						</form>
 							<hr>
 							<h3>Boxes</h3>
 							<form action="/FarmClient/Farmlet" method="post">
