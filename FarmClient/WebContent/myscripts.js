@@ -1,12 +1,18 @@
 $("#changeFood").change(function() {
 		$('#food').text($('option:selected').attr('data-content'));
 		$('#foodOne').text($('option:selected').attr('data-example'));
-	    
+		
 	}).change();
-//$("#findAnimal").click(function(){
-//	  $('#foundStatusAnimal').val($('#Baajs').val());
+
+//$(document).ready(function(){	
+//	console.log("alsjd")
+//$("#find-animal").click(function(){
+//	alert($('#animalstatus').val());
+//	  $('#foundstatusanimal').val($('#animalstatus').val());
+//		alert($('#animalstatus').val());
+//		alert("fuck")
 //	});	
-	
+//});
 
 
 	

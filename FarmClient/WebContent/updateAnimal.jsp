@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet"
 		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		  <link rel="stylesheet" href="skeleton.css">
 		<link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
 <body>
@@ -45,55 +46,56 @@
 
 						<form action="/FarmClient/Farmlet" method="post">
 							<label>Type of animal</label>
-							<br> <input type="text" name="foundTypeAnimal"
-								maxlength="222" readonly
-								value="<%=a.getClass().getSimpleName()%>"> <br> <label>Status</label>
-										<select id="FoundStatusAnimal" class="form-control">
-											<%
-												if (a.getStatusAnimal().equals("Healthy")) {
-											%>
-											<option selected value="healthy"><%=a.getStatusAnimal()%></option>
-											<option value="Sick">Sick</option>
-											<option value="Gluefactory">Gluefactory</option>
-											<%
-												}
-												if (a.getStatusAnimal().equals("Sick")) {
-											%>
-											<option value="Healthy">Healthy</option>
-											<option selected value="Sick"><%=a.getStatusAnimal()%></option>
-											<option value="Gluefactory">Gluefactory</option>
-											<%
-												}
-												if (a.getStatusAnimal().equals("Gluefactory")) {
-											%>
-											<option value="Sick">Sick</option>
-											<option value="Healthy">Healthy</option>
-											<option selected value="Gluefactory"><%=a.getStatusAnimal()%></option>
-											<%
-												}
-											%>
+							<br />
+							<input type="text" name="foundTypeAnimal" maxlength="222"
+								readonly value="<%=a.getClass().getSimpleName()%>"> <br />
+							<label>Status</label>
+							<select id="foundStatusAnimal" class="form-control">
+								<%
+									if (a.getStatusAnimal().equals("Healthy")) {
+								%>
+								<option selected value="healthy"><%=a.getStatusAnimal()%></option>
+								<option value="Sick">Sick</option>
+								<option value="Gluefactory">Gluefactory</option>
+								<%
+									}
+									if (a.getStatusAnimal().equals("Sick")) {
+								%>
+								<option value="Healthy">Healthy</option>
 
-									</select> <br> <label>IdAnimal</label> <br> <input
-												type="numbers" name="foundidAnimal" maxlength="5" readonly
-												value="<%=a.getIdAnimal()%>"> <br> <label>Name</label>
-														<br> <input type="text" name="foundname"
-															maxlength="222" required value="<%=a.getName()%>">
-																<br> <label>Age</label> <br> <input
-																		type="text" name="age" maxlength="2" required
-																		value="<%=a.getAge()%>"> <br> <label>Box</label>
-																				<br> <input type="text" name="idBox"
-																					maxlength="2" required
-																					value="<%=a.getBox().getIdBox()%>"> <br>
-																							<label id="food"> Food </label> <br> <input
-																								type="text" name="food" maxlength="2" required
-																								value="<%=a.getAmountOfFood()%>"> </input> <br>
-																									<br>
-																										<button type="submit" value="find">Back</button>
-																										<input name="operation" value="find"
-																										type="hidden">
-																											<button type="submit" value="update">Update</button>
-																											<input name="operation" value="update"
-																											type="hidden">
+								<option selected value="Sick"><%=a.getStatusAnimal()%></option>
+
+								<option value="Gluefactory">Gluefactory</option>
+								<%
+									}
+									if (a.getStatusAnimal().equals("Gluefactory")) {
+								%>
+								<option value="Sick">Sick</option>
+								<option value="Healthy">Healthy</option>
+								<option selected value="Gluefactory"><%=a.getStatusAnimal()%></option>
+								<%
+									}
+								%>
+							</select>
+							<br> <label>IdAnimal</label> <br> <input type="text"
+									name="foundidAnimal" maxlength="5" readonly
+									value="<%=a.getIdAnimal()%>">
+									 <br> <label>Name</label>
+									<br /> <input type="text" name="foundname" maxlength="222"
+									required value="<%=a.getName()%>"> <br> <label>Age</label>
+									<br> <input type="text" name="age" maxlength="2"
+														required value="<%=a.getAge()%>"> <br> <label>Box</label>
+																<br> <input type="text" name="idBox" maxlength="2"
+																	required value="<%=a.getBox().getIdBox()%>"> <br>
+																			<label id="food"> Food </label> <br> <input
+																				type="text" name="food" maxlength="2" required
+																				value="<%=a.getAmountOfFood()%>"> </input> <br>
+																					<br>
+																						<button type="submit" value="find">Back</button> <input
+																						name="operation" value="find" type="hidden">
+																							<button type="submit" value="update">Update</button>
+																							<input name="operation" value="update"
+																							type="hidden">
 						</form>
 				</div>
 

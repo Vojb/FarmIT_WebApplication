@@ -89,7 +89,12 @@ public class Farmlet extends HttpServlet {
 				request.setAttribute("msgF", "didnt find your fucking food");
 				url = "/find.jsp?";
 			}
-		} else if (operation.equals("feedAnimals")) {
+		}else if (operation.equals("addAnimal")) {
+				
+			
+			url = "/index.jsp?";
+ 
+		}else if (operation.equals("feedAnimals")) {
 			facade.feedAllAnimals(1, 2, 3);
 			url = "/index.jsp?";
 

@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-
+  <link rel="stylesheet" href="skeleton.css">
 <link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
 <body>
@@ -42,13 +42,13 @@
 							
 							<h3>Add animal</h3>
 
-							<form method="post">
+							<form action="/FarmClient/Farmlet" method="post">
 
 								<label>Type of Animal</label>
 								<br />
 								<select id="changeFood" class="form-control" name="changeFood" required>
 									<option name="changeFood" data-content="Food" data-example=" ">Choose</option>
-									<option name="changeFood" value="cow" data-content="Powerfeed" data-example=" ">Cow</option>
+									<option name="changeFood" value="Cow" data-content="Powerfeed" data-example=" ">Cow</option>
 									<option name="changeFood" value="Hen" data-content="Oats" data-example=" ">Hen</option>
 									<option name="changeFood" value="Horse" data-content="Powerfeed" data-example="Hay">Horse</option>
 									<option name="changeFood" value="Pig" data-content="Powerfeed" data-example="">Pig</option>
@@ -60,7 +60,6 @@
 									<option>Sick</option>
 									<option>Gluefactory</option>
 								</select>
-								<br />
 								<label>IdAnimal</label>
 								<br />
 								<input type="text" ="idAnimal" maxlength="5" required>
@@ -86,8 +85,10 @@
 								<input type="text" name="foodOne" maxlength="2" required />
 								<br />
 								<br />
-								<button type="submit" value="Submit">Submit</button>
-								<button type="reset" value="Reset">Reet</button>
+								<button type="reset" value="Reset">Reset</button>
+								<button type="submit" value="addaAnimal">Add</button>
+								<input name="operation" value="addAnimal" type="hidden">
+								
 							</form>
 		
 

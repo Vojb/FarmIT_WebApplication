@@ -4,13 +4,23 @@ body {
  font-family: Arial, Helvetica, sans-serif;
  font-size: 13px;
 }
+input[type="text"],input[type="url"], input[type="password"], textarea, select {
+    height: 30px;
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+input, textarea, select, fieldset {
+    margin-bottom:0px;
+}
 hr {
-    margin-right: 3px;
-    margin-left: 3px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 18;
+    border: 18px;
     border-top: 1px solid black;
+    margin: 7px;
+    padding: 0px;
 }
 .form-control {
     margin-left: 2%;
@@ -144,9 +154,16 @@ text-align: center;
 #logga {
     padding-left: 38%;
 }
+h1, h2, h3, h4, h5, h6 {
+     margin-top: 0; 
+     margin-bottom: 0px;
+}
 .container  h3 {
     padding-left: 2%;
-    }
+    font-size: 20px; 
+    line-height: 1.3; 
+    letter-spacing: -.1rem;
+}
 input, select, textarea {
     margin-left: 2%;
     font-family: inherit;
@@ -154,7 +171,6 @@ input, select, textarea {
     line-height: inherit;
 }
 .container {
-	
 width: 510px;
 	padding-left: 0px;
 	padding-right: 0px;
@@ -196,7 +212,6 @@ label {
 	padding-top: 1%;
     display: inline-block;
     max-width: 100%;
-    margin-bottom: 5px;
     font-weight: 700;
     padding-left: 2%;
 }
