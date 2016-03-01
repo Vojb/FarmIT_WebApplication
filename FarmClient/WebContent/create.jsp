@@ -82,7 +82,7 @@
 								<br />
 								<label id="foodOne"> </label>
 								<br />
-								<input type="text" name="foodOne" maxlength="2" required />
+								<input type="text" name="foodOne" maxlength="2" />
 								<br />
 								<br />
 								<button type="reset" value="Reset">Reset</button>

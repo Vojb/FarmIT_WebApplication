@@ -38,7 +38,7 @@
 
 				<div class="container">
 							
-							<h3>Update animal</h3>
+							<h3>Update building</h3>
 		<% Building a = (Building)request.getAttribute("building"); %>
 									<br>
 
@@ -48,12 +48,6 @@
 								<input type="text" name="foundIdBuilding" maxlength="222" readonly value="<%= a.getIdBuilding()%>"> 
 								<br>
 								<%  %>
-								<label>Status</label>
-								<select class="form-control">
-									<option>Healthy</option>
-									<option>Sick</option>
-									<option>Gluefactory</option>
-								</select>
 								<br>
 								
 								<br>
