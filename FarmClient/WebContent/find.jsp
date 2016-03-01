@@ -6,6 +6,7 @@
 <title>Farmit</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="skeleton.css">
 <link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
 <body>
@@ -41,14 +42,17 @@
 							<hr>
 							<h3>Animal</h3>
 
-							<form action="/FarmClient/Farmlet" method="post" onSubmit="return checkIfidNbr();">
+							<form action="/FarmClient/Farmlet" method="post" >
 									<label>Find by Animal id</label>
 									<br>
-									<input type="numbers" id="findAnimalId" name="findIdAnimal" maxlength="50" required>
-									<button type="submit" value="btn_findByIdAnimal">Find </button>
+									<input type="text" id="findIdAnimal" name="findIdAnimal" maxlength="50" required>
+									<button type="submit" id="find-animal" value="btn_findByIdAnimal">Find </button>
 									<input name="operation" value="findByIdAnimal" type="hidden">
 									<br>
-									<%= request.getAttribute("msg") %>
+									<%if(request.getAttribute("msgA")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msgA")%></center><%
+									}%>
 								
 							</form>
 							<hr>
@@ -59,6 +63,10 @@
 									<input type="text" name="findByFoodName" maxlength="52" required>
 									<button type="submit" value="btn_findByFoodName">Find</button>
 									<input name="operation" value="findByFoodName" type="hidden">
+									<%if(request.getAttribute("msgF")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msgF")%></center><%
+									}%>
 							</form>
 							<hr>
 							<h3>Building</h3>
@@ -68,7 +76,10 @@
 									<input type="text" name="findIdBuilding" maxlength="5" required>
 									<button type="submit" value="btn_findIdBuilding">Find</button>
 									<input name="operation" value="findByIdBuilding" type="hidden">
-
+									<%if(request.getAttribute("msgB")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msgB")%></center><%
+									}%>
 							</form>
 							<hr>
 							<h3>Boxes</h3>
@@ -78,8 +89,12 @@
 									<input type="text" name="findIdBox" maxlength="5" required>
 									<button type="submit" value="btn_findIdbox">Find</button>
 									<input name="operation" value="findByIdBox" type="hidden">
+									<%if(request.getAttribute("msgBox")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msgBox")%></center><%
+									}%>
 							</form>
-							<hr>
+							
 
 				</div>
 			</div>

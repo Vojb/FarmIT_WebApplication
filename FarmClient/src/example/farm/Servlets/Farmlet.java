@@ -27,7 +27,6 @@ public class Farmlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
 	FarmFacadeLocal facade;
-	
 
 	public Farmlet() {
 		super();
@@ -42,29 +41,32 @@ public class Farmlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String url = null;
 		String operation = request.getParameter("operation");
 		if (operation.equals("findByIdAnimal")) {
 			int id = Integer.parseInt(request.getParameter("findIdAnimal"));
 			Animal a = facade.findByIdAnimal(id);
-			
+
 			if (a != null) {
 				request.setAttribute("animal", a);
 				url = "/updateAnimal.jsp?";
-			}else{
-				request.setAttribute("msg", "didnt find a fucking animal");
+			} else {
+				request.setAttribute("msgA", "didnt find a fucking animal");
 				url = "/find.jsp?";
-
 			}
-			
+
 		} else if (operation.equals("findByIdBuilding")) {
 			String id = request.getParameter("findIdBuilding");
 			Building b = facade.findByIdBuilding(id);
-			
+
 			if (b != null) {
 				request.setAttribute("building", b);
 				url = "/updateBuilding.jsp?";
+			} else {
+				request.setAttribute("msgB", "didnt find a fucking building");
+				url = "/find.jsp?";
+
 			}
 		} else if (operation.equals("findByIdBox")) {
 			String id = request.getParameter("findIdBox");
@@ -72,20 +74,31 @@ public class Farmlet extends HttpServlet {
 			if (b != null) {
 				request.setAttribute("box", b);
 				url = "/updateBox.jsp?";
-			}	
-		}  else if (operation.equals("findByFoodName")) {
+			} else {
+				request.setAttribute("msgBox", "didnt find a fucking box");
+				url = "/find.jsp?";
+			}
+		} else if (operation.equals("findByFoodName")) {
 			Food f = null;
 			String foodname = request.getParameter("findByFoodName");
 			f = facade.findByFoodName(foodname);
-			if (f!= null) {
+			if (f != null) {
 				request.setAttribute("food", f);
 				url = "/updateFood.jsp?";
-			}	
-		} else if (operation.equals("feedAnimals")) {
-				facade.feedAllAnimals(1,2,3);
-				url = "/index.jsp?";
+			}else {
+				request.setAttribute("msgF", "didnt find your fucking food");
+				url = "/find.jsp?";
+			}
+		}else if (operation.equals("addAnimal")) {
 				
-		}else if (operation.equals("find")) {
+			
+			url = "/index.jsp?";
+ 
+		}else if (operation.equals("feedAnimals")) {
+			facade.feedAllAnimals(1, 2, 3);
+			url = "/index.jsp?";
+
+		} else if (operation.equals("find")) {
 			url = "/find.jsp?";
 		} else {
 			url = "/find.jsp?";

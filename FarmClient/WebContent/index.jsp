@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="skeleton.css">
 <link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
 <body>	
