@@ -2,7 +2,7 @@
 
 body {
 	
-    background-image: url(http://organic-kahunahost.netdna-ssl.com/wp-content/themes/organic_themes_v5/images/hawaii-background.svg);
+    background-image: url(backgroundFarm.png);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-y: 104%;
@@ -58,11 +58,14 @@ button{
    background: rgb(182, 216, 164);	
 }
 #navigation a{
+        color: black;
+    background: rgb(248, 248, 232);
     box-shadow: inset 0px 0px 2px black;
 	padding-right: 25px;
 	padding-left: 25px;
     border-radius: 4px;
     font-size: 15px;
+   text-decoration: none;
 }
 #navigation a:focus{
     color :black;
@@ -76,8 +79,8 @@ a:visited {
 
 #navigation a:hover {
     color: black;
-    box-shadow: 1px 1px 15px black;
-
+    box-shadow: 1px 1px 15px black; 
+   text-decoration: none;
 }
 a:active {
     color: black;
@@ -181,6 +184,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -.1rem;
 }
 .container  h3 {
+        padding-bottom: 2%;
 
     padding-left: 2%;
     font-size: 20px; 
