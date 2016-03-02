@@ -112,7 +112,7 @@ public class Farmlet extends HttpServlet {
 			} else if (animalType.equals("Hen")) {
 				Hen a = new Hen();
 				a.setAmountOfOats(Integer.parseInt(request.getParameter("food")));
-				a.setIdAnimal(Long.parseLong(request.getParameter("changefood")));
+				a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
 				a.setStatusAnimal(request.getParameter("status-animal"));
 				a.setName(request.getParameter("name"));
 				a.setAge(request.getParameter("age"));
@@ -128,7 +128,7 @@ public class Farmlet extends HttpServlet {
 				Horse a = new Horse();
 				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
 				a.setAmountOfHay(Integer.parseInt(request.getParameter("food")));
-				a.setIdAnimal(Long.parseLong(request.getParameter("changefood")));
+				a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
 				a.setStatusAnimal(request.getParameter("status-animal"));
 				a.setName(request.getParameter("name"));
 				a.setAge(request.getParameter("age"));
@@ -142,7 +142,7 @@ public class Farmlet extends HttpServlet {
 			} else {
 				Pig a = new Pig();
 				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
-				a.setIdAnimal(Long.parseLong(request.getParameter("changefood")));
+				a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
 				a.setStatusAnimal(request.getParameter("status-animal"));
 				a.setName(request.getParameter("name"));
 				a.setAge(request.getParameter("age"));
@@ -189,7 +189,7 @@ public class Farmlet extends HttpServlet {
 			} else if (animalType.equals("Horse")) {
 				Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
 				a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
-				a.setAmountOfFoodAgain(Integer.parseInt(request.getParameter("foundfoodOne")));
+				a.setAmountOfHay(Integer.parseInt(request.getParameter("foundHay")));
 				a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
 				a.setName(request.getParameter("foundname"));
 				a.setAge(request.getParameter("foundage"));

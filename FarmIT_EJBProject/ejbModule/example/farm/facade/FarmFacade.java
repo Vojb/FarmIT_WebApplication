@@ -194,7 +194,7 @@ public class FarmFacade implements FarmFacadeLocal {
 			Food f2 = findByIdFood(idF);
 			for (Animal a : horses) {
 				int amount = a.getAmountOfFood();
-				int amount2 = a.getAmountOfFoodAgain();
+				int amount2 = a.getAmountOfHay();
 				int feedAmount= f.getAmount();
 				int feedAmount2= f2.getAmount();
 				feedAmount2-=amount2;
