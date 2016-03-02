@@ -95,7 +95,6 @@ public class Farmlet extends HttpServlet {
 		} else if (operation.equals("addAnimal")) {
 
 			String animalType = request.getParameter("typeAnimal");
-			System.out.println(request.getParameter("typeAnimal"));
 			if (animalType.equals("Cow")) {
 				Cow a = new Cow();
 				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
@@ -173,7 +172,6 @@ public class Farmlet extends HttpServlet {
 				}
 				
 				facade.updateAnimal(a);
-				System.out.println(a.getName());
 			} else if (animalType.equals("Hen")) {
 				Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
 				a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
@@ -214,7 +212,6 @@ public class Farmlet extends HttpServlet {
 					a.setBox(b);
 				}
 				facade.updateAnimal(a);
-				System.out.println(a.getName());
 			}
 			
 			int id = Integer.parseInt(request.getParameter("foundidAnimal"));
