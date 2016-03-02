@@ -132,9 +132,7 @@ public abstract class Animal implements Serializable {
 	@Transient
 
 	public int getAmountOfHay() {
-
 		return 0;
-
 	}
 
 	@Transient
