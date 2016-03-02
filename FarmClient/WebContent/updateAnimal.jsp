@@ -47,14 +47,14 @@
 						<form action="/FarmClient/Farmlet" method="post">
 							<label>Type of animal</label>
 							<br />
-							<input type="text" name="foundTypeAnimal" maxlength="222"
+							<input type="text" id="foundType" name="foundType" maxlength="222"
 								readonly value="<%=a.getClass().getSimpleName()%>"> <br />
-							<label>Status</label>
-							<select id="foundStatusAnimal" class="form-control">
+							<label>Status</label><br/>
+							<select id="foundstatusAnimal" name="foundstatusAnimal">
 								<%
 									if (a.getStatusAnimal().equals("Healthy")) {
 								%>
-								<option selected value="healthy"><%=a.getStatusAnimal()%></option>
+								<option selected value="Healthy">Healthy</option>
 								<option value="Sick">Sick</option>
 								<option value="Gluefactory">Gluefactory</option>
 								<%
@@ -63,15 +63,15 @@
 								%>
 								<option value="Healthy">Healthy</option>
 
-								<option selected value="Sick"><%=a.getStatusAnimal()%></option>
+								<option selected value="Sick">Sick</option>
 
 								<option value="Gluefactory">Gluefactory</option>
 								<%
 									}
 									if (a.getStatusAnimal().equals("Gluefactory")) {
 								%>
-								<option value="Sick">Sick</option>
 								<option value="Healthy">Healthy</option>
+								<option value="Sick">Sick</option>
 								<option selected value="Gluefactory"><%=a.getStatusAnimal()%></option>
 								<%
 									}
@@ -83,20 +83,24 @@
 									 <br> <label>Name</label>
 									<br /> <input type="text" name="foundname" maxlength="222"
 									required value="<%=a.getName()%>"> <br> <label>Age</label>
-									<br> <input type="text" name="age" maxlength="2"
+									<br> <input type="text" name="foundage" maxlength="2"
 														required value="<%=a.getAge()%>"> <br> <label>Box</label>
-																<br> <input type="text" name="idBox" maxlength="2"
+																<br> <input type="text" name="foundidBox" maxlength="2"
 																	required value="<%=a.getBox().getIdBox()%>"> <br>
 																			<label id="food"> Food </label> <br> <input
-																				type="text" name="food" maxlength="2" required
-																				value="<%=a.getAmountOfFood()%>"> </input> <br>
+																				type="text" name="foundfood" maxlength="2" required
+																				value="<%=a.getAmountOfFood()%>"> </input> 
+																				<input type="text" name="FoundfoodOne" maxlength="2" value "<%=a.getAmountOfFoodAgain()%>" />
+																				<br />
 																					<br>
-																						<button type="submit" value="find">Back</button> <input
-																						name="operation" value="find" type="hidden">
 																							<button type="submit" value="update">Update</button>
-																							<input name="operation" value="update"
+																							<input name="operation" value="updateAnimal"
 																							type="hidden">
 						</form>
+										<form action="/FarmClient/Farmlet" method="post">
+																						<button type="submit" value="find">Back</button> <input
+																						name="operation" value="find" type="hidden">
+																					</form>
 				</div>
 
 

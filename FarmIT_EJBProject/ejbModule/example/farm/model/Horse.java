@@ -37,4 +37,12 @@ public class Horse extends Animal {
 	public int getAmountOfFoodAgain() {
 		return amountOfHay;
 	}
+	@Transient
+	public void setAmountOfFood(int amountOfPowerFeed) {
+		this.amountOfPowerFeed = amountOfPowerFeed;
+	}
+	@Transient
+	public void setAmountOfFoodAgain(int amountOfHay) {
+		this.amountOfHay = amountOfHay;
+	}
 }

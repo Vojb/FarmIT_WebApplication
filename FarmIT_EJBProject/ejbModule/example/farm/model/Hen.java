@@ -23,4 +23,8 @@ public class Hen extends Animal {
 	public int getAmountOfFood() {
 		return amountOfOats;
 	}
+	@Transient
+	public void setAmountOfFood(int amountOfOats) {
+		this.amountOfOats = amountOfOats;;
+	}
 }

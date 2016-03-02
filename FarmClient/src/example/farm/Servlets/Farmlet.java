@@ -156,6 +156,75 @@ public class Farmlet extends HttpServlet {
 			}
 			
 			url = "/index.jsp?";
+		} else if (operation.equals("updateAnimal")) {
+
+			String animalType = request.getParameter("foundType");
+			System.out.println(request.getParameter("foundType"));
+			if (animalType.equals("Cow")) {
+				Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
+				a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
+				a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
+				a.setName(request.getParameter("foundname"));
+				a.setAge(request.getParameter("foundage"));
+
+				Box b = facade.findByIdBox(request.getParameter("idBox"));
+				if (b != null) {
+					a.setBox(b);
+				}
+				
+				facade.updateAnimal(a);
+				System.out.println(a.getName());
+			} else if (animalType.equals("Hen")) {
+				Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
+				a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
+				a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
+				a.setName(request.getParameter("foundname"));
+				a.setAge(request.getParameter("foundage"));
+
+				Box b = facade.findByIdBox(request.getParameter("foundidBox"));
+				if (b != null) {
+					a.setBox(b);
+
+				}
+
+				facade.updateAnimal(a);
+			} else if (animalType.equals("Horse")) {
+				Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
+				a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
+				a.setAmountOfFoodAgain(Integer.parseInt(request.getParameter("foundfoodOne")));
+				a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
+				a.setName(request.getParameter("foundname"));
+				a.setAge(request.getParameter("foundage"));
+
+				Box b = facade.findByIdBox(request.getParameter("foundidBox"));
+				if (b != null) {
+					a.setBox(b);
+				}
+
+				facade.updateAnimal(a);
+			} else {
+				Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
+				a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
+				a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
+				a.setName(request.getParameter("foundname"));
+				a.setAge(request.getParameter("foundage"));
+
+				Box b = facade.findByIdBox(request.getParameter("foundidBox"));
+				if (b != null) {
+					a.setBox(b);
+				}
+				facade.updateAnimal(a);
+				System.out.println(a.getName());
+			}
+			
+			int id = Integer.parseInt(request.getParameter("foundidAnimal"));
+			Animal a = facade.findByIdAnimal(id);
+
+			if (a != null) {
+				request.setAttribute("animal", a);
+				url = "/updateAnimal.jsp?";
+			}
+			
 
 		} else if (operation.equals("feedAnimals")) {
 			facade.feedAllAnimals(1, 2, 3);

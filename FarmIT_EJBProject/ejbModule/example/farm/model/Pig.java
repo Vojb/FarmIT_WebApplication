@@ -27,4 +27,8 @@ public class Pig extends Animal {
 	public int getAmountOfFood(){
 		return amountOfPowerFeed;
 	}
+	@Transient
+	public void setAmountOfFood(int amountOfPowerFeed) {
+		this.amountOfPowerFeed = amountOfPowerFeed;
+	}
 }
