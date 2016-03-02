@@ -8,10 +8,10 @@ $("#typeAnimal").change(function(){
 	 alert;
 	if ($('#typeAnimal option:selected').text() ==="Horse") {
 		
-	        $('#bajs').show();
+	        $('#hay').show();
 	    }
 	    else {
-	        $('#bajs').hide();
+	        $('#hay').hide();
 	    }
 	}).change();
 
