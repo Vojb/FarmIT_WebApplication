@@ -83,7 +83,7 @@
 							<form action="/FarmClient/Farmlet" method="post">
 									<label>Find Box</label>
 									<br>
-									<input type="text" name="findIdBox" placeholder="Insert Box id" maxlength="5" required>
+									<input type="text" name="findIdBox" placeholder="Insert box id" maxlength="5" required>
 									<button type="submit" value="btn_findIdbox">Find</button>
 									<input name="operation" value="findByIdBox" type="hidden">
 									<%if(request.getAttribute("msgBox")==null){

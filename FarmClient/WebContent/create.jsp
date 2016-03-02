@@ -48,9 +48,9 @@
 								<label>Type of Animal</label>
 								<br />
 								<select id="typeAnimal" name="typeAnimal" required>
-									<option selected name="changeFood" value="Cow" data-content="Powerfeed" data-example=" ">Cow</option>
+									<option selected name="changeFood" value="Cow" data-content="Powerfeed" data-example=" " >Cow</option>
 									<option name="changeFood" value="Hen" data-content="Oats" data-example=" ">Hen</option>
-									<option name="changeFood" value="Horse" data-content="Powerfeed" data-example="Hay">Horse</option>
+									<option name="changeFoodHorse" value="Horse" data-content="Powerfeed" data-example="Hay">Horse</option>
 									<option name="changeFood" value="Pig" data-content="Powerfeed" data-example="">Pig</option>
 								</select>
 								<br/>
@@ -80,15 +80,15 @@
 								<br />
 								<label id="food">Food</label>
 								<br />
-								<input type="text" name="food" maxlength="2" required />
+								<input type="text" name="food" maxlength="2" required placeholder="Insert amount" />
 								<br />
 								<label id="foodOne"> </label>
 								<br />
-								<input type="text" name="foodOne" maxlength="2" />
+								<input type="text" id="foodOne" name="foodOne" maxlength="2" /> 
 								<br />
 								<br />
 								<button type="reset" value="Reset">Reset</button>
-								<button type="submit" value="addaAnimal">Add</button>
+								<button type="submit" value="addaAnimal" >Add</button>
 								<input name="operation" value="addAnimal" type="hidden">
 								
 							</form>
