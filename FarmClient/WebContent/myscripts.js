@@ -5,7 +5,6 @@ $("#typeAnimal").change(function() {
 
 $("#typeAnimal").change(function(){
 
-	 alert;
 	if ($('#typeAnimal option:selected').text() ==="Horse") {
 		
 	        $('#hay').show();
