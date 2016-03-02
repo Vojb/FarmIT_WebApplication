@@ -4,12 +4,14 @@ $("#typeAnimal").change(function() {
 	}).change();
 
 $("#typeAnimal").change(function(){
-	   
-	if ($('option:selected') ===($('#changeFoodHorse').val("Horse"))) {
-	        $('#foodOne').show();
+
+	 alert;
+	if ($('#typeAnimal option:selected').text() ==="Horse") {
+		
+	        $('#bajs').show();
 	    }
 	    else {
-	        $('#foodOne').hide();
+	        $('#bajs').hide();
 	    }
 	}).change();
 
