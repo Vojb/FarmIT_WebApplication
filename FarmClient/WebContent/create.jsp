@@ -57,14 +57,14 @@
 								</select>
 								
 								<label>Status</label>
-								<select class="form-control">
+								<select ="status-animal"class="form-control">
 									<option>Healthy</option>
 									<option>Sick</option>
 									<option>Gluefactory</option>
 								</select>
 								<label>IdAnimal</label>
 								<br />
-								<input type="text" ="idAnimal" maxlength="5" required>
+								<input type="text" name="idAnimal" maxlength="5" required/>
 								<br />
 								<label>Name</label>
 								<br />

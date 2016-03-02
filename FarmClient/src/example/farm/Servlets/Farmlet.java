@@ -21,6 +21,9 @@ import example.farm.model.Box;
 import example.farm.model.Building;
 import example.farm.model.Cow;
 import example.farm.model.Food;
+import example.farm.model.Hen;
+import example.farm.model.Horse;
+import example.farm.model.Pig;
 
 @WebServlet("/Farmlet")
 public class Farmlet extends HttpServlet {
@@ -85,16 +88,76 @@ public class Farmlet extends HttpServlet {
 			if (f != null) {
 				request.setAttribute("food", f);
 				url = "/updateFood.jsp?";
-			}else {
+			} else {
 				request.setAttribute("msgF", "didnt find your fucking food");
 				url = "/find.jsp?";
 			}
-		}else if (operation.equals("addAnimal")) {
-				
+		} else if (operation.equals("addAnimal")) {
+
+			String animalType = request.getParameter("changefoods");
+			System.out.println(request.getParameter("changefoods"));
+			if (animalType.equals("Cow")) {
+				Cow a = new Cow();
+				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
+				a.setIdAnimal(Long.parseLong(request.getParameter("changefood")));
+				a.setStatusAnimal(request.getParameter("status-animal"));
+				a.setName(request.getParameter("name"));
+				a.setAge(request.getParameter("age"));
+
+				Box b = facade.findByIdBox(request.getParameter("idBox"));
+				if (b != null) {
+					a.setBox(b);
+				}
+
+				facade.createAnimal(a);
+			} else if (animalType.equals("Hen")) {
+				Hen a = new Hen();
+				a.setAmountOfOats(Integer.parseInt(request.getParameter("food")));
+				a.setIdAnimal(Long.parseLong(request.getParameter("changefood")));
+				a.setStatusAnimal(request.getParameter("status-animal"));
+				a.setName(request.getParameter("name"));
+				a.setAge(request.getParameter("age"));
+
+				Box b = facade.findByIdBox(request.getParameter("idBox"));
+				if (b != null) {
+					a.setBox(b);
+
+				}
+
+				facade.createAnimal(a);
+			} else if (animalType.equals("Horse")) {
+				Horse a = new Horse();
+				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
+				a.setAmountOfHay(Integer.parseInt(request.getParameter("food")));
+				a.setIdAnimal(Long.parseLong(request.getParameter("changefood")));
+				a.setStatusAnimal(request.getParameter("status-animal"));
+				a.setName(request.getParameter("name"));
+				a.setAge(request.getParameter("age"));
+
+				Box b = facade.findByIdBox(request.getParameter("idBox"));
+				if (b != null) {
+					a.setBox(b);
+				}
+
+				facade.createAnimal(a);
+			} else {
+				Pig a = new Pig();
+				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
+				a.setIdAnimal(Long.parseLong(request.getParameter("changefood")));
+				a.setStatusAnimal(request.getParameter("status-animal"));
+				a.setName(request.getParameter("name"));
+				a.setAge(request.getParameter("age"));
+
+				Box b = facade.findByIdBox(request.getParameter("idBox"));
+				if (b != null) {
+					a.setBox(b);
+				}
+				facade.createAnimal(a);
+			}
 			
 			url = "/index.jsp?";
- 
-		}else if (operation.equals("feedAnimals")) {
+
+		} else if (operation.equals("feedAnimals")) {
 			facade.feedAllAnimals(1, 2, 3);
 			url = "/index.jsp?";
 
