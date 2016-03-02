@@ -94,8 +94,8 @@ public class Farmlet extends HttpServlet {
 			}
 		} else if (operation.equals("addAnimal")) {
 
-			String animalType = request.getParameter("bajs");
-			System.out.println(request.getParameter("bajs"));
+			String animalType = request.getParameter("typeAnimal");
+			System.out.println(request.getParameter("typeAnimal"));
 			if (animalType.equals("Cow")) {
 				Cow a = new Cow();
 				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));

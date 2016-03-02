@@ -35,8 +35,7 @@
 		<div id="faux">
 
 			<div id="leftcolumn">
-			<a href="create.jsp"><img src="horse.png"/> </a>
-			<a href="create.jsp"><img src="hen.png" /> </a>
+
 			</div>
 			<div id="content">
 
@@ -48,19 +47,21 @@
 
 								<label>Type of Animal</label>
 								<br />
-								<select id="bajs" class="form-control" name="bajs" required>
-									<option name="changeFood" value="Cow" data-content="Powerfeed" data-example=" ">Cow</option>
+								<select id="typeAnimal" name="typeAnimal" required>
+									<option selected name="changeFood" value="Cow" data-content="Powerfeed" data-example=" ">Cow</option>
 									<option name="changeFood" value="Hen" data-content="Oats" data-example=" ">Hen</option>
 									<option name="changeFood" value="Horse" data-content="Powerfeed" data-example="Hay">Horse</option>
 									<option name="changeFood" value="Pig" data-content="Powerfeed" data-example="">Pig</option>
 								</select>
 								<br/>
 								<label>Status</label>
-								<select ="status-animal"class="form-control">
-									<option>Healthy</option>
+								<br/>
+								<select ="status-animal" name="status-animal">
+									<option selected>Healthy</option>
 									<option>Sick</option>
 									<option>Gluefactory</option>
 								</select>
+								<br/>
 								<label>IdAnimal</label>
 								<br />
 								<input type="text" name="idAnimal" maxlength="5" required/>
@@ -101,8 +102,6 @@
 			<!-- End Content Column -->
 			<!-- Begin Right Column -->
 			<div id="rightcolumn">
-			<a href="create.jsp"><img src="pig.png" /> </a>
-			<a href="create.jsp"><img src="cow.png" /> </a>
 			</div><!-- End Right Column -->
 		</div>
 		<!-- End Faux Columns -->
