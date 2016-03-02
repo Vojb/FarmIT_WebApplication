@@ -166,7 +166,7 @@ public class Farmlet extends HttpServlet {
 				a.setName(request.getParameter("foundname"));
 				a.setAge(request.getParameter("foundage"));
 
-				Box b = facade.findByIdBox(request.getParameter("idBox"));
+				Box b = facade.findByIdBox(request.getParameter("foundidBox"));
 				if (b != null) {
 					a.setBox(b);
 				}
