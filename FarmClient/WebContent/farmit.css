@@ -6,9 +6,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-y: 104%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
- font-size: 13px;
+    font-size: 13px;	
 }
 input[type="text"],input[type="url"], input[type="number"], textarea, select {
     height: 30px;
