@@ -90,7 +90,7 @@
 																			<label id="food"> Food </label> <br> <input
 																				type="text" name="foundfood" maxlength="2" required
 																				value="<%=a.getAmountOfFood()%>"> </input> 
-																				<input type="text" name="FoundfoodOne" maxlength="2" value "<%=a.getAmountOfFoodAgain()%>" />
+																				<input type="text" id="foundFoodOne" name="FoundfoodOne" maxlength="2" value "<%=a.getAmountOfFoodAgain()%>" />
 																				<br />
 																					<br>
 																							<button type="submit" value="update">Update</button>
