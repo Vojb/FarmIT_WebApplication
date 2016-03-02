@@ -57,7 +57,7 @@
 							<form action="/FarmClient/Farmlet" method="post" id="y">
 									<label>Find Animal</label>
 									<br>
-									<input type="number" id="findIdAnimal" name="findIdAnimal" placeholder="Insert id number" maxlength="50" required>
+									<input type="number" id="findIdAnimal" name="findIdAnimal" placeholder="Insert id number" maxlength="5" required>
 									<button type="submit" id="findAnimal" value="btn_findByIdAnimal" onClick="x();"> Find </button>
 									<input name="operation" value="findByIdAnimal" type="hidden">
 									<br>
