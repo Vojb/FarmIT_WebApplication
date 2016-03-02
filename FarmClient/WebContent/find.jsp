@@ -12,21 +12,6 @@
 <body>
 <%@ page import="javax.servlet.http.*" %>
 <%@ page import="example.farm.model.*" %>
-<script type="text/javascript">
-
-/* function x(){
-	var fnElement = document.getElementById("findIdAnimal");
-	  var findIdAnimal = fnElement.value;
-	  if (isNaN(findIdAnimal)) {
-		  
-		  //document.getElementById("findIdAnimal").value = '';		 
-		  //fnElement.setAttribute("placeholder","Id only consists of numbers");
-		  return false;
-	  }
-		document.getElementById("y").submit();
-} */
-</script>
-
 
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
