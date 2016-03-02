@@ -10,11 +10,11 @@ body {
     font-size: 13px;
  font-size: 13px;
 }
-input[type="text"],input[type="url"], input[type="numbers"], textarea, select {
+input[type="text"],input[type="url"], input[type="number"], textarea, select {
     height: 30px;
     padding: 6px 10px;
     background-color: #fff;
-    border: 1px solid #D1D1D1;
+    border: 1px solid black;
     border-radius: 4px;
     box-shadow: none;
     box-sizing: border-box;
