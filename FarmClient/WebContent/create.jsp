@@ -34,8 +34,10 @@
 		<!-- Begin Faux Columns -->
 		<div id="faux">
 
-			<div id="leftcolumn"></div>
-
+			<div id="leftcolumn">
+			<a href="create.jsp"><img src="horse.png"/> </a>
+			<a href="create.jsp"><img src="hen.png" /> </a>
+			</div>
 			<div id="content">
 
 				<div class="container">
@@ -99,8 +101,10 @@
 			</div>
 			<!-- End Content Column -->
 			<!-- Begin Right Column -->
-			<div id="rightcolumn"></div>
-			<!-- End Right Column -->
+			<div id="rightcolumn">
+			<a href="create.jsp"><img src="pig.png" /> </a>
+			<a href="create.jsp"><img src="cow.png" /> </a>
+			</div><!-- End Right Column -->
 		</div>
 		<!-- End Faux Columns -->
 		<!-- Begin Footer -->
