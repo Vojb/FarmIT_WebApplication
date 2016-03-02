@@ -85,7 +85,7 @@
 										<br /> <input type="text" name="foundidBox"	maxlength="2" required value="<%=a.getBox().getIdBox()%>"> <br>
 										<label id="food"> Food </label>
 										 <br> <input type="text" name="foundfood" maxlength="2" required value="<%=a.getAmountOfFood()%>"> 
-										 <br /><input type="text" name="foundHay" maxlength="2" required value "<%=a.getAmountOfHay()%>" />
+										 <br /><input type="text" name="foundHay" maxlength="2" required value="<%=a.getAmountOfHay()%>" />
 												<br /> <br> <button type="submit" value="update">Update</button>
 																						<input name="operation" value="updateAnimal"
 																						type="hidden">
