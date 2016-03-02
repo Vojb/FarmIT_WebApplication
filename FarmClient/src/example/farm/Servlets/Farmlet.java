@@ -94,12 +94,12 @@ public class Farmlet extends HttpServlet {
 			}
 		} else if (operation.equals("addAnimal")) {
 
-			String animalType = request.getParameter("changefoods");
-			System.out.println(request.getParameter("changefoods"));
+			String animalType = request.getParameter("bajs");
+			System.out.println(request.getParameter("bajs"));
 			if (animalType.equals("Cow")) {
 				Cow a = new Cow();
 				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
-				a.setIdAnimal(Long.parseLong(request.getParameter("changefood")));
+				a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
 				a.setStatusAnimal(request.getParameter("status-animal"));
 				a.setName(request.getParameter("name"));
 				a.setAge(request.getParameter("age"));
