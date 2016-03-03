@@ -20,7 +20,7 @@
 
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
-		<a href="index.jsp"><img id="logga" src="signLoggoFarm.png"
+		<a href="index.jsp"><img id="logga" src="signLogoFarm.png"
 			height="120px" /> </a>
 		<!-- Begin Header -->
 		<div id="header">

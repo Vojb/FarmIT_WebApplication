@@ -19,7 +19,7 @@
 
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
-		<a href="index.jsp"><img id="logga" src="signLoggoFarm.png"
+		<a href="index.jsp"><img id="logga" src="signLogoFarm.png"
 			height="120px" /> </a>
 		<!-- Begin Header -->
 		<div id="header"></div>
@@ -42,8 +42,6 @@
 					<%
 						Animal a = (Animal) request.getAttribute("animal");
 					%>
-					<br>
-
 						<form action="/FarmClient/Farmlet" method="post">
 							<label>Type of animal</label>
 							<br />
@@ -86,7 +84,8 @@
 										<label id="food"> Food </label>
 										 <br> <input type="text" name="foundfood" maxlength="2" required value="<%=a.getAmountOfFood()%>"> 
 										 <br /><input type="text" name="foundHay" maxlength="2" required value="<%=a.getAmountOfHay()%>" />
-												<br /> <br> <button type="submit" value="update">Update</button>
+												<br /> <br>
+												<div class="row"></div> <button type="submit" value="update">Update</button>
 																						<input name="operation" value="updateAnimal"
 																						type="hidden">
 						</form>
@@ -94,6 +93,7 @@
 							<button type="submit" value="find">Back</button>
 							<input name="operation" value="find" type="hidden">
 						</form>
+						</div>
 				</div>
 
 

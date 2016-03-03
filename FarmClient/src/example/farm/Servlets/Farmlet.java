@@ -55,7 +55,7 @@ public class Farmlet extends HttpServlet {
 				request.setAttribute("animal", a);
 				url = "/updateAnimal.jsp?";
 			} else {
-				request.setAttribute("msgA", "didnt find a fucking animal");
+				request.setAttribute("msgA", "didnt find an animal");
 				url = "/find.jsp?";
 			}
 
@@ -67,7 +67,7 @@ public class Farmlet extends HttpServlet {
 				request.setAttribute("building", b);
 				url = "/updateBuilding.jsp?";
 			} else {
-				request.setAttribute("msgB", "didnt find a fucking building");
+				request.setAttribute("msgB", "didnt find a building");
 				url = "/find.jsp?";
 
 			}
@@ -78,7 +78,7 @@ public class Farmlet extends HttpServlet {
 				request.setAttribute("box", b);
 				url = "/updateBox.jsp?";
 			} else {
-				request.setAttribute("msgBox", "didnt find a fucking box");
+				request.setAttribute("msgBox", "didnt find a box");
 				url = "/find.jsp?";
 			}
 		} else if (operation.equals("findByFoodName")) {
@@ -89,7 +89,7 @@ public class Farmlet extends HttpServlet {
 				request.setAttribute("food", f);
 				url = "/updateFood.jsp?";
 			} else {
-				request.setAttribute("msgF", "didnt find your fucking food");
+				request.setAttribute("msgF", "didnt find your food");
 				url = "/find.jsp?";
 			}
 		} else if (operation.equals("addAnimal")) {

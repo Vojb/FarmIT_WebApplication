@@ -10,8 +10,6 @@ $("#typeAnimal").change(function() {
 		$('#hay').hide();
 	}
 }).change();
-
-
 $("#foundType").change(function() {
 	if ($('#foundType').text() === "Horse") {
 		$('#foundFoodOne').show();
