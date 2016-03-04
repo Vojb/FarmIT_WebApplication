@@ -225,7 +225,14 @@ public class Farmlet extends HttpServlet {
 
 		} else if (operation.equals("feedAnimals")) {
 			facade.feedAllAnimals(1, 2, 3);
-			url = "/index.jsp?";
+			List<Food> f = facade.findAllFood();
+
+			if (f != null) {
+				request.setAttribute("allFood", f);
+				url = "/index.jsp?";
+			}else{
+				url = "/index.jsp?";
+			}
 
 		}else if (operation.equals("getFood")) {
 			

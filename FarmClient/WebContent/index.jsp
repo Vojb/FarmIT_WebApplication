@@ -40,6 +40,7 @@
 		<h1> Information</h1>
     <form action="/FarmClient/Farmlet" method="post">
     <button type="submit" value="btn_feedAnimals">Feed your animals </button>
+    
     <input name="operation" value="feedAnimals" type="hidden">
     </form>
     <div style="width: 50%">
@@ -77,9 +78,9 @@ var powerfeed = document.getElementById("powerfeed").value;
     labels : ["PowerFeed","Oats","Hay"],
     datasets : [
       {
-        fillColor : "rgba(220,220,220,0.5)",
+        fillColor : "rgba(65, 154, 18, 0.38)",
         strokeColor : "rgba(220,220,220,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
+        highlightFill: "rgba(65, 154, 18, 0.38)",
         highlightStroke: "rgba(220,220,220,1)",
         data : [powerfeed,oat,hay]
       },
