@@ -10,11 +10,12 @@ $("#typeAnimal").change(function() {
 		$('#hay').hide();
 	}
 }).change();
-$("#foundType").change(function() {
+
+$("#findAnimal").click(function() {
 	if ($('#foundType').text() === "Horse") {
-		$('#foundFoodOne').show();
+		$('#foundHay').show();
 	} else {
-		$('#FoundFoodOne').hide();
+		$('#FoundHay').hide();
 	}
 }).change();
 
