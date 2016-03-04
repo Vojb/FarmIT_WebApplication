@@ -38,9 +38,20 @@ public class Farmlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-	
-	}
+		String url = null;
+		List<Food> f = facade.findAllFood();
+
+		if (f != null) {
+			request.setAttribute("allFood", f);
+			url = "/index.jsp?";
+		}else{
+			url = "/index.jsp?";
+		}
+	        //forward to the desired view
+	        //this is the real JSP that has the content to display to user
+	        request.getRequestDispatcher("/index.jsp").forward(request, response);
+}
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

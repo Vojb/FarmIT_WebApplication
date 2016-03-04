@@ -38,13 +38,9 @@
 	
     <div id="content">
 		<h1> Information</h1>
-    <form action="/FarmClient/Farmlet" method="post">
-    <button type="submit" value="btn_feedAnimals">Feed your animals </button>
     
-    <input name="operation" value="feedAnimals" type="hidden">
-    </form>
-    <div style="width: 50%">
-      <canvas id="canvas" height="350" width="350"></canvas>
+    <div id="canvaas">
+      <canvas id="canvas"></canvas>
     </div>
 
 <% List<Food> foods = (List<Food>) request.getAttribute("allFood");
@@ -96,7 +92,12 @@ var powerfeed = document.getElementById("powerfeed").value;
   }
 
   </script>
- 
+
+ <form action="/FarmClient/Farmlet" method="post">
+    <button type="submit" value="btn_feedAnimals">Feed your animals </button>
+    
+    <input name="operation" value="feedAnimals" type="hidden">
+    </form>
 		
     </div>
     <!-- End Content Column -->

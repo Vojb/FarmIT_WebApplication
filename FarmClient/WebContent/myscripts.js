@@ -18,5 +18,3 @@ $("#findAnimal").click(function() {
 		$('#FoundHay').hide();
 	}
 }).change();
-
-
