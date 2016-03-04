@@ -2,7 +2,12 @@
 <body>
 
 	<div id="navigation">
-			<a href="index.jsp">Home</a> 
+		<form action="/FarmClient/Farmlet" method="post">
+
+							<button type="submit">Home </button> 
+<input name="operation" value="getFood" type="hidden">
+</form>
+			
 			<a href="create.jsp">Add</a> 
 			<a href="find.jsp">Find</a> 
 			<a href="lists.jsp">Lists</a> 

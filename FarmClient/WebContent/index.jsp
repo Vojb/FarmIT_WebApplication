@@ -13,6 +13,10 @@
 <link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
 <body>	
+<%@ page import="javax.servlet.http.*" %>
+
+<%@ page import="java.util.*" %>
+<%@ page import="example.farm.model.*" %>
 <!-- Begin Wrapper -->
 <div id="wrapper">
 <a href="index.jsp"><img id="logga" src="signLogoFarm.png" height="120px"/> </a>
@@ -37,7 +41,61 @@
     <form action="/FarmClient/Farmlet" method="post">
     <button type="submit" value="btn_feedAnimals">Feed your animals </button>
     <input name="operation" value="feedAnimals" type="hidden">
-  </form>
+    </form>
+    <div style="width: 50%">
+      <canvas id="canvas" height="350" width="350"></canvas>
+    </div>
+
+<% List<Food> foods = (List<Food>) request.getAttribute("allFood");
+  int hay=0;
+  int oat=0;
+  int powerfeed=0;
+  int i = 0;
+  for(Food f: foods ){
+  if(i==1){
+    powerfeed= f.getAmount();
+}else if(i==2){
+  oat=f.getAmount();
+}else{
+  hay =f.getAmount();
+}
+  i++;
+  }
+%>
+
+    <input type="number" id="powerfeed" value="<%=powerfeed%>" hidden>
+    <input type="number" id="oat" value="<%=oat%>" hidden>
+    <input type="number" id="hay" value="<%=hay%>" hidden>
+
+
+  <script>
+  var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+var hay = document.getElementById("hay").value;
+var oat = document.getElementById("oat").value;
+var powerfeed = document.getElementById("powerfeed").value;
+  var barChartData = {
+    labels : ["PowerFeed","Oats","Hay"],
+    datasets : [
+      {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [powerfeed,oat,hay]
+      },
+      
+    ]
+
+  }
+  window.onload = function(){
+    var ctx = document.getElementById("canvas").getContext("2d");
+    window.myBar = new Chart(ctx).Bar(barChartData, {
+      responsive : true
+    });
+  }
+
+  </script>
+ 
 		
     </div>
     <!-- End Content Column -->
@@ -54,6 +112,7 @@
  </div>
 <!-- End Wrapper -->
 </body>
+ <script src="/FarmClient/Chart.js"></script>
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="/FarmClient/myscripts.js"></script>

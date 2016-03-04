@@ -17,3 +17,5 @@ $("#foundType").change(function() {
 		$('#FoundFoodOne').hide();
 	}
 }).change();
+
+

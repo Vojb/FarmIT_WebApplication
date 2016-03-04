@@ -218,7 +218,9 @@ public class FarmFacade implements FarmFacadeLocal {
 		}
 	}
 
-
+	public List<Food> findAllFood() {
+	return foodb.findAllFood();
+	}
 			
 	public void feedAllAnimals(long idPowerFeed, long idOats,long idHay){
 		feedPigs(idPowerFeed);

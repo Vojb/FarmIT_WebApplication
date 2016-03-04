@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -37,9 +38,8 @@ public class Farmlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		out.println("Farmlet-doGet");
-		out.close();
+		
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -227,7 +227,18 @@ public class Farmlet extends HttpServlet {
 			facade.feedAllAnimals(1, 2, 3);
 			url = "/index.jsp?";
 
-		} else if (operation.equals("find")) {
+		}else if (operation.equals("getFood")) {
+			
+			List<Food> f = facade.findAllFood();
+
+			if (f != null) {
+				request.setAttribute("allFood", f);
+				url = "/index.jsp?";
+			}else{
+				url = "/index.jsp?";
+			}
+			
+		}else if (operation.equals("find")) {
 			url = "/find.jsp?";
 		} else {
 			url = "/find.jsp?";

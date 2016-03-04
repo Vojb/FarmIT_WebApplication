@@ -17,6 +17,7 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
 @NamedQuery(name="Food.findByName", query="SELECT a FROM Food a WHERE a.nameFood =:foodType"),
+@NamedQuery(name="Food.findAll", query="SELECT a FROM Food a")
 })
 @Table(name = "Foods")
 public class Food implements Serializable{

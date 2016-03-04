@@ -1,6 +1,7 @@
 package example.farm.eao;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -59,5 +60,12 @@ public class FoodBean implements FoodBeanLocal {
 		}
 		return f;
 		
+	}
+	public List<Food> findAllFood() {
+
+		TypedQuery<Food> query = em.createNamedQuery("Food.findAll", Food.class);
+
+		List<Food> results = query.getResultList();
+		return results;
 	}
 }

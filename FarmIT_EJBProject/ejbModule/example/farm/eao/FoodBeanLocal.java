@@ -15,5 +15,6 @@ public interface FoodBeanLocal {
 	public void deleteFood(long id);
 	public Food findFoodByType(String type);
 	public void addAnimal(Food f,Animal a);
+	public List<Food> findAllFood();
 //	public void feedCow(Food f);
 }
