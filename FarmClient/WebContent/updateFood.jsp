@@ -17,8 +17,6 @@
 
 
 	<!-- Begin Wrapper -->
-	<div id="wrapper">
-		<a href="index.jsp"><img id="logga" src="signLoggoFarm.png"
 			height="120px" /> </a>
 		<!-- Begin Header -->
 		<div id="header"></div>
@@ -50,8 +48,11 @@
 						<input type="text" name="foundIdFood" maxlength="222" readonly
 							value="<%=a.getIdFood()%>"> <br /> <label>FoodName</label>
 							<br /> <input type="text" name="foundFoodName" maxlength="222"
-							readonly value="<%=a.getNameFood().substring(0, 1).toUpperCase() + a.getNameFood().substring(1)%>"> <br /> <label>Amount</label>
-								<br /> <input type="text" name="foundFoodAmount"
+							readonly value="<%=a.getNameFood().substring(0, 1).toUpperCase() + a.getNameFood().substring(1)%>"> <br />
+							 <label>Amount</label>
+								<br /> 
+
+								<input type="text" name="foundFoodAmount"
 								maxlength="222" readonly value="<%=a.getAmount()%>"> <br />
 
 

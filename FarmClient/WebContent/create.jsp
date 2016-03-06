@@ -20,8 +20,6 @@
 
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
-		<a href="index.jsp"><img id="logga" src="signLogoFarm.png"
-			height="120px" /> </a>
 		<!-- Begin Header -->
 		<div id="header">
 		</div>
@@ -88,7 +86,7 @@
 								<br />
 								<br />
 								<button type="reset" value="Reset">Reset</button>
-								<button type="submit" value="addaAnimal" >Add</button>
+								<button id="updateAnimal"type="submit" value="addaAnimal" >Add</button>
 								<input name="operation" value="addAnimal" type="hidden">
 								
 							</form>

@@ -19,8 +19,6 @@
 
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
-		<a href="index.jsp"><img id="logga" src="signLogoFarm.png"
-			height="120px" /> </a>
 		<!-- Begin Header -->
 		<div id="header"></div>
 		<!-- End Header -->
@@ -81,23 +79,26 @@
 										<br /> <input type="text" name="foundname" maxlength="222" required value="<%=a.getName()%>"> <br> <label>Age</label>
 										<br /> <input type="text" name="foundage" maxlength="2" required value="<%=a.getAge()%>"> <br> <label>Box</label>
 										<br /> <input type="text" name="foundidBox"	maxlength="2" required value="<%=a.getBox().getIdBox()%>"> <br>
-										<label id="food"> Food </label>
-										 <br> <input type="text" name="foundfood" maxlength="2" required value="<%=a.getAmountOfFood()%>"> 
-										 <br /><input type="text" id="foundHay" name="foundHay" maxlength="2" required value="<%=a.getAmountOfHay()%>" />
-												<br /> <br>
-												<div class="row"></div> <button type="submit" value="update">Update</button>
+										<label id="foundfood"> Food </label>
+										 <br /> <input type="text" name="foundfood" maxlength="2" required value="<%=a.getAmountOfFood()%>"> 
+										 <br/>
+										<label id="foundfoodHay"> Hay</label>
+
+										 <br/>
+										<input type="number" id="hay" name="hay" maxlength="2" required value="<%=a.getAmountOfHay()%>" />
+												<br /> <br >
+
+
+												<div class="row"></div> <button id="updateAnimal"type="submit" value="update">Update</button>
 																						<input name="operation" value="updateAnimal"
 																						type="hidden">
 						</form>
 						<form action="/FarmClient/Farmlet" method="post">
-							<button type="submit" value="find">Back</button>
+							<button id="back" type="submit" value="find">Back</button>
 							<input name="operation" value="find" type="hidden">
 						</form>
-						</div>
-				</div>
-
-
-
+				
+</div>
 			</div>
 			<!-- End Content Column -->
 			<!-- Begin Right Column -->

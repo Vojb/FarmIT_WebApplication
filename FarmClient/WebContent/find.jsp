@@ -15,8 +15,6 @@
 
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
-		<a href="index.jsp"><img id="logga" src="signLogoFarm.png"
-			height="120px" /> </a>
 		<!-- Begin Header -->
 		<div id="header">
 
@@ -32,7 +30,7 @@
 
 			<div id="leftcolumn"></div>
 
-			<div id="content">
+			<div id="contentFind">
 
 				<div class="container">
 							<h3><center>What do you want to find?</center></h3>

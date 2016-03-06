@@ -38,8 +38,11 @@ p {
 	padding-top: 4px;
 	margin: 0px 12px 0px;
 }
-
+button#updateAnimal {
+    margin-left: 80px;
+}
 button {
+	position: absolute;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
@@ -54,6 +57,7 @@ button {
 }
 
 button#home {  
+	position: static;
 	line-height: 1;
 	color: black;
     font-family: inherit;
@@ -178,6 +182,17 @@ e#header {
 	margin: 0px 0px 0px 0px;
 	background: rgba(65, 154, 18, 0.38);
 }
+#contentFind{
+    background: rgba(255, 255, 255, 0.89);
+    margin: 10px 10px 10px;
+    float: left;
+    color: #333;
+    width: 510px;
+    height: 600px;
+    box-shadow: inset 0px 0px 2px black;
+    display: inline;
+    position: relative;
+}
 
 #leftcolumn {
 	margin: 10px 0px 0px;
@@ -196,6 +211,7 @@ e#header {
 }
 
 #content {
+	padding-left: 2%;
 	background: rgba(255, 255, 255, 0.89);
 	margin: 10px 10px 10px;
 	float: left;
