@@ -58,6 +58,11 @@ button {
 form#update {
     margin: 0;
 }
+hr#hay {
+    width: 470px;
+    padding: 0px;
+    margin: 1px;
+}
 form {
 	margin-bottom: 7%;
 }
