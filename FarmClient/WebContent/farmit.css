@@ -55,13 +55,12 @@ button {
 	padding-right: 2%;
 	background: rgb(182, 216, 164);
 }
-
-
-form {
-	margin-bottom: 0px;
+form#update {
+    margin: 0;
 }
-
-
+form {
+	margin-bottom: 7%;
+}
 
 #navigation a {
 	color: black;

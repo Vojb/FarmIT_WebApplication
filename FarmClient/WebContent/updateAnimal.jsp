@@ -40,7 +40,7 @@
 					<%
 						Animal a = (Animal) request.getAttribute("animal");
 					%>
-						<form action="/FarmClient/Farmlet" method="post">
+						<form action="/FarmClient/Farmlet" method="post" id="update">
 							<label>Type of animal</label>
 							<br />
 							<input type="text" id="foundType" name="foundType"
