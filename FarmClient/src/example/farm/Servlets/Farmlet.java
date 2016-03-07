@@ -164,8 +164,14 @@ public class Farmlet extends HttpServlet {
 				}
 				facade.createAnimal(a);
 			}
-			
+			List<Food> f = facade.findAllFood();
+
+			if (f != null) {
+				request.setAttribute("allFood", f);
 			url = "/index.jsp?";
+			}else{
+				url = "/create.jsp?";
+			}
 		} else if (operation.equals("updateAnimal")) {
 
 			String animalType = request.getParameter("foundType");

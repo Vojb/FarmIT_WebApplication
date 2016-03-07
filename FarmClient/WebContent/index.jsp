@@ -21,7 +21,7 @@
 	<%@ page import="example.farm.model.*"%>
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
-	
+
 		<!-- Begin Header -->
 		<div id="header">
 
@@ -39,25 +39,25 @@
 				<div id="content">
 					<h1>Information</h1>
 					<br />
-				<div style="width: 65%">
-			<canvas id="canvas" height="400" width="400"></canvas>
-		</div>
+					<div style="width: 65%">
+						<canvas id="canvas" height="400" width="400"></canvas>
+					</div>
 
 					<%
 						List<Food> foods = (List<Food>) request.getAttribute("allFood");
 						int hay = 0;
 						int oat = 0;
 						int powerfeed = 0;
-						int i = 0;
+			
 						for (Food f : foods) {
-							if (i == 1) {
+							if (f.getNameFood().equals("powerfeed")) {
 								powerfeed = f.getAmount();
-							} else if (i == 2) {
+							} else if ((f.getNameFood().equals("oats"))) {
 								oat = f.getAmount();
 							} else {
 								hay = f.getAmount();
 							}
-							i++;
+						
 						}
 					%>
 
@@ -72,17 +72,17 @@
 								var powerfeed = document
 										.getElementById("powerfeed").value;
 								var barChartData = {
-									labels : [ "PowerFeed", "Oats", "Hay"],
+									labels : [ "PowerFeed", "Oats", "Hay" ],
 									datasets : [
-									        
-											{
-												fillColor : "rgba(65, 154, 18, 0.38)",
-												strokeColor : "rgba(220,220,220,0.8)",
-												highlightFill : "rgba(65, 154, 18, 0.38)",
-												highlightStroke : "rgba(220,220,220,1)",
-												data : [ powerfeed, oat, hay]
-											}
-										
+
+									{
+										fillColor : "rgba(65, 154, 18, 0.38)",
+										strokeColor : "rgba(220,220,220,0.8)",
+										highlightFill : "rgba(65, 154, 18, 0.38)",
+										highlightStroke : "rgba(220,220,220,1)",
+										data : [ powerfeed, oat, hay ]
+									}
+
 									]
 
 								}
@@ -91,17 +91,15 @@
 											.getContext("2d");
 									window.myBar = new Chart(ctx).Bar(
 											barChartData, {
-												 scaleOverride : true,
-        scaleSteps : 10,
-        scaleStepWidth : 100,
-        scaleStartValue : 0 ,
-   
+												scaleOverride : true,
+												scaleSteps : 10,
+												scaleStepWidth : 100,
+												scaleStartValue : 0,
 
 												responsive : true
 											});
 								}
 							</script>
-
 								<form action="/FarmClient/Farmlet" method="post">
 									<button type="submit" value="btn_feedAnimals">Feed
 										your animals</button>
