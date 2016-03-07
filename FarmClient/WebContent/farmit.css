@@ -304,3 +304,9 @@ label {
 	clear: both;
 	background: none;
 }
+
+.container {
+    width: 523px;
+    padding-left: 0x;
+    padding-right: 38px;
+}

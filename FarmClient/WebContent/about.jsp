@@ -39,7 +39,16 @@
 
 				<div class="container">
 							
-							<h2>Add animal</h2>
+							<h2>About</h2>
+							<p>
+							We have been operating in the fields of Skåne since 2001 when Erik at the age of 9 had a passion for farming.
+							<br> 
+							<br>
+							It started off with hens and rabbits but has now expanded into a family of pigs, horses, cows and hens.
+							We receive eggs, dairy products and a large amount of love through the daily exchange we have with our animals. 
+							This mutual passion has brought us 5 together and as for now we cannot see ourselves doing anything else in our lives.
+							</p>
+							
 
 							
 		
