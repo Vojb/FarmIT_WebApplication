@@ -55,6 +55,10 @@ button {
 	padding-right: 2%;
 	background: rgb(182, 216, 164);
 }
+button#remove {
+    margin-left: 2%;
+    margin-top: 10%;
+}
 form#update {
     margin: 0;
 }
