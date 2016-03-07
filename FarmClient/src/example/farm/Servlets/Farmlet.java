@@ -44,230 +44,238 @@ public class Farmlet extends HttpServlet {
 		if (f != null) {
 			request.setAttribute("allFood", f);
 			url = "/index.jsp?";
-		}else{
+		} else {
 			url = "/index.jsp?";
 		}
-	        //forward to the desired view
-	        //this is the real JSP that has the content to display to user
-	        request.getRequestDispatcher("/index.jsp").forward(request, response);
-}
-
+		// forward to the desired view
+		// this is the real JSP that has the content to display to user
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 
-		String url = null;
-		String operation = request.getParameter("operation");
-		if (operation.equals("findByIdAnimal")) {
-			int id = Integer.parseInt(request.getParameter("findIdAnimal"));
-			Animal a = facade.findByIdAnimal(id);
+			String url = null;
+			try {
+			String operation = request.getParameter("operation");
+		
+			if (operation.equals("findByIdAnimal")) {
+				int id = Integer.parseInt(request.getParameter("findIdAnimal"));
+				Animal a = facade.findByIdAnimal(id);
 
-			if (a != null) {
-				request.setAttribute("animal", a);
-				url = "/updateAnimal.jsp?";
+				if (a != null) {
+					request.setAttribute("animal", a);
+					url = "/updateAnimal.jsp?";
+				} else {
+					request.setAttribute("msgA", "didnt find an animal");
+					url = "/find.jsp?";
+				}
+
+			} else if (operation.equals("findByIdBuilding")) {
+				String id = request.getParameter("findIdBuilding");
+				Building b = facade.findByIdBuilding(id);
+
+				if (b != null) {
+					request.setAttribute("building", b);
+					url = "/updateBuilding.jsp?";
+				} else {
+					request.setAttribute("msgB", "didnt find a building");
+					url = "/find.jsp?";
+
+				}
+			} else if (operation.equals("findByIdBox")) {
+				String id = request.getParameter("findIdBox");
+				Box b = facade.findByIdBox(id);
+				if (b != null) {
+					request.setAttribute("box", b);
+					url = "/updateBox.jsp?";
+				} else {
+					request.setAttribute("msgBox", "didnt find a box");
+					url = "/find.jsp?";
+				}
+			} else if (operation.equals("findByFoodName")) {
+				Food f = null;
+				String foodname = request.getParameter("findByFoodName");
+				f = facade.findByFoodName(foodname);
+				if (f != null) {
+					request.setAttribute("food", f);
+					url = "/updateFood.jsp?";
+				} else {
+					request.setAttribute("msgF", "didnt find your food");
+					url = "/find.jsp?";
+				}
+			} else if (operation.equals("addAnimal")) {
+
+				String animalType = request.getParameter("typeAnimal");
+				if (animalType.equals("Cow")) {
+					Cow a = new Cow();
+					a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
+					a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
+					a.setStatusAnimal(request.getParameter("status-animal"));
+					a.setName(request.getParameter("name"));
+					a.setAge(request.getParameter("age"));
+
+					Box b = facade.findByIdBox(request.getParameter("idBox"));
+					if (b != null) {
+						a.setBox(b);
+					}
+
+					facade.createAnimal(a);
+				} else if (animalType.equals("Hen")) {
+					Hen a = new Hen();
+					a.setAmountOfOats(Integer.parseInt(request.getParameter("food")));
+					a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
+					a.setStatusAnimal(request.getParameter("status-animal"));
+					a.setName(request.getParameter("name"));
+					a.setAge(request.getParameter("age"));
+
+					Box b = facade.findByIdBox(request.getParameter("idBox"));
+					if (b != null) {
+						a.setBox(b);
+
+					}
+
+					facade.createAnimal(a);
+				} else if (animalType.equals("Horse")) {
+					Horse a = new Horse();
+					a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
+					a.setAmountOfHay(Integer.parseInt(request.getParameter("hay")));
+					a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
+					a.setStatusAnimal(request.getParameter("status-animal"));
+					a.setName(request.getParameter("name"));
+					a.setAge(request.getParameter("age"));
+
+					Box b = facade.findByIdBox(request.getParameter("idBox"));
+					if (b != null) {
+						a.setBox(b);
+					}
+
+					facade.createAnimal(a);
+				} else {
+					Pig a = new Pig();
+					a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
+					a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
+					a.setStatusAnimal(request.getParameter("status-animal"));
+					a.setName(request.getParameter("name"));
+					a.setAge(request.getParameter("age"));
+
+					Box b = facade.findByIdBox(request.getParameter("idBox"));
+					if (b != null) {
+						a.setBox(b);
+					}
+					facade.createAnimal(a);
+				}
+				List<Food> f = facade.findAllFood();
+
+				if (f != null) {
+					request.setAttribute("allFood", f);
+					url = "/index.jsp?";
+				} else {
+					url = "/create.jsp?";
+				}
+			} else if (operation.equals("updateAnimal")) {
+
+				String animalType = request.getParameter("foundType");
+				System.out.println(request.getParameter("foundType"));
+				if (animalType.equals("Cow")) {
+					Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
+					a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
+					a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
+					a.setName(request.getParameter("foundname"));
+					a.setAge(request.getParameter("foundage"));
+
+					Box b = facade.findByIdBox(request.getParameter("foundidBox"));
+					if (b != null) {
+						a.setBox(b);
+					}
+
+					facade.updateAnimal(a);
+				} else if (animalType.equals("Hen")) {
+					Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
+					a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
+					a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
+					a.setName(request.getParameter("foundname"));
+					a.setAge(request.getParameter("foundage"));
+
+					Box b = facade.findByIdBox(request.getParameter("foundidBox"));
+					if (b != null) {
+						a.setBox(b);
+
+					}
+
+					facade.updateAnimal(a);
+				} else if (animalType.equals("Horse")) {
+					Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
+					a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
+					a.setAmountOfHay(Integer.parseInt(request.getParameter("foundHay")));
+					a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
+					a.setName(request.getParameter("foundname"));
+					a.setAge(request.getParameter("foundage"));
+
+					Box b = facade.findByIdBox(request.getParameter("foundidBox"));
+					if (b != null) {
+						a.setBox(b);
+					}
+
+					facade.updateAnimal(a);
+				} else {
+					Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
+					a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
+					a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
+					a.setName(request.getParameter("foundname"));
+					a.setAge(request.getParameter("foundage"));
+
+					Box b = facade.findByIdBox(request.getParameter("foundidBox"));
+					if (b != null) {
+						a.setBox(b);
+					}
+					facade.updateAnimal(a);
+				}
+
+				int id = Integer.parseInt(request.getParameter("foundidAnimal"));
+				Animal a = facade.findByIdAnimal(id);
+
+				if (a != null) {
+					request.setAttribute("animal", a);
+					url = "/updateAnimal.jsp?";
+				}
+
+			} else if (operation.equals("feedAnimals")) {
+				facade.feedAllAnimals(1, 2, 3);
+				List<Food> f = facade.findAllFood();
+
+				if (f != null) {
+					request.setAttribute("allFood", f);
+					url = "/index.jsp?";
+				} else {
+					url = "/index.jsp?";
+				}
+
+			} else if (operation.equals("getFood")) {
+
+				List<Food> f = facade.findAllFood();
+
+				if (f != null) {
+					request.setAttribute("allFood", f);
+					url = "/index.jsp?";
+				} else {
+					url = "/index.jsp?";
+				}
+
+			} else if (operation.equals("find")) {
+				url = "/find.jsp?";
 			} else {
-				request.setAttribute("msgA", "didnt find an animal");
 				url = "/find.jsp?";
 			}
-
-		} else if (operation.equals("findByIdBuilding")) {
-			String id = request.getParameter("findIdBuilding");
-			Building b = facade.findByIdBuilding(id);
-
-			if (b != null) {
-				request.setAttribute("building", b);
-				url = "/updateBuilding.jsp?";
-			} else {
-				request.setAttribute("msgB", "didnt find a building");
-				url = "/find.jsp?";
-
-			}
-		} else if (operation.equals("findByIdBox")) {
-			String id = request.getParameter("findIdBox");
-			Box b = facade.findByIdBox(id);
-			if (b != null) {
-				request.setAttribute("box", b);
-				url = "/updateBox.jsp?";
-			} else {
-				request.setAttribute("msgBox", "didnt find a box");
-				url = "/find.jsp?";
-			}
-		} else if (operation.equals("findByFoodName")) {
-			Food f = null;
-			String foodname = request.getParameter("findByFoodName");
-			f = facade.findByFoodName(foodname);
-			if (f != null) {
-				request.setAttribute("food", f);
-				url = "/updateFood.jsp?";
-			} else {
-				request.setAttribute("msgF", "didnt find your food");
-				url = "/find.jsp?";
-			}
-		} else if (operation.equals("addAnimal")) {
-
-			String animalType = request.getParameter("typeAnimal");
-			if (animalType.equals("Cow")) {
-				Cow a = new Cow();
-				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
-				a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
-				a.setStatusAnimal(request.getParameter("status-animal"));
-				a.setName(request.getParameter("name"));
-				a.setAge(request.getParameter("age"));
-
-				Box b = facade.findByIdBox(request.getParameter("idBox"));
-				if (b != null) {
-					a.setBox(b);
-				}
-
-				facade.createAnimal(a);
-			} else if (animalType.equals("Hen")) {
-				Hen a = new Hen();
-				a.setAmountOfOats(Integer.parseInt(request.getParameter("food")));
-				a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
-				a.setStatusAnimal(request.getParameter("status-animal"));
-				a.setName(request.getParameter("name"));
-				a.setAge(request.getParameter("age"));
-
-				Box b = facade.findByIdBox(request.getParameter("idBox"));
-				if (b != null) {
-					a.setBox(b);
-
-				}
-
-				facade.createAnimal(a);
-			} else if (animalType.equals("Horse")) {
-				Horse a = new Horse();
-				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
-				a.setAmountOfHay(Integer.parseInt(request.getParameter("food")));
-				a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
-				a.setStatusAnimal(request.getParameter("status-animal"));
-				a.setName(request.getParameter("name"));
-				a.setAge(request.getParameter("age"));
-
-				Box b = facade.findByIdBox(request.getParameter("idBox"));
-				if (b != null) {
-					a.setBox(b);
-				}
-
-				facade.createAnimal(a);
-			} else {
-				Pig a = new Pig();
-				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
-				a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
-				a.setStatusAnimal(request.getParameter("status-animal"));
-				a.setName(request.getParameter("name"));
-				a.setAge(request.getParameter("age"));
-
-				Box b = facade.findByIdBox(request.getParameter("idBox"));
-				if (b != null) {
-					a.setBox(b);
-				}
-				facade.createAnimal(a);
-			}
-			List<Food> f = facade.findAllFood();
-
-			if (f != null) {
-				request.setAttribute("allFood", f);
-			url = "/index.jsp?";
-			}else{
-				url = "/create.jsp?";
-			}
-		} else if (operation.equals("updateAnimal")) {
-
-			String animalType = request.getParameter("foundType");
-			System.out.println(request.getParameter("foundType"));
-			if (animalType.equals("Cow")) {
-				Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
-				a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
-				a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
-				a.setName(request.getParameter("foundname"));
-				a.setAge(request.getParameter("foundage"));
-
-				Box b = facade.findByIdBox(request.getParameter("foundidBox"));
-				if (b != null) {
-					a.setBox(b);
-				}
-				
-				facade.updateAnimal(a);
-			} else if (animalType.equals("Hen")) {
-				Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
-				a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
-				a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
-				a.setName(request.getParameter("foundname"));
-				a.setAge(request.getParameter("foundage"));
-
-				Box b = facade.findByIdBox(request.getParameter("foundidBox"));
-				if (b != null) {
-					a.setBox(b);
-
-				}
-
-				facade.updateAnimal(a);
-			} else if (animalType.equals("Horse")) {
-				Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
-				a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
-				a.setAmountOfHay(Integer.parseInt(request.getParameter("foundHay")));
-				a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
-				a.setName(request.getParameter("foundname"));
-				a.setAge(request.getParameter("foundage"));
-
-				Box b = facade.findByIdBox(request.getParameter("foundidBox"));
-				if (b != null) {
-					a.setBox(b);
-				}
-
-				facade.updateAnimal(a);
-			} else {
-				Animal a = facade.findByIdAnimal(Long.parseLong(request.getParameter("foundidAnimal")));
-				a.setAmountOfFood(Integer.parseInt(request.getParameter("foundfood")));
-				a.setStatusAnimal(request.getParameter("foundstatusAnimal"));
-				a.setName(request.getParameter("foundname"));
-				a.setAge(request.getParameter("foundage"));
-
-				Box b = facade.findByIdBox(request.getParameter("foundidBox"));
-				if (b != null) {
-					a.setBox(b);
-				}
-				facade.updateAnimal(a);
-			}
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+			dispatcher.forward(request, response);
+		} catch (Exception e) {
 			
-			int id = Integer.parseInt(request.getParameter("foundidAnimal"));
-			Animal a = facade.findByIdAnimal(id);
-
-			if (a != null) {
-				request.setAttribute("animal", a);
-				url = "/updateAnimal.jsp?";
-			}
-			
-
-		} else if (operation.equals("feedAnimals")) {
-			facade.feedAllAnimals(1, 2, 3);
-			List<Food> f = facade.findAllFood();
-
-			if (f != null) {
-				request.setAttribute("allFood", f);
-				url = "/index.jsp?";
-			}else{
-				url = "/index.jsp?";
-			}
-
-		}else if (operation.equals("getFood")) {
-			
-			List<Food> f = facade.findAllFood();
-
-			if (f != null) {
-				request.setAttribute("allFood", f);
-				url = "/index.jsp?";
-			}else{
-				url = "/index.jsp?";
-			}
-			
-		}else if (operation.equals("find")) {
-			url = "/find.jsp?";
-		} else {
-			url = "/find.jsp?";
+			url = "/create.jsp";
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+			dispatcher.forward(request, response);
 		}
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-		dispatcher.forward(request, response);
 	}
+
 }

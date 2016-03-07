@@ -62,7 +62,7 @@
 								<br/>
 								<label>IdAnimal</label>
 								<br />
-								<input type="text" name="idAnimal" maxlength="5" required/>
+								<input type="number" name="idAnimal" maxlength="5" required/>
 								<br />
 								<label>Name</label>
 								<br />

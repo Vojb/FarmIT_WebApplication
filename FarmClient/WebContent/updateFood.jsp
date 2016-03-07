@@ -61,7 +61,7 @@ name="operation" value="find" type="hidden">
 <br>
 <br>
 <hr>
-<h3>Buy more <%a.getNameFood();%></h3>
+<h3>Buy more <%=a.getNameFood()%></h3>
 <input type="text" name="buyAmount" maxlength="222" > 
 <button type="submit" value="buyFood ">Buy</button> <input
 name="operation" value="buyFood" type="hidden">

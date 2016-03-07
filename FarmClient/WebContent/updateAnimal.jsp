@@ -79,16 +79,21 @@
 										<br /> <input type="text" name="foundname" maxlength="222" required value="<%=a.getName()%>"> <br> <label>Age</label>
 										<br /> <input type="text" name="foundage" maxlength="2" required value="<%=a.getAge()%>"> <br> <label>Box</label>
 										<br /> <input type="text" name="foundidBox"	maxlength="2" required value="<%=a.getBox().getIdBox()%>"> <br>
-										<label id="foundfood"> Food </label>
+										<label id="foundfood"> <% if(a.getClass().getSimpleName().equals("Hen")){
+											%> Oats </label> <% }else {%> Powerfeed <%} %> </label>
 										 <br /> <input type="text" name="foundfood" maxlength="2" required value="<%=a.getAmountOfFood()%>"> 
-										 <br/>
-										<label id="foundfoodHay"> Hay</label>
+										 <br />
 
+										 <% if(a.getClass().getSimpleName().equals("Horse")){
+											%> 
+											<label id="foundfoodHay"> Hay </label>
 										 <br/>
 										<input type="number" id="hay" name="hay" maxlength="2" required value="<%=a.getAmountOfHay()%>" />
 												<br /> <br >
-
-
+										<%
+										 } else{   %>
+										
+<br /> <br ><%} %>
 												<div class="row"></div> <button id="updateAnimal"type="submit" value="update">Update</button>
 																						<input name="operation" value="updateAnimal"
 																						type="hidden">
@@ -97,7 +102,6 @@
 							<button id="back" type="submit" value="find">Back</button>
 							<input name="operation" value="find" type="hidden">
 						</form>
-				
 </div>
 			</div>
 			<!-- End Content Column -->
