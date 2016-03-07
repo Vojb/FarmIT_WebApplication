@@ -40,7 +40,7 @@ p {
 }
 button#updateAnimal {
     margin-left: 80px;
-}
+}	
 button {
 	position: absolute;
 	font-family: inherit;
@@ -56,51 +56,12 @@ button {
 	background: rgb(182, 216, 164);
 }
 
-button#home {  
-	position: static;
-	line-height: 1;
-	color: black;
-    font-family: inherit;
-    font-style: inherit;
-    font-weight: initial;
-    background: rgba(250, 217, 148, 0.73);
-    /* padding-right: 25px; */
-    /* padding-left: 25px; */
-    height: inherit;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    /* line-height: 180%; */
-    text-transform: none;
-    font-size: 15px;
-}
-
-button#home a:link {
-	color: #ffffff;
-}
-
-button#home a:visited {
-	color: #ffffff;
-}
 
 form {
 	margin-bottom: 0px;
 }
 
-button:hover {
-	color: #333;
-	/* border-top-left-radius: 50%; */
-	/* border-top-right-radius: 50%; */
-	color: black;
-	box-shadow: 1px 1px 15px black;
-	text-decoration: none;
-	/* border-color: #888; */
-	outline: 0;
-}
 
-button#home a:active {
-	color: black;
-	border-radius: 100px;
-}
 
 #navigation a {
 	color: black;
