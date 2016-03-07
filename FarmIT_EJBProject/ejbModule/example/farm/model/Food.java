@@ -49,7 +49,7 @@ public class Food implements Serializable{
 		return idFood;
 	}
 
-	@Column(name = "Type")
+	@Column(name = "FoodName")
 	public String getNameFood() {
 		return nameFood;
 	}

@@ -94,13 +94,28 @@ public class Farmlet extends HttpServlet {
 					request.setAttribute("msgBox", "didnt find a box");
 					url = "/find.jsp?";
 				}
-			} else if (operation.equals("findByFoodName")) {
+			}else if (operation.equals("buy")) {
+				Food f = null;
+				int food = Integer.parseInt(request.getParameter("foundIdFood"));
+				f = facade.findByIdFood(food);
+				if (f != null) {
+				
+					facade.addAmount(f, Integer.parseInt(request.getParameter("buyAmount")));
+					facade.updateFood(f);
+					request.setAttribute("food", f);
+					url = "/updateFood.jsp?";
+				} else {
+					request.setAttribute("msgF", "didnt find your food");
+					url = "/find.jsp?";
+				}
+			}  else if (operation.equals("findByFoodName")) {
 				Food f = null;
 				String foodname = request.getParameter("findByFoodName");
 				f = facade.findByFoodName(foodname);
 				if (f != null) {
 					request.setAttribute("food", f);
 					url = "/updateFood.jsp?";
+				
 				} else {
 					request.setAttribute("msgF", "didnt find your food");
 					url = "/find.jsp?";

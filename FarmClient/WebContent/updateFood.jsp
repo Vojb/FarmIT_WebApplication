@@ -42,33 +42,34 @@ Food a = (Food) request.getAttribute("food");
 <br />
 
 <form action="/FarmClient/Farmlet" method="post">
+
+
 <label>Id</label>
 <br />
 <% %>
-<input type="text" name="foundIdFood" maxlength="222" readonly
-value="<%=a.getIdFood()%>"> <br /> <label>FoodName</label>
-<br /> <input type="text" name="foundFoodName" maxlength="222"
-readonly value="<%=a.getNameFood().substring(0, 1).toUpperCase() + a.getNameFood().substring(1)%>"> <br />
+<input type="number" id="bajs" name="bajs" maxlength="5" readonly value="<%=a.getIdFood()%>"><br /> <label>FoodName</label>
+<br /> <input type="text" name="foundFoodName" maxlength="222" readonly value="<%=a.getNameFood().substring(0, 1).toUpperCase() + a.getNameFood().substring(1)%>"> <br />
 <label>Amount</label>
 <br /> 
 <input type="text" name="foundFoodAmount"
 maxlength="222" readonly value="<%=a.getAmount()%>"> <br />
 
 <br />
-<button type="submit" value="find ">Back</button> <input
-name="operation" value="find" type="hidden">
-</form>
+
+
+
 <br>
 <br>
 <hr>
 <h3>Buy more <%=a.getNameFood().substring(0, 1).toUpperCase() + a.getNameFood().substring(1)%></h3>
 <input type="text" name="buyAmount" maxlength="222" > 
-<button type="submit" value="buyFood ">Buy</button> <input
-name="operation" value="buyFood" type="hidden">
+<button type="submit" value="buyFood">Buy</button> 
+<input name="operation" value="buy" type="hidden">
 </form>
-
-
-				
+<form action="/FarmClient/Farmlet" method="post">
+<button type="submit" value="find ">Back</button> <input
+name="operation" value="find" type="hidden">
+</form>			
 </div>
 			</div>
 			<!-- End Content Column -->
