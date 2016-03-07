@@ -7,7 +7,7 @@
 			<a href="/FarmClient/Farmlet">Home</a> 
 			<a href="create.jsp">Add</a> 
 			<a href="find.jsp">Find</a>  
-			<a href="find.jsp">About</a>
+			<a href="about.jsp">About</a>
 
 			<a href="find.jsp">Test</a> 
 		</div>
