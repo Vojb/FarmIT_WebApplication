@@ -106,6 +106,10 @@
 
 									<input name="operation" value="feedAnimals" type="hidden">
 								</form>
+								<%if(request.getAttribute("msgKill")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msgKill")%></center><%
+									}%>
 				</div>
 				<!-- End Content Column -->
 				<!-- Begin Right Column -->

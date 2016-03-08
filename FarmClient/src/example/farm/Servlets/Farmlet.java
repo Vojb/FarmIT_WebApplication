@@ -255,8 +255,20 @@ public class Farmlet extends HttpServlet {
 					request.setAttribute("animal", a);
 					url = "/updateAnimal.jsp?";
 				}
+				
+			} else if (operation.equals("remove")) {
+				
+				int a = Integer.parseInt(request.getParameter("foundAnimal"));
+		
+				List<Food> f = facade.findAllFood();
+				request.setAttribute("allFood", f);
+			
+				facade.deleteAnimal(a);
+				
+				url = "/index.jsp";
+				request.setAttribute("msgKill", "you just killed an animal");
 
-			} else if (operation.equals("feedAnimals")) {
+			}else if (operation.equals("feedAnimals")) {
 				facade.feedAllAnimals(1, 2, 3);
 				List<Food> f = facade.findAllFood();
 

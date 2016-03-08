@@ -47,7 +47,7 @@ Food a = (Food) request.getAttribute("food");
 <label>Id</label>
 <br />
 <% %>
-<input type="number" id="bajs" name="bajs" maxlength="5" readonly value="<%=a.getIdFood()%>"><br /> <label>FoodName</label>
+<input type="number" id="foundIdFood" name="foundIdFood" maxlength="5" readonly value="<%=a.getIdFood()%>"><br /> <label>FoodName</label>
 <br /> <input type="text" name="foundFoodName" maxlength="222" readonly value="<%=a.getNameFood().substring(0, 1).toUpperCase() + a.getNameFood().substring(1)%>"> <br />
 <label>Amount</label>
 <br /> 
@@ -68,7 +68,7 @@ maxlength="222" readonly value="<%=a.getAmount()%>"> <br />
 </form>
 <form action="/FarmClient/Farmlet" method="post">
 <button type="submit" value="find ">Back</button> <input
-name="operation" value="find" type="hidden">
+name="operation" value="find" hidden>
 </form>			
 </div>
 			</div>

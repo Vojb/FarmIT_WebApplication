@@ -56,8 +56,8 @@ button {
 	background: rgb(182, 216, 164);
 }
 button#remove {
-    margin-left: 2%;
-    margin-top: 10%;
+    margin-left: 60%;
+    margin-top: -6%;
 }
 form#update {
     margin: 0;

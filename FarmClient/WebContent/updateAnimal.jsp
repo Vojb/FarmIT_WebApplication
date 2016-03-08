@@ -40,69 +40,77 @@
 					<%
 						Animal a = (Animal) request.getAttribute("animal");
 					%>
-						<form action="/FarmClient/Farmlet" method="post" id="update">
-							<label>Type of animal</label>
-							<br />
-							<input type="text" id="foundType" name="foundType"
-								maxlength="222" readonly
-								value="<%=a.getClass().getSimpleName()%>"> <br /> <label>Status</label><br />
-								<select id="foundstatusAnimal" name="foundstatusAnimal">
-									<%
-										if (a.getStatusAnimal().equals("Healthy")) {
-									%>
-									<option selected value="Healthy">Healthy</option>
-									<option value="Sick">Sick</option>
-									<option value="Gluefactory">Gluefactory</option>
-									<%
-										}
-										if (a.getStatusAnimal().equals("Sick")) {
-									%>
-									<option value="Healthy">Healthy</option>
+					<form action="/FarmClient/Farmlet" method="post" id="update">
+						<label>Type of animal</label>
+						<br />
+						<input type="text" id="foundType" name="foundType" maxlength="222"
+							readonly value="<%=a.getClass().getSimpleName()%>"> <br />
+							<label>Status</label><br /> <select id="foundstatusAnimal"
+							name="foundstatusAnimal">
+								<%
+									if (a.getStatusAnimal().equals("Healthy")) {
+								%>
+								<option selected value="Healthy">Healthy</option>
+								<option value="Sick">Sick</option>
+								<option value="Gluefactory">Gluefactory</option>
+								<%
+									}
+									if (a.getStatusAnimal().equals("Sick")) {
+								%>
+								<option value="Healthy">Healthy</option>
 
-									<option selected value="Sick">Sick</option>
+								<option selected value="Sick">Sick</option>
 
-									<option value="Gluefactory">Gluefactory</option>
-									<%
-										}
-										if (a.getStatusAnimal().equals("Gluefactory")) {
-									%>
-									<option value="Healthy">Healthy</option>
-									<option value="Sick">Sick</option>
-									<option selected value="Gluefactory"><%=a.getStatusAnimal()%></option>
-									<%
-										}
-									%>
-							</select> <br> <label>IdAnimal</label> <br> <input type="text"
-										name="foundidAnimal" maxlength="5" readonly
-										value="<%=a.getIdAnimal()%>">
-										 <br> <label>Name</label>
-										<br /> <input type="text" name="foundname" maxlength="222" required value="<%=a.getName()%>"> <br> <label>Age</label>
-										<br /> <input type="text" name="foundage" maxlength="2" required value="<%=a.getAge()%>"> <br> <label>Box</label>
-										<br /> <input type="text" name="foundidBox"	maxlength="2" required value="<%=a.getBox().getIdBox()%>"> <br>
-										<label id="foundfood"> <% if(a.getClass().getSimpleName().equals("Hen")){
-											%> Oats </label> <% }else {%> Powerfeed <%} %> </label>
-										 <br /> <input type="text" name="foundfood" maxlength="2" required value="<%=a.getAmountOfFood()%>"> 
-										 <br />
-
-										 <% if(a.getClass().getSimpleName().equals("Horse")){
-											%> 
-											<label id="foundfoodHay"> Hay </label>
-										 <br/>
-										<input type="number" id="hay" name="hay" maxlength="2" required value="<%=a.getAmountOfHay()%>" />
-												<br /> <br >
-										<%
-										 } else{   %>
-										
-<br /> <br ><%} %>
-												<div class="row"></div> <button id="updateAnimal"type="submit" value="update">Update</button>
-																						<input name="operation" value="updateAnimal"
-																						type="hidden">
-						</form>
-						<form action="/FarmClient/Farmlet" method="post">
-							<button id="back" type="submit" value="find">Back</button>
-							<input name="operation" value="find" type="hidden">
-						</form>
-</div>
+								<option value="Gluefactory">Gluefactory</option>
+								<%
+									}
+									if (a.getStatusAnimal().equals("Gluefactory")) {
+								%>
+								<option value="Healthy">Healthy</option>
+								<option value="Sick">Sick</option>
+								<option selected value="Gluefactory"><%=a.getStatusAnimal()%></option>
+								<%
+									}
+								%>
+						</select> <br> <label>IdAnimal</label> <br> <input type="text"
+									name="foundidAnimal" maxlength="5" readonly
+									value="<%=a.getIdAnimal()%>"> <br> <label>Name</label>
+											<br /> <input type="text" name="foundname" maxlength="222"
+											required value="<%=a.getName()%>"> <br> <label>Age</label>
+													<br /> <input type="text" name="foundage" maxlength="2"
+													required value="<%=a.getAge()%>"> <br> <label>Box</label>
+															<br /> <input type="text" name="foundidBox"
+															maxlength="2" required value="<%=a.getBox().getIdBox()%>">
+																<br> <label id="foundfood"> <%
+ 	if (a.getClass().getSimpleName().equals("Hen")) {
+ %> Oats
+																</label> <%
+ 	} else {
+ %> Powerfeed <%
+ 	}
+ %> </label> <br /> <input type="text" name="foundfood" maxlength="2" required
+																	value="<%=a.getAmountOfFood()%>"> <br /> <%
+ 	if (a.getClass().getSimpleName().equals("Horse")) {
+ %> <label id="foundfoodHay"> Hay </label> <br /> <input type="number" id="hay" name="hay" maxlength="2" required value="<%=a.getAmountOfHay()%>" /> <br /> <br>
+																			<%
+																				} else {
+																			%> <br /> <br> <%
+ 	}
+ %>
+																				<div class="row"></div>
+																				<button id="updateAnimal" type="submit"
+																					value="update">Update</button> <input
+																				name="operation" value="updateAnimal" type="hidden">
+					</form>
+					<form action="/FarmClient/Farmlet" method="post">
+						<button id="back" type="submit" value="find">Back</button>
+						<input name="operation" value="find" type="hidden">
+					</form>
+					<form action="/FarmClient/Farmlet" method="post">
+					 <input type="text"	name="foundAnimal" maxlength="5" readonly value="<%=a.getIdAnimal()%>" hidden>
+					<button id="remove" type="submit" value="remove">Send to gluefactory
+</button><input name="operation" value="remove" type="hidden"></form>
+				</div>
 			</div>
 			<!-- End Content Column -->
 			<!-- Begin Right Column -->
