@@ -8,8 +8,7 @@
 			<a href="create.jsp">Add</a> 
 			<a href="find.jsp">Find</a>  
 			<a href="about.jsp">About</a>
-
-			<a href="find.jsp">Test</a> 
+			<a href="test.jsp">Test</a> 
 		</div>
 
 <input name="operation" value="getFood" type="hidden">
