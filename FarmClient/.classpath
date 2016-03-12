@@ -15,7 +15,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/FarmIT_EJBProject"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
-	<classpathentry kind="lib" path="C:/Users/Erik/Desktop/Junitee/junitee-1.11/lib/junitee1.11.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Erik/Desktop/Junitee/junitee-1.11/lib/junit3.8.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Vojb/Documents/Systemvetenskap/proggrejor/junit3.8.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Vojb/Documents/Systemvetenskap/proggrejor/junitee1.11.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
