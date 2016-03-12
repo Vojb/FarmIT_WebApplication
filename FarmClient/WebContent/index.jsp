@@ -33,8 +33,7 @@
 			<!-- End Navigation -->
 			<!-- Begin Faux Columns -->
 			<div id="faux">
-
-				<div id="leftcolumn"></div>
+					<%@ include file="includeleft.jsp"%>
 
 				<div id="content">
 					<h1>Information</h1>
@@ -108,24 +107,12 @@
 				</div>
 				<!-- End Content Column -->
 				<!-- Begin Right Column -->
-				<div id="rightcolumn"></div>
-				<!-- End Right Column -->
-			</div>
+<%@ include file="includeright.jsp"%>
+
+				
 			<!-- End Faux Columns -->
 			<!-- Begin Footer -->
-			<div id="footer"><form action="/FarmClient/Farmlet" id="feed" method="post">
-
-<button type="submit" id="feed" value="btn_feedAnimals">Feed
-
-your animals</button>
-
-
-
-<input name="operation" value="feedAnimals" type="hidden">
-
-</form></div>
-			<!-- End Footer -->
-		</div>
+		<%@ include file="includefooter.jsp"%>
 		<!-- End Wrapper -->
 </body>
 <script src="/FarmClient/Chart.js"></script>
