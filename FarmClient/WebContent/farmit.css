@@ -4,7 +4,8 @@
 }
 
 body {
-	font: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
+		sans-serif;
 	background-image: url(backgroundFarm.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -38,9 +39,11 @@ p {
 	padding-top: 4px;
 	margin: 0px 12px 0px;
 }
+
 button#updateAnimal {
-    margin-left: 80px;
-}	
+	margin-left: 80px;
+}
+
 button {
 	position: absolute;
 	font-family: inherit;
@@ -55,18 +58,39 @@ button {
 	padding-right: 2%;
 	background: rgb(182, 216, 164);
 }
+
 button#remove {
-    margin-left: 60%;
-    margin-top: -6%;
+	margin-left: 60%;
+	margin-top: -6%;
 }
+
 form#update {
-    margin: 0;
+	margin: 0;
 }
+
 hr#hay {
-    width: 470px;
-    padding: 0px;
-    margin: 1px;
+	width: 470px;
+	padding: 0px;
+	margin: 1px;
 }
+
+button#feed {
+	margin-left: -105px;
+	margin-top: 10px;
+}
+
+div#finding {
+	float: right;
+	width: 247px;
+}
+
+img#animaljpg {
+	padding-bottom: 10%;
+	padding-top: 0%;
+	margin-top: 25%;
+	margin-bottom: 25%;
+}
+
 form {
 	margin-bottom: 7%;
 }
@@ -82,12 +106,11 @@ form {
 }
 
 #navigation a:focus {
-
 	color: black;
 }
 
 a:link {
-	font:inherit;
+	font: inherit;
 	color: #ffffff;
 }
 
@@ -151,16 +174,17 @@ e#header {
 	margin: 0px 0px 0px 0px;
 	background: rgba(65, 154, 18, 0.38);
 }
-#contentFind{
-    background: rgba(255, 255, 255, 0.89);
-    margin: 10px 10px 10px;
-    float: left;
-    color: #333;
-    width: 510px;
-    height: 600px;
-    box-shadow: inset 0px 0px 2px black;
-    display: inline;
-    position: relative;
+
+#contentFind {
+	background: rgba(255, 255, 255, 0.89);
+	margin: 10px 10px 10px;
+	float: left;
+	color: #333;
+	width: 510px;
+	height: 600px;
+	box-shadow: inset 0px 0px 2px black;
+	display: inline;
+	position: relative;
 }
 
 #leftcolumn {
@@ -266,8 +290,8 @@ input, select, textarea {
 	clear: both;
 	color: #333;
 	background: rgba(65, 154, 18, 0.38);
-	margin: 0px 0px 10px 0px;
-	padding: 10px;
+	margin: 0px 0px 15px 0px;
+	padding-bottom: 50px;
 }
 
 .nav {
@@ -314,27 +338,7 @@ label {
 }
 
 .container {
-    width: 523px;
-    padding-left: 0x;
-    padding-right: 38px;
-}
-
-.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
-    display: inline-block;
-    height: 38px;
-    padding: 17px 30px;
-    color: #555;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 38px;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-    background-color: rgb(182, 216, 164);
-    border-radius: 4px;
-    border: 1px solid #bbb;
-    cursor: pointer;
-    box-sizing: border-box;
+	width: 523px;
+	padding-left: 0x;
+	padding-right: 38px;
 }

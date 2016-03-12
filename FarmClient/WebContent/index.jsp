@@ -100,12 +100,7 @@
 											});
 								}
 							</script>
-								<form action="/FarmClient/Farmlet" method="post">
-									<button type="submit" value="btn_feedAnimals">Feed
-										your animals</button>
-
-									<input name="operation" value="feedAnimals" type="hidden">
-								</form>
+								
 								<%if(request.getAttribute("msgKill")==null){
 									 }else{ %>
 									 	<center><%=request.getAttribute("msgKill")%></center><%
@@ -118,7 +113,17 @@
 			</div>
 			<!-- End Faux Columns -->
 			<!-- Begin Footer -->
-			<div id="footer">farm life</div>
+			<div id="footer"><form action="/FarmClient/Farmlet" id="feed" method="post">
+
+<button type="submit" id="feed" value="btn_feedAnimals">Feed
+
+your animals</button>
+
+
+
+<input name="operation" value="feedAnimals" type="hidden">
+
+</form></div>
 			<!-- End Footer -->
 		</div>
 		<!-- End Wrapper -->
