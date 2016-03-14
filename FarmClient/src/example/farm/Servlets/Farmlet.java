@@ -279,17 +279,6 @@ public class Farmlet extends HttpServlet {
 					url = "/index.jsp?";
 				}
 
-			}else if (operation.equals("createHorse")) {
-				
-				List<Animal> f = facade.findByTypeQuery("Horse");
-				
-				if (f != null) {
-					request.setAttribute("Horse", f);
-					url = "/horse.jsp?";
-				} else {
-					url = "/horse.jsp?";
-				}
-
 			}else if (operation.equals("createHen")) {
 				
 				List<Animal> f = facade.findByTypeQuery("Hen");
@@ -299,6 +288,17 @@ public class Farmlet extends HttpServlet {
 					url = "/hen.jsp?";
 				} else {
 					url = "/hen.jsp?";
+				}
+
+			}else if (operation.equals("createHorse")) {
+				
+				List<Animal> f = facade.findByTypeQuery("Horse");
+				
+				if (f != null) {
+					request.setAttribute("Horse", f);
+					url = "/horse.jsp?";
+				} else {
+					url = "/horse.jsp?";
 				}
 
 			}else if (operation.equals("createPig")) {
