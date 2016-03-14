@@ -95,9 +95,9 @@ pageEncoding="UTF-8"%>
 
 
 
-<% List<Animal> horses =(List<Animal>) request.getAttribute("Horse");
+<% List<Animal> hens =(List<Animal>) request.getAttribute("Hen");
 
-for(Animal a: horses ){
+for(Animal a: hens ){
 
 %>
 <option selected name="findIdAnimal"> <%=a.getIdAnimal()%> </option>
@@ -197,7 +197,7 @@ readonly value="Horse"> <br />
 
 <br />
 
-<label id="food">Food</label>
+<label id="food">Oats</label>
 
 <br />
 
@@ -205,15 +205,6 @@ readonly value="Horse"> <br />
 
 <br />
 
-<label id="foodOne"> </label>
-
-<br />
-
-<input type="number" id="hay" name="hay" maxlength="2" /> 
-
-<br />
-
-<br />
 
 <button type="reset" value="Reset">Reset</button>
 

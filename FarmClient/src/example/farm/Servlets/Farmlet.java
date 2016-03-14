@@ -279,6 +279,50 @@ public class Farmlet extends HttpServlet {
 					url = "/index.jsp?";
 				}
 
+			}else if (operation.equals("createHorse")) {
+				
+				List<Animal> f = facade.findByTypeQuery("Horse");
+				
+				if (f != null) {
+					request.setAttribute("Horse", f);
+					url = "/horse.jsp?";
+				} else {
+					url = "/horse.jsp?";
+				}
+
+			}else if (operation.equals("createHen")) {
+				
+				List<Animal> f = facade.findByTypeQuery("Hen");
+				
+				if (f != null) {
+					request.setAttribute("Hen", f);
+					url = "/hen.jsp?";
+				} else {
+					url = "/hen.jsp?";
+				}
+
+			}else if (operation.equals("createPig")) {
+				
+				List<Animal> f = facade.findByTypeQuery("Pig");
+				
+				if (f != null) {
+					request.setAttribute("Pig", f);
+					url = "/pig.jsp?";
+				} else {
+					url = "/pig.jsp?";
+				}
+
+			}else if (operation.equals("createCow")) {
+				
+				List<Animal> f = facade.findByTypeQuery("Cow");
+				
+				if (f != null) {
+					request.setAttribute("Cow", f);
+					url = "/cow.jsp?";
+				} else {
+					url = "/cow.jsp?";
+				}
+
 			} else if (operation.equals("getFood")) {
 
 				List<Food> f = facade.findAllFood();

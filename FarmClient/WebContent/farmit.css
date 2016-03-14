@@ -83,7 +83,12 @@ div#finding {
 	float: right;
 	width: 247px;
 }
-
+input.animal {
+    height: 225px;
+    padding-bottom: 10%;
+    padding-top: 0%;
+    margin-top: 25%;
+}
 img#animaljpg {
 	padding-bottom: 10%;
 	padding-top: 0%;
@@ -104,7 +109,6 @@ form {
 	font-size: 15px;
 	text-decoration: none;
 }
-
 #navigation a:focus {
 	color: black;
 }

@@ -4,15 +4,20 @@
 
 </head>
 <div id="leftcolumn">
+<form action="/FarmClient/Farmlet" method="post">
 
-</form action="/FarmClient/farmlet" method="post">
+									 <input class="animal" type="image"  src="nicecow.png"/> 
+									<input name="operation" value="createCow" type="hidden">
+							
+							</form>
 
-<a href="/FarmClient/create.jsp"><img id="animaljpg" src="nicecow.png"/></a>
 
-</form>
+<form action="/FarmClient/Farmlet" method="post">
 
-<a href="/FarmClient/create.jsp"><img id="animaljpg" src="minipig.png"/></a>
-
+									 <input class="animal" type="image"  src="minipig.png"/> 
+									<input name="operation" value="createPig" type="hidden">
+							
+							</form>
 
 </div>
 </body>
