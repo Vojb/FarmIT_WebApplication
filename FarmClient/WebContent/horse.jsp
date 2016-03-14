@@ -145,9 +145,6 @@ for(Animal a: horses ){
 readonly value="Horse"> <br />
 
 
-
-<br/>
-
 <label>Status</label>
 
 <br/>
