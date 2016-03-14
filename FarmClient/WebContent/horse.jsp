@@ -112,7 +112,6 @@ for(Animal a: horses ){
 <button type="submit" id="findAnimal" value="btn_findByIdAnimal">Find</button>
 
 
-
 <input name="operation" value="findByIdAnimal" type="hidden">
 
 <br>
@@ -204,21 +203,18 @@ readonly value="Horse"> <br />
 <input type="text" name="food" maxlength="2" required placeholder="Insert amount" />
 
 <br />
-<label id="foodOne"> </label>
-								<br />
-								<input type="number" id="hay" name="hay" maxlength="2" /> 
-								<br />
-								<br />
-
+<label id="foodOne">Hay </label>
+<br />
+<input type="text" name="foodOne" maxlength="2" required placeholder="Insert amount" />
+<br />
+								
 
 <button type="reset" value="Reset">Reset</button>
 
 <button id="updateAnimal"type="submit" value="addaAnimal" >Add</button>
 
 <input name="operation" value="addAnimal" type="hidden">
-
-
-
+</form>
 
 
 
