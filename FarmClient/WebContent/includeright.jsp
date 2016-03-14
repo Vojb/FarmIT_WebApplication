@@ -1,7 +1,9 @@
 <html>
-<body>
-<div id="rightcolumn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+</head>
+<div id="rightcolumn">
 <form action="/FarmClient/Farmlet" method="post">
 
 									 <input class="animal" type="image"  src="stupidhorse.png"/> 
@@ -12,15 +14,11 @@
 
 <form action="/FarmClient/Farmlet" method="post">
 
-									 <input class="animal" type="image"  src="evilhen.png"/>
+									 <input class="animal" type="image"  src="evilhen.png"/> 
 									<input name="operation" value="createHen" type="hidden">
 							
 							</form>
 
-
-
-				<!-- End Right Column -->
-			</div>
-
+</div>
 </body>
 </html>

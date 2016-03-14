@@ -30,8 +30,7 @@
 		<!-- End Navigation -->
 		<!-- Begin Faux Columns -->
 		<div id="faux">
-
-			<div id="leftcolumn"></div>
+<%@ include file="includeleft.jsp" %> 
 
 			<div id="content">
 
@@ -63,16 +62,26 @@
 
 				
 			</div>
+
 			<!-- End Content Column -->
+
 			<!-- Begin Right Column -->
-			<div id="rightcolumn"></div>
+
+			<%@ include file="includeright.jsp" %> 
+
 			<!-- End Right Column -->
-		</div>
+
+		
+
 		<!-- End Faux Columns -->
+
 		<!-- Begin Footer -->
-		<div id="footer">farm life</div>
+
+		<%@ include file="includefooter.jsp" %> 
+
 		<!-- End Footer -->
-	</div>
+
+</div>
 	<!-- End Wrapper -->
 </body>
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>

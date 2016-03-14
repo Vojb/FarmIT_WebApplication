@@ -30,7 +30,8 @@
 		<!-- Begin Faux Columns -->
 		<div id="faux">
 
-			<div id="leftcolumn"></div>
+			
+<%@ include file="includeleft.jsp" %> 
 
 			<div id="content">
 
@@ -111,17 +112,27 @@
 					<button id="remove" type="submit" value="remove">Send to gluefactory
 </button><input name="operation" value="remove" type="hidden"></form>
 				</div>
-			</div>
-			<!-- End Content Column -->
-			<!-- Begin Right Column -->
-			<div id="rightcolumn"></div>
-			<!-- End Right Column -->
 		</div>
+
+			<!-- End Content Column -->
+
+			<!-- Begin Right Column -->
+
+			<%@ include file="includeright.jsp" %> 
+
+			<!-- End Right Column -->
+
+		
+
 		<!-- End Faux Columns -->
+
 		<!-- Begin Footer -->
-		<div id="footer">farm life</div>
+
+		<%@ include file="includefooter.jsp" %> 
+
 		<!-- End Footer -->
-	</div>
+
+</div>
 	<!-- End Wrapper -->
 </body>
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>

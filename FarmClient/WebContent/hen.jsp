@@ -115,16 +115,6 @@ for(Animal a: hens ){
 
 <input name="operation" value="findByIdAnimal" type="hidden">
 
-<br>
-
-<%if(request.getAttribute("msgA")==null){
-
-}else{ %>
-
-
-<center><%=request.getAttribute("msgA")%></center><%
-
-}%>
 
 </div>
 
@@ -204,9 +194,8 @@ readonly value="Hen"> <br />
 <input type="text" name="food" maxlength="2" required placeholder="Insert amount" />
 
 <br />
-
-		<br />
-								<br />
+<br />
+<br />
 <button type="reset" value="Reset">Reset</button>
 
 <button id="updateAnimal"type="submit" value="addaAnimal" >Add</button>
