@@ -201,7 +201,7 @@ readonly value="Hen"> <br />
 <button id="updateAnimal"type="submit" value="addaAnimal" >Add</button>
 
 <input name="operation" value="addAnimal" type="hidden">
-
+</form>
 
 
 

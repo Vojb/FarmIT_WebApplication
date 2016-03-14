@@ -7,7 +7,7 @@
 <form action="/FarmClient/Farmlet" method="post">
 
 									 <input class="animal" type="image"  src="stupidhorse.png"/> 
-									<input name="operation" value="createHorse" type="hidden">
+									<input name="operation" value="bajs" type="hidden"></input>
 							
 							</form>
 
