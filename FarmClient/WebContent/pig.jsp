@@ -96,15 +96,17 @@ pageEncoding="UTF-8"%>
 
 
 <% List<Animal> pigs=(List<Animal>) request.getAttribute("Pig");
-
+long b=0;
 for(Animal a: pigs ){
+
+b = a.getIdAnimal();
 
 %>
 <option selected name="findIdAnimal"> <%=a.getIdAnimal()%> </option>
 
 <%
 }
-
+b= b+1;
 %>
 
 </select>
@@ -169,7 +171,7 @@ readonly value="Pig"> <br />
 
 <br />
 
-<input type="number" name="idAnimal" maxlength="5" required/>
+<input type="number" name="idAnimal" maxlength="5" value="<%=b%>"required/>
 
 <br />
 
