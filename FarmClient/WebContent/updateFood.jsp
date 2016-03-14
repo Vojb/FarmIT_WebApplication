@@ -30,7 +30,7 @@
 		<!-- Begin Faux Columns -->
 		<div id="faux">
 
-			<div id="leftcolumn"></div>
+			<%@ include file="includeleft.jsp" %> 
 
 			<div id="content">
 

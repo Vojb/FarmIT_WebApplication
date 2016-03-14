@@ -54,12 +54,11 @@ public class Farmlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 
-			String url = null;
-			try {
+		String url = null;
+		try {
 			String operation = request.getParameter("operation");
-		
+
 			if (operation.equals("findByIdAnimal")) {
 				int id = Integer.parseInt(request.getParameter("findIdAnimal"));
 				Animal a = facade.findByIdAnimal(id);
@@ -94,12 +93,12 @@ public class Farmlet extends HttpServlet {
 					request.setAttribute("msgBox", "didnt find a box");
 					url = "/find.jsp?";
 				}
-			}else if (operation.equals("buy")) {
+			} else if (operation.equals("buy")) {
 				Food f = null;
 				int food = Integer.parseInt(request.getParameter("foundIdFood"));
 				f = facade.findByIdFood(food);
 				if (f != null) {
-				
+
 					facade.addAmount(f, Integer.parseInt(request.getParameter("buyAmount")));
 					facade.updateFood(f);
 					request.setAttribute("food", f);
@@ -108,14 +107,14 @@ public class Farmlet extends HttpServlet {
 					request.setAttribute("msgF", "didnt find your food");
 					url = "/find.jsp?";
 				}
-			}  else if (operation.equals("findByFoodName")) {
+			} else if (operation.equals("findByFoodName")) {
 				Food f = null;
 				String foodname = request.getParameter("findByFoodName");
 				f = facade.findByFoodName(foodname);
 				if (f != null) {
 					request.setAttribute("food", f);
 					url = "/updateFood.jsp?";
-				
+
 				} else {
 					request.setAttribute("msgF", "didnt find your food");
 					url = "/find.jsp?";
@@ -158,6 +157,7 @@ public class Farmlet extends HttpServlet {
 				} else if (animalType.equals("Horse")) {
 					Horse a = new Horse();
 					a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
+
 					a.setAmountOfHay(Integer.parseInt(request.getParameter("hay")));
 					a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
 					a.setStatusAnimal(request.getParameter("status-animal"));
@@ -262,20 +262,39 @@ public class Farmlet extends HttpServlet {
 					request.setAttribute("animal", a);
 					url = "/updateAnimal.jsp?";
 				}
+
+			} else if (operation.equals("addHorse")) {
+				Horse a = new Horse();
+				a.setAmountOfPowerFeed(Integer.parseInt(request.getParameter("food")));
+				a.setAmountOfHay(Integer.parseInt(request.getParameter("foodOne")));
+				a.setIdAnimal(Long.parseLong(request.getParameter("idAnimal")));
+				a.setStatusAnimal(request.getParameter("status-animal"));
+				a.setName(request.getParameter("name"));
+				a.setAge(request.getParameter("age"));
+
+				Box b = facade.findByIdBox(request.getParameter("idBox"));
+				if (b != null) {
+					a.setBox(b);
+					facade.createAnimal(a);
+					request.setAttribute("msgCreate", "Animal Created");
+					url = "/create.jsp?";
+				}
+
+				
 				
 			} else if (operation.equals("remove")) {
-				
+
 				int a = Integer.parseInt(request.getParameter("foundAnimal"));
-		
+
 				List<Food> f = facade.findAllFood();
 				request.setAttribute("allFood", f);
-			
+
 				facade.deleteAnimal(a);
-				
+
 				url = "/index.jsp";
 				request.setAttribute("msgKill", "you just killed an animal");
 
-			}else if (operation.equals("feedAnimals")) {
+			} else if (operation.equals("feedAnimals")) {
 				facade.feedAllAnimals(1, 2, 3);
 				List<Food> f = facade.findAllFood();
 
@@ -286,10 +305,10 @@ public class Farmlet extends HttpServlet {
 					url = "/index.jsp?";
 				}
 
-			}else if (operation.equals("createHen")) {
-				
+			} else if (operation.equals("createHen")) {
+
 				List<Animal> f = facade.findByTypeQuery("Hen");
-				
+
 				if (f != null) {
 					request.setAttribute("Hen", f);
 					url = "/hen.jsp?";
@@ -297,10 +316,10 @@ public class Farmlet extends HttpServlet {
 					url = "/hen.jsp?";
 				}
 
-			}else if (operation.equals("bajs")) {
-				
+			} else if (operation.equals("bajs")) {
+
 				List<Animal> f = facade.findByTypeQuery("Horse");
-				
+
 				if (f != null) {
 					request.setAttribute("Horse", f);
 					url = "/horse.jsp?";
@@ -308,10 +327,10 @@ public class Farmlet extends HttpServlet {
 					url = "/horse.jsp?";
 				}
 
-			}else if (operation.equals("createPig")) {
-				
+			} else if (operation.equals("createPig")) {
+
 				List<Animal> f = facade.findByTypeQuery("Pig");
-				
+
 				if (f != null) {
 					request.setAttribute("Pig", f);
 					url = "/pig.jsp?";
@@ -319,10 +338,10 @@ public class Farmlet extends HttpServlet {
 					url = "/pig.jsp?";
 				}
 
-			}else if (operation.equals("createCow")) {
-				
+			} else if (operation.equals("createCow")) {
+
 				List<Animal> f = facade.findByTypeQuery("Cow");
-				
+
 				if (f != null) {
 					request.setAttribute("Cow", f);
 					url = "/cow.jsp?";
@@ -349,8 +368,8 @@ public class Farmlet extends HttpServlet {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
-			
-			url = "/create.jsp";
+
+			url = "/about.jsp";
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 			dispatcher.forward(request, response);
 		}
