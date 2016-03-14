@@ -87,7 +87,10 @@
 								<button type="reset" value="Reset">Reset</button>
 								<button id="updateAnimal"type="submit" value="addaAnimal" >Add</button>
 								<input name="operation" value="addAnimal" type="hidden">
-								
+								<%if(request.getAttribute("msgCreate")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msgCreate")%></center><%
+									}%>
 							</form>
 		
 

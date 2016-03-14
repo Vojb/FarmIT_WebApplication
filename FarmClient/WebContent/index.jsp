@@ -51,7 +51,7 @@
 						for (Food f : foods) {
 							if (f.getNameFood().equals("powerfeed")) {
 								powerfeed = f.getAmount();
-							} else if ((f.getNameFood().equals("oats"))) {
+							} else if ((f.getNameFood().equals("oat"))) {
 								oat = f.getAmount();
 							} else {
 								hay = f.getAmount();
