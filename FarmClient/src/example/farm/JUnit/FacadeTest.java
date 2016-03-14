@@ -3,15 +3,13 @@ package example.farm.JUnit;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
-import example.farm.eao.AnimalBeanLocal;
-import example.farm.facade.FarmFacade;
 import example.farm.facade.FarmFacadeLocal;
 import example.farm.model.Cow;
 import junit.framework.TestCase;
 
 public class FacadeTest extends TestCase {
 
-FarmFacadeLocal facade; 
+FarmFacadeLocal facade;
 
 	
 	public FacadeTest(String name) {
@@ -25,8 +23,6 @@ FarmFacadeLocal facade;
 		facade=(FarmFacadeLocal)context.lookup("java:app/FarmIT_EJBProject/FarmFacade!example.farm.facade.FarmFacadeLocal");
 	}
 
-	
-	
 	public void testCreateAnimal() throws Exception {
 		Cow c = new Cow();
 		
