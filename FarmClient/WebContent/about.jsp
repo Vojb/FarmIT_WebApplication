@@ -41,7 +41,7 @@
 							
 							<h2>About</h2>
 							<p>
-							We have been operating in the fields of Skåne since 2001 when Erik at the age of 9 had a passion for farming.
+							We have been operating in the fields of Skåne since 2001 when Erik at the age of 9 discovered his passion for farming.
 							<br> 
 							<br>
 							It started off with hens and rabbits but has now expanded into a family of pigs, horses, cows and hens.
