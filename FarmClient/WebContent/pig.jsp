@@ -214,7 +214,7 @@ readonly value="Pig"> <br />
 
 <input name="operation" value="addAnimal" type="hidden">
 
-
+</form>
 
 
 

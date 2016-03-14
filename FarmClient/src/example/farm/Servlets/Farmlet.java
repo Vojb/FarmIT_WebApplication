@@ -290,7 +290,7 @@ public class Farmlet extends HttpServlet {
 					url = "/hen.jsp?";
 				}
 
-			}else if (operation.equals("createHorse")) {
+			}else if (operation.equals("bajs")) {
 				
 				List<Animal> f = facade.findByTypeQuery("Horse");
 				
