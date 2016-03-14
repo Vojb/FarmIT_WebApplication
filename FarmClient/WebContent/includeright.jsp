@@ -2,15 +2,20 @@
 <body>
 <div id="rightcolumn">
 
-</form action="/FarmClient/farmlet" method="post">
+<form action="/FarmClient/Farmlet" method="post">
 
-<a href="/FarmClient/create.jsp"><img id="animaljpg" src="stupidhorse.png"/> </a>
+									 <input class="animal" type="image"  src="stupidhorse.png"/> 
+									<input name="operation" value="createHorse" type="hidden">
+							
+							</form>
 
-<input name="operation" value="getAnimalByType" type="hidden">
 
-</form>
+<form action="/FarmClient/Farmlet" method="post">
 
-<a href="/FarmClient/create.jsp"><img id="animaljpg" src="evilhen.png"/></a></div>
+									 <input class="animal" type="image"  src="evilhen.png"/>
+									<input name="operation" value="createHen" type="hidden">
+							
+							</form>
 
 
 

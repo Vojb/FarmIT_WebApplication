@@ -32,9 +32,8 @@
 		<!-- Begin Faux Columns -->
 		<div id="faux">
 
-			<div id="leftcolumn">
+			<%@ include file="includeleft.jsp" %> 
 
-			</div>
 			<div id="content">
 
 				<div class="container">
@@ -99,12 +98,12 @@
 			</div>
 			<!-- End Content Column -->
 			<!-- Begin Right Column -->
-			<div id="rightcolumn">
-			</div><!-- End Right Column -->
-		</div>
+			<%@ include file="includeright.jsp" %> 
+			<!-- End Right Column -->
+		
 		<!-- End Faux Columns -->
 		<!-- Begin Footer -->
-		<div id="footer">farm life</div>
+		<%@ include file="includefooter.jsp" %> 
 		<!-- End Footer -->
 	</div>
 	<!-- End Wrapper -->
