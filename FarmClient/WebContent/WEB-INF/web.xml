@@ -12,7 +12,6 @@
 <servlet>
 <servlet-name>JUnitEETestServlet</servlet-name>
 <servlet-class>org.junitee.servlet.JUnitEEServlet</servlet-class>
-
 </servlet>
 
 <servlet-mapping>

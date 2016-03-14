@@ -43,8 +43,8 @@
 							<p>Här kan du välja en eller flera av följande test:<br></p>
 				<form action="TestServlet" method="get" name="youPickItForm">
 				<select name="suite" size="2" multiple>
-				<option value="ics.junit.ejb.EmployeeBeanTest">
-					ics.junit.ejb.EmployeeBeanTest</option>
+				<option value="example.farm.JUnit.FarmFacadeTest">
+					Test All</option>
 				<option value="ics.junit…">ett.annat.TestCase</option>
 				</select>
 				<input type="submit" value="Run" />
