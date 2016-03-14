@@ -143,7 +143,7 @@ for(Animal a: cows ){
 
 <input type="text" id="typeAnimal" name="typeAnimal" maxlength="222"
 
-readonly value="Horse"> <br />
+readonly value="Cow"> <br />
 
 
 
@@ -203,6 +203,9 @@ readonly value="Horse"> <br />
 
 <input type="text" name="food" maxlength="2" required placeholder="Insert amount" />
 
+
+<br />
+<br />
 <br />
 
 

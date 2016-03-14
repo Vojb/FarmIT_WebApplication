@@ -143,7 +143,7 @@ for(Animal a: hens ){
 
 <input type="text" id="typeAnimal" name="typeAnimal" maxlength="222"
 
-readonly value="Horse"> <br />
+readonly value="Hen"> <br />
 
 
 
@@ -205,7 +205,8 @@ readonly value="Horse"> <br />
 
 <br />
 
-
+		<br />
+								<br />
 <button type="reset" value="Reset">Reset</button>
 
 <button id="updateAnimal"type="submit" value="addaAnimal" >Add</button>

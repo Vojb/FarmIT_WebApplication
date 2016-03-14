@@ -12,7 +12,7 @@
 
 <form action="/FarmClient/Farmlet" method="post">
 
-									 <input class="animal" type="image"  src="evilhen.png"/> 
+									 <input class="animal" type="image"  src="evilhen.png"/>
 									<input name="operation" value="createHen" type="hidden">
 							
 							</form>

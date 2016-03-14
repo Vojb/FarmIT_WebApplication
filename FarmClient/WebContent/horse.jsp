@@ -85,7 +85,7 @@ pageEncoding="UTF-8"%>
 
 <div id="finding">
 
-<form action="/FarmClient/Farmlet" method="post" id="y">
+<form action="/FarmClient/Farmlet" method="post" >
 
 <label id="voj">Find Animal</label>
 
@@ -197,23 +197,19 @@ readonly value="Horse"> <br />
 
 <br />
 
-<label id="food">Food</label>
+<label id="food">Powerfeed</label>
 
 <br />
 
 <input type="text" name="food" maxlength="2" required placeholder="Insert amount" />
 
 <br />
-
 <label id="foodOne"> </label>
+								<br />
+								<input type="number" id="hay" name="hay" maxlength="2" /> 
+								<br />
+								<br />
 
-<br />
-
-<input type="number" id="hay" name="hay" maxlength="2" /> 
-
-<br />
-
-<br />
 
 <button type="reset" value="Reset">Reset</button>
 

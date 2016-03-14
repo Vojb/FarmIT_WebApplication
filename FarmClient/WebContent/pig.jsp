@@ -204,6 +204,8 @@ readonly value="Pig"> <br />
 <input type="text" name="food" maxlength="2" required placeholder="Insert amount" />
 
 <br />
+<br />
+<br />
 
 
 <button type="reset" value="Reset">Reset</button>
