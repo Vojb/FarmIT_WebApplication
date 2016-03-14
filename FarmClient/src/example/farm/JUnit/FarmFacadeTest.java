@@ -7,12 +7,12 @@ import example.farm.facade.FarmFacadeLocal;
 import example.farm.model.Cow;
 import junit.framework.TestCase;
 
-public class FacadeTest extends TestCase {
+public class FarmFacadeTest extends TestCase {
 
 FarmFacadeLocal facade;
 
 	
-	public FacadeTest(String name) {
+	public FarmFacadeTest(String name) {
 		super(name);
 	}
 
