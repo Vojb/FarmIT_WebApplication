@@ -42,16 +42,13 @@
 			
 				<form action="TestServlet" method="get" name="youPickItForm">
 				<select name="suite" size="2" multiple hidden>
-				<option selected value="example.farm.JUnit.FarmFacadeTest" hidden>
+				<option selected value="example.farm.JUnit.AnimalBeanTest" hidden>
 					Test All</option>
 				</select>
 				<input type="submit" value="Run" />
 				</form>
 
 							
-
-							
-		
 
 
 						</div>
