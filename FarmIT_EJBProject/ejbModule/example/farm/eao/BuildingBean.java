@@ -5,6 +5,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import example.farm.model.Box;
 import example.farm.model.Building;
 
 /**
@@ -35,4 +36,11 @@ public class BuildingBean implements BuildingBeanLocal {
 		return a;
 	}
 
+	public void deleteBuilding(String id) {
+		Building a = this.findByIdBuilding(id);
+		if (a != null) {
+			em.remove(a);
+		}
+
+	}
 }

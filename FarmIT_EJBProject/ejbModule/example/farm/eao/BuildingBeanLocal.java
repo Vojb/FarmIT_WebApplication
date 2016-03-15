@@ -12,4 +12,6 @@ public interface BuildingBeanLocal {
 	public Building createBuilding(Building a);
 	
 	public Building updateBuilding(Building a);
+
+	public void deleteBuilding(String id);
 }

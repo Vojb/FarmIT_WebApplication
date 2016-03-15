@@ -6,68 +6,76 @@
 <title>Farmit</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="skeleton.css">
-<link rel="stylesheet" type="text/css" href="farmit.css" />
+		<link rel="stylesheet" href="skeleton.css">
+			<link rel="stylesheet" type="text/css" href="farmit.css" />
 </head>
 <body>
 
-<%@ page import="javax.servlet.http.*" %>
-<%@ page import="example.farm.model.*" %>
+	<%@ page import="javax.servlet.http.*"%>
+	<%@ page import="example.farm.model.*"%>
 
 
 
 	<!-- Begin Wrapper -->
 	<div id="wrapper">
 		<!-- Begin Header -->
-		<div id="header">
-		</div>
+		<div id="header"></div>
 		<!-- End Header -->
 		<!-- Begin Navigation -->
-		  <div>
-  			<%@ include file="includedivision.jsp" %> 
-      	</div>
+		<div>
+			<%@ include file="includedivision.jsp"%>
+		</div>
 		<!-- End Navigation -->
 		<!-- Begin Faux Columns -->
 		<div id="faux">
 
-		<%@ include file="includeleft.jsp" %> 
-		
+			<%@ include file="includeleft.jsp"%>
+
 			<div id="content">
 
 				<div class="container">
-							
-							<h2>Test</h2>
-			
-				<form action="TestServlet" method="get" name="youPickItForm">
-				<select name="suite" size="2" multiple hidden>
-				<option selected value="example.farm.JUnit.AnimalBeanTest" hidden>
-					Test All</option>
-				</select>
-				<input type="submit" value="Run" />
-				</form>
 
-							
+					<h2>Test</h2>
+
+					<p>
+						Här kan du välja en eller flera av följande test:<br>
+					</p>
+					<form action="TestServlet" method="get" name="youPickItForm">
+						<select name="suite" size="2" multiple>
+							<option value="example.farm.JUnit.AnimalBeanTest">
+								Create, Find and Delete Animal</option>
+							<option value="example.farm.JUnit.BuildingBeanTest">Create, Find and Delete Building</option>
+						</select>
+						<input type="submit" value="Run" />
+					</form>
 
 
-						</div>
-					
+
+
 
 				</div>
+
+
+			</div>
 			<!-- End Content Column -->
 			<!-- Begin Right Column -->
-			<%@ include file="includeright.jsp" %> 
+			<%@ include file="includeright.jsp"%>
 			<!-- End Right Column -->
-		
-		<!-- End Faux Columns -->
-		<!-- Begin Footer -->
-		<%@ include file="includefooter.jsp" %> 
-		<!-- End Footer -->
-	</div>
-	<!-- End Wrapper -->
+
+			<!-- End Faux Columns -->
+			<!-- Begin Footer -->
+			<%@ include file="includefooter.jsp"%>
+			<!-- End Footer -->
+		</div>
+		<!-- End Wrapper -->
 </body>
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	crossorigin="anonymous"></script>
 <script src="/FarmClient/myscripts.js"></script>
 </html>
