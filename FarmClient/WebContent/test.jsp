@@ -39,8 +39,7 @@
 				<div class="container">
 							
 							<h2>Test</h2>
-							
-							<p>Här kan du välja en eller flera av följande test:<br></p>
+			
 				<form action="TestServlet" method="get" name="youPickItForm">
 				<select name="suite" size="2" multiple>
 				<option selected value="example.farm.JUnit.FarmFacadeTest">
