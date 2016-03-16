@@ -8,40 +8,35 @@ import example.farm.model.Building;
 import junit.framework.TestCase;
 
 public class BuildingBeanTest extends TestCase {
-	
-		BuildingBeanLocal building;
 
-			
-			public BuildingBeanTest(String name) {
-				super(name);
-			}
+	BuildingBeanLocal building;
 
-			protected void setUp() throws Exception {
-				super.setUp();
-				
-				Context context = new InitialContext();
-				building=(BuildingBeanLocal)context.lookup("java:app/FarmIT_EJBProject/BuildingBean!example.farm.eao.BuildingBeanLocal");
-			}
+	public BuildingBeanTest(String name) {
+		super(name);
+	}
 
-			public void testCreateBuilding() throws Exception {
-				Building b = new Building();
-				
-				b.setIdBuilding("666");
-				
-				building.createBuilding(b);
-			}
+	protected void setUp() throws Exception {
+		super.setUp();
 
-			public void testFindBuilding() throws Exception {
-				
-				building.findByIdBuilding("666");
-			}
+		Context context = new InitialContext();
+		building = (BuildingBeanLocal) context
+				.lookup("java:app/FarmIT_EJBProject/BuildingBean!example.farm.eao.BuildingBeanLocal");
+	}
 
-			public void testDeleteBuilding() {
-				building.deleteBuilding("666");
-			}
-			protected void tearDown() throws Exception {
-				super.tearDown();
+	public void testCreateBuilding() throws Exception {
+		Building b = new Building();
 
-			}
-			
-		}
+		b.setIdBuilding("666");
+
+		building.createBuilding(b);
+	}
+
+	public void testFindBuilding() throws Exception {
+
+		building.findByIdBuilding("666");
+	}
+
+	public void testDeleteBuilding() {
+		building.deleteBuilding("666");
+	}
+}
