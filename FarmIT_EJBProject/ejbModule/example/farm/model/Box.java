@@ -21,9 +21,7 @@ import javax.persistence.Table;
 })
 @Table(name = "Boxes")
 public class Box implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private String idBox;
 	private Building building;
@@ -56,8 +54,4 @@ public class Box implements Serializable {
 	public void setAnimals(Set<Animal> animals) {
 		this.animals = animals;
 	}
-//	public void addAnimaltoBox(Animal a){
-//		animals.add(a);
-//	}
-
 }

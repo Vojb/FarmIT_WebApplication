@@ -23,7 +23,7 @@ import javax.persistence.*;
 		@NamedQuery(name = "Animal.findHens", query = "SELECT a FROM Animal a WHERE a.class = 'Hen'"),
 		@NamedQuery(name = "Animal.findHorses", query = "SELECT a FROM Animal a WHERE a.class = 'Horse'"),
 		@NamedQuery(name = "Animal.findPigs", query = "SELECT a FROM Animal a WHERE a.class = 'Pig'")
-		// @NamedQuery(name="Animals.findFood", query="SELECT ")
+		
 
 })
 

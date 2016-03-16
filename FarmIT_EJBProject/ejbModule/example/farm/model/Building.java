@@ -13,9 +13,6 @@ import java.io.Serializable;
 import java.util.*;
 
 @Entity
-//@NamedQueries({
-//	@NamedQuery(name="Buildings.findAllBoxesInBuildin", query= "SELECT b FROM Buildings b WHERE IdBox b = :IdBox")
-//})
 @Table(name = "Buildings")
 public class Building implements Serializable {
 
@@ -40,9 +37,4 @@ public class Building implements Serializable {
 	public void setBoxes(Set<Box> boxes) {
 		this.boxes = boxes;
 	}
-
-//	public void addBoxtoBuilding(Box b) {
-//		boxes.add(b);
-//	}
-
 }

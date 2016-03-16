@@ -9,9 +9,7 @@ import javax.persistence.Transient;
 @DiscriminatorValue("Pig")
 public class Pig extends Animal {
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	@Column(name="AmountOfPowerFeed")
 	private int amountOfPowerFeed;

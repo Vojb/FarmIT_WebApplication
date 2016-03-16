@@ -7,13 +7,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Transient;
 
 @Entity
-//@NamedQuery(name = "Cow.feedCowsSum", query = "SELECT a FROM Animal a WHERE a.class = 'Cow'")
 @DiscriminatorValue("Cow")
 public class Cow extends Animal {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private int amountOfPowerFeed;
 	
