@@ -16,7 +16,7 @@ import example.farm.model.Pig;
 @Local
 public interface FarmFacadeLocal {
 
-	// skapa
+	// Create
 	public Animal createAnimal(Animal a);
 
 	public Box createBox(Box a);
@@ -25,7 +25,7 @@ public interface FarmFacadeLocal {
 
 	public Building createBuilding(Building a);
 
-	// uppdatera
+	// Update
 	public Animal updateAnimal(Animal a);
 
 	public Food updateFood(Food f);
@@ -34,12 +34,12 @@ public interface FarmFacadeLocal {
 
 	public Building updateBuilding(Building a);
 
-	// ta bort
+	// Delete
 	public void deleteAnimal(long a);
 
 	public void deleteFood(long id);
 
-	// hitta
+	// Find
 	public List<Food> findAllFood() ;
 	public Food findByFoodName(String foodName);
 	
@@ -63,12 +63,12 @@ public interface FarmFacadeLocal {
 
 	public List<Animal> findPigs();
 
-	// lägga till
+	// Add
 	public void addAnimal(Food f, Animal a);
 
 	public void addAmount(Food f, int amount);
 
-	// Mata
+	// Feed
 	public void changeAmountInCow(Cow c, Food f);
 
 	public void changeAmountInHen(Hen h, Food f);

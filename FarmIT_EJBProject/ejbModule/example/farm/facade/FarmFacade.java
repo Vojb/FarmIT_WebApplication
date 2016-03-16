@@ -21,9 +21,6 @@ import example.farm.model.Hen;
 import example.farm.model.Horse;
 import example.farm.model.Pig;
 
-/**
- * Session Bean implementation class FarmFacade
- */
 @Stateless
 public class FarmFacade implements FarmFacadeLocal {
 
@@ -36,14 +33,6 @@ public class FarmFacade implements FarmFacadeLocal {
 	@EJB
 	BoxBean boxb;
 
-
-	/**
-	 * Default constructor.
-	 */
-	public FarmFacade() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public List<Animal> findAll() {
 		return animalb.findAllQuery();
 	}
@@ -52,22 +41,23 @@ public class FarmFacade implements FarmFacadeLocal {
 		return animalb.findByTypeQuery(type);
 	}
 
-	// public List<Cow> sumOfCowFoodTHATAREAWESOME(){
-	// return cowb.sumOfCowFoodTHATAREAWESOME();
-	// }
 	public List<Animal> findCows() {
 		return animalb.findCows();
 	}
-	public List<Animal> findHens(){
+
+	public List<Animal> findHens() {
 		return animalb.findHens();
 	}
-	public List<Animal> findHorses(){
+
+	public List<Animal> findHorses() {
 		return animalb.findHorses();
 	}
-	public List<Animal> findPigs(){
+
+	public List<Animal> findPigs() {
 		return animalb.findPigs();
 	}
-	// Skapa
+
+	// Create
 	public Animal createAnimal(Animal a) {
 		return animalb.createAnimal(a);
 	}
@@ -85,7 +75,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		return a;
 	}
 
-	// uppdatera
+	// Update
 	public Animal updateAnimal(Animal a) {
 		return animalb.updateAnimal(a);
 	}
@@ -103,7 +93,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		return a;
 	}
 
-	// ta bort
+	// Delete
 	public void deleteAnimal(long a) {
 		animalb.deleteAnimal(a);
 	}
@@ -112,10 +102,11 @@ public class FarmFacade implements FarmFacadeLocal {
 		foodb.deleteFood(id);
 	}
 
-	// hitta
-	public Food findByFoodName(String foodName){
+	// Find
+	public Food findByFoodName(String foodName) {
 		return foodb.findFoodByType(foodName);
 	}
+
 	public Animal findByIdAnimal(long a) {
 		return animalb.findByIdAnimal(a);
 	}
@@ -132,7 +123,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		return buildingb.findByIdBuilding(id);
 	}
 
-	// lägga till
+	// Add
 	public void addAnimal(Food f, Animal a) {
 		foodb.addAnimal(f, a);
 	}
@@ -142,7 +133,7 @@ public class FarmFacade implements FarmFacadeLocal {
 		f.setAmount(amounts + amount);
 	}
 
-	// Mata ett djur
+	// Feed an animal
 	public void changeAmountInCow(Cow c, Food f) {
 		int amount = c.getAmountOfPowerFeed();
 		f.setAmount(f.getAmount() - amount);
@@ -165,70 +156,71 @@ public class FarmFacade implements FarmFacadeLocal {
 		powerFeed.setAmount(powerFeed.getAmount() - amountPowerFeed);
 	}
 
-	// Mata
+	// Feed
 	public void feedCows(long idFood) {
 		List<Animal> cows = findByTypeQuery("Cow");
 		Food f = findByIdFood(idFood);
 		for (Animal a : cows) {
 			int amount = a.getAmountOfFood();
-			int feedAmount= f.getAmount();
-			feedAmount -=amount;
+			int feedAmount = f.getAmount();
+			feedAmount -= amount;
 			f.setAmount(feedAmount);
 			updateFood(f);
 		}
 	}
+
 	public void feedHens(long idFood) {
 		List<Animal> hens = findByTypeQuery("Hen");
 		Food f = findByIdFood(idFood);
 		for (Animal a : hens) {
 			int amount = a.getAmountOfFood();
-			int feedAmount= f.getAmount();
-			feedAmount -=amount;
+			int feedAmount = f.getAmount();
+			feedAmount -= amount;
 			f.setAmount(feedAmount);
 			updateFood(f);
 		}
 	}
-	public void feedHorses(long idFood,long idF) {
-			List<Animal> horses = findByTypeQuery("Horse");
-			Food f = findByIdFood(idFood);
-			Food f2 = findByIdFood(idF);
-			for (Animal a : horses) {
-				int amount = a.getAmountOfFood();
-				int amount2 = a.getAmountOfHay();
-				int feedAmount= f.getAmount();
-				int feedAmount2= f2.getAmount();
-				feedAmount2-=amount2;
-				feedAmount -=amount;
-				f2.setAmount(feedAmount2);
-				f.setAmount(feedAmount);
-				updateFood(f2);
-				updateFood(f);
-			}
-		
+
+	public void feedHorses(long idFood, long idF) {
+		List<Animal> horses = findByTypeQuery("Horse");
+		Food f = findByIdFood(idFood);
+		Food f2 = findByIdFood(idF);
+		for (Animal a : horses) {
+			int amount = a.getAmountOfFood();
+			int amount2 = a.getAmountOfHay();
+			int feedAmount = f.getAmount();
+			int feedAmount2 = f2.getAmount();
+			feedAmount2 -= amount2;
+			feedAmount -= amount;
+			f2.setAmount(feedAmount2);
+			f.setAmount(feedAmount);
+			updateFood(f2);
+			updateFood(f);
+		}
+
 	}
+
 	public void feedPigs(long idFood) {
 		List<Animal> pigs = findByTypeQuery("Pig");
 		Food f = findByIdFood(idFood);
 		for (Animal a : pigs) {
 			int amount = a.getAmountOfFood();
-			int feedAmount= f.getAmount();
-			feedAmount -=amount;
+			int feedAmount = f.getAmount();
+			feedAmount -= amount;
 			f.setAmount(feedAmount);
 			updateFood(f);
 		}
 	}
 
 	public List<Food> findAllFood() {
-	return foodb.findAllFood();
+		return foodb.findAllFood();
 	}
-			
-	public void feedAllAnimals(long idPowerFeed, long idOats,long idHay){
+
+	public void feedAllAnimals(long idPowerFeed, long idOats, long idHay) {
 		feedPigs(idPowerFeed);
-		feedHorses(idPowerFeed,idHay);
+		feedHorses(idPowerFeed, idHay);
 		feedHens(idOats);
 		feedCows(idPowerFeed);
 	}
-
-	
 
 }
