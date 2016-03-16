@@ -146,9 +146,6 @@ b+=1;
 readonly value="Cow"> <br />
 
 
-
-<br/>
-
 <label>Status</label>
 
 <br/>

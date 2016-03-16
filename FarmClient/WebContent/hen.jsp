@@ -128,7 +128,6 @@ b+=1;
 
 <label>Type of Animal</label>
 
-<br />
 
 
 <input type="text" id="typeAnimal" name="typeAnimal" maxlength="222"
