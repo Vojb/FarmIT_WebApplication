@@ -203,7 +203,7 @@ readonly value="Pig"> <br />
 
 <br />
 
-<input type="text" name="food" maxlength="2" required placeholder="Insert amount" />
+<input type="number" name="food" maxlength="2" required placeholder="Insert amount" />
 
 <br />
 <br />

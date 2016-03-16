@@ -86,7 +86,7 @@ div#finding {
 	width: 247px;
 }
 input.animal {
-		border:0px;	
+	border:0px;	
     height: 225px;
     padding-bottom: 10%;
     padding-top: 0%;
@@ -98,16 +98,15 @@ img#animaljpg {
 	padding-top: 0%;
 	margin-top: 25%;
 	margin-bottom: 25%;
-}
-img#animaljpg :focus{
-	outline:none;
-	border:0px;	
-	padding-bottom: 10%;
-	padding-top: 0%;
-	margin-top: 25%;
-	margin-bottom: 25%;
+}input[type="submit"] {
+    position: fixed;
+    height: 46px;
 }
 
+img#animaljpg :link:focus{
+	outline:none;
+	border:0px;	
+}
 form {
 	margin-bottom: 7%;
 }
