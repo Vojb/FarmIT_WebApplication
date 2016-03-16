@@ -77,11 +77,11 @@
 								<br />
 								<label id="food">Food</label>
 								<br />
-								<input type="text" name="food" maxlength="2" required placeholder="Insert amount" />
+								<input type="number" name="food" maxlength="2" required placeholder="Insert amount" />
 								<br />
 								<label id="foodOne"> </label>
 								<br />
-								<input type="number" id="hay" name="hay" maxlength="2" /> 
+								<input type="number" id="hay" name="hay" placeholder="Insert amount"  maxlength="2" /> 
 								<br />
 								<br />
 								<button type="reset" value="Reset">Reset</button>
@@ -93,7 +93,7 @@
 									}%>
 								<%if(request.getAttribute("msg")==null){
 									 }else{ %>
-									 	<center><%=request.getAttribute("msg")%></center><%
+									 	<center><%=request.getAttribute("msgCreate")%></center><%
 									}%>	
 							</form>
 		
