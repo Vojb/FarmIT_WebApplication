@@ -131,11 +131,16 @@ public class Farmlet extends HttpServlet {
 					a.setAge(request.getParameter("age"));
 
 					Box b = facade.findByIdBox(request.getParameter("idBox"));
+				
 					if (b != null) {
 						a.setBox(b);
 						facade.createAnimal(a);
 						request.setAttribute("msgCreate", "Animal Created");
 						url = "/create.jsp?";
+					}else
+					{
+						request.setAttribute("msg", "didnt find a box with that id");
+						url= "/cow.jsp)";	
 					}
 
 				} else if (animalType.equals("Hen")) {
@@ -152,6 +157,10 @@ public class Farmlet extends HttpServlet {
 						facade.createAnimal(a);
 						request.setAttribute("msgCreate", "Animal Created");
 						url = "/create.jsp?";
+					}else
+					{
+						request.setAttribute("msg", "didnt find a box with that id");
+						url= "/hen.jsp)";	
 					}
 
 				} else if (animalType.equals("Horse")) {
@@ -170,6 +179,10 @@ public class Farmlet extends HttpServlet {
 						facade.createAnimal(a);
 						request.setAttribute("msgCreate", "Animal Created");
 						url = "/create.jsp?";
+					}else
+					{
+						request.setAttribute("msg", "didnt find a box with that id");
+						url= "/horse.jsp)";	
 					}
 
 				} else {
@@ -186,6 +199,10 @@ public class Farmlet extends HttpServlet {
 						facade.createAnimal(a);
 						request.setAttribute("msgCreate", "Animal Created");
 						url = "/create.jsp?";
+					}else
+					{
+						request.setAttribute("msg", "didnt find a box with that id");
+						url= "/pig.jsp)";	
 					}
 				}
 				List<Food> f = facade.findAllFood();

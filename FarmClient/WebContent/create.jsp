@@ -91,6 +91,10 @@
 									 }else{ %>
 									 	<center><%=request.getAttribute("msgCreate")%></center><%
 									}%>
+								<%if(request.getAttribute("msg")==null){
+									 }else{ %>
+									 	<center><%=request.getAttribute("msg")%></center><%
+									}%>	
 							</form>
 		
 
