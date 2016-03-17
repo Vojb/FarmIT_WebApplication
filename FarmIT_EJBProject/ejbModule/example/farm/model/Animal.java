@@ -23,68 +23,47 @@ import javax.persistence.*;
 		@NamedQuery(name = "Animal.findHens", query = "SELECT a FROM Animal a WHERE a.class = 'Hen'"),
 		@NamedQuery(name = "Animal.findHorses", query = "SELECT a FROM Animal a WHERE a.class = 'Horse'"),
 		@NamedQuery(name = "Animal.findPigs", query = "SELECT a FROM Animal a WHERE a.class = 'Pig'")
-		
 
 })
 
 public abstract class Animal implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
 	private long idAnimal;
-
 	private String name;
-
 	private String age;
-
 	private String statusAnimal;
-
 	private Box box;
 
 	@ManyToOne
-
 	@JoinColumn(name = "IdBox", referencedColumnName = "IdBox")
 
 	public Box getBox() {
-
 		return box;
-
 	}
 
 	@ManyToMany(fetch = FetchType.EAGER)
-
 	@JoinTable(name = "Eats", joinColumns = @JoinColumn(name = "IdFood", referencedColumnName = "IdFood") , inverseJoinColumns = @JoinColumn(name = "IdAnimal", referencedColumnName = "IdAnimal") )
 
 	private Set<Food> foods;
 
 	@Id
-
 	@Column(name = "IdAnimal")
-
 	public long getIdAnimal() {
-
 		return idAnimal;
-
 	}
 
 	public void setIdAnimal(long idAnimal) {
-
 		this.idAnimal = idAnimal;
-
 	}
 
 	@Column(name = "Name")
-
 	public String getName() {
-
 		return name;
-
 	}
 
 	public void setName(String name) {
-
 		this.name = name;
-
 	}
 
 	@Column(name = "Age")
